@@ -5,31 +5,31 @@ from typing import Dict, List, Optional, Tuple, Callable
 
 import pytest
 
-import chia.server.ws_connection as ws
+import deafwave.server.ws_connection as ws
 
-from chia.full_node.mempool import Mempool
-from chia.full_node.full_node_api import FullNodeAPI
-from chia.protocols import full_node_protocol
-from chia.simulator.simulator_protocol import FarmNewBlockProtocol
-from chia.types.announcement import Announcement
-from chia.types.blockchain_format.coin import Coin
-from chia.types.coin_solution import CoinSolution
-from chia.types.condition_opcodes import ConditionOpcode
-from chia.types.condition_with_args import ConditionWithArgs
-from chia.types.spend_bundle import SpendBundle
-from chia.util.clvm import int_to_bytes
-from chia.util.condition_tools import conditions_for_solution
-from chia.util.errors import Err
-from chia.util.ints import uint64
-from chia.util.hash import std_hash
-from chia.types.mempool_inclusion_status import MempoolInclusionStatus
-from chia.util.api_decorators import api_request, peer_required, bytes_required
+from deafwave.full_node.mempool import Mempool
+from deafwave.full_node.full_node_api import FullNodeAPI
+from deafwave.protocols import full_node_protocol
+from deafwave.simulator.simulator_protocol import FarmNewBlockProtocol
+from deafwave.types.announcement import Announcement
+from deafwave.types.blockchain_format.coin import Coin
+from deafwave.types.coin_solution import CoinSolution
+from deafwave.types.condition_opcodes import ConditionOpcode
+from deafwave.types.condition_with_args import ConditionWithArgs
+from deafwave.types.spend_bundle import SpendBundle
+from deafwave.util.clvm import int_to_bytes
+from deafwave.util.condition_tools import conditions_for_solution
+from deafwave.util.errors import Err
+from deafwave.util.ints import uint64
+from deafwave.util.hash import std_hash
+from deafwave.types.mempool_inclusion_status import MempoolInclusionStatus
+from deafwave.util.api_decorators import api_request, peer_required, bytes_required
 
 from tests.connection_utils import connect_and_get_peer
 from tests.core.node_height import node_height_at_least
 from tests.setup_nodes import bt, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
-from chia.types.blockchain_format.program import Program, INFINITE_COST
+from deafwave.types.blockchain_format.program import Program, INFINITE_COST
 
 BURN_PUZZLE_HASH = b"0" * 32
 BURN_PUZZLE_HASH_2 = b"1" * 32
@@ -107,7 +107,7 @@ class TestMempool:
 async def respond_transaction(
     node: FullNodeAPI,
     tx: full_node_protocol.RespondTransaction,
-    peer: ws.WSChiaConnection,
+    peer: ws.WSDeafwaveConnection,
     tx_bytes: bytes = b"",
     test: bool = False,
 ) -> Tuple[MempoolInclusionStatus, Optional[Err]]:

@@ -14,7 +14,7 @@ from deafwave.util.ints import uint16
 from deafwave.util.misc import format_bytes
 from deafwave.util.misc import format_minutes
 
-SECONDS_PER_BLOCK = (24 * 3600) / 50688
+SECONDS_PER_BLOCK = (24 * 3600) / 4608
 
 
 async def get_plots(harvester_rpc_port: int) -> Optional[Dict[str, Any]]:

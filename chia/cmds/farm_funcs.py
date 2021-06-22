@@ -14,7 +14,7 @@ from chia.util.ints import uint16
 from chia.util.misc import format_bytes
 from chia.util.misc import format_minutes
 
-SECONDS_PER_BLOCK = (24 * 3600) / 4608
+SECONDS_PER_BLOCK = (24 * 3600) / 50688
 
 
 async def get_plots(harvester_rpc_port: int) -> Optional[Dict[str, Any]]:

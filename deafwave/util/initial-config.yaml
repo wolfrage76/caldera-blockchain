@@ -24,7 +24,7 @@ network_overrides: &network_overrides
   config:
     mainnet:
       address_prefix: "zzz"
-      default_full_node_port: 8444
+      default_full_node_port: 7888
     testnet0:
       address_prefix: "tzzz"
 

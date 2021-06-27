@@ -28,9 +28,10 @@ testnet_kwargs = {
     # Used as the initial cc rc challenges, as well as first block back pointers, and first SES back pointer
     # We override this value based on the chain being run (testnet0, testnet1, mainnet, etc)
     # Default used for tests is std_hash(b'')
-    "GENESIS_CHALLENGE": bytes.fromhex("e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"),
+    "GENESIS_CHALLENGE": bytes.fromhex("43c987d292909d0e29d3aa2c55e776c99bc758dac2ad484e158e413dec5f8abe"),
     # Forks of deafwave should change this value to provide replay attack protection. This is set to mainnet genesis chall
-    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("ccd5bb71183532bff220ba46c268991a3ff07eb358e8255a65c30a2dce0e5fbb"),
+    # null until mainnet release
+    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex(""),
     "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex(
         "030df0a076a3ee729e533b94ec2dfdf51a3dbf36bd2783c9736aa847570abb06"
     ),

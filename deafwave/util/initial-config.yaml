@@ -178,7 +178,7 @@ timelord:
   # is running in sanitizer_mode.
   # You must set 'send_uncompact_interval' in 'full_node' > 0 in the full_node
   # section below to have full_node send existing time proofs to be sanitized.
-  sanitizer_mode: False
+  sanitizer_mode: True
 
   ssl:
     private_crt:  "config/ssl/timelord/private_timelord.crt"
@@ -227,7 +227,7 @@ full_node:
 
   # Send to a Bluebox (sanatizing timelord) uncompact blocks once every
   # 'send_uncompact_interval' seconds. Set to 0 if you don't use this feature.
-  send_uncompact_interval: 0
+  send_uncompact_interval: 300
   # At every 'send_uncompact_interval' seconds, send blueboxes 'target_uncompact_proofs' proofs to be normalized.
   target_uncompact_proofs: 100
   # Setting this flag as True, blueboxes will sanitize only data needed in weight proof calculation, as opposed to whole blocks.

@@ -23,10 +23,10 @@ network_overrides: &network_overrides
       DIFFICULTY_CONSTANT_FACTOR: 10052721566054
   config:
     mainnet:
-      address_prefix: "xch"
+      address_prefix: "zzz"
       default_full_node_port: 8444
     testnet0:
-      address_prefix: "txch"
+      address_prefix: "tzzz"
 
 selected_network: &selected_network "mainnet"
 ALERTS_URL: https://download.deafwave.net/notify/mainnet_alert.txt
@@ -92,7 +92,7 @@ harvester:
 
 pool:
   # Replace this with a real puzzle hash
-  # xch_target_address: txch102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
+  # zzz_target_address: tzzz102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
   logging: *logging
   network_overrides: *network_overrides
   selected_network: *selected_network
@@ -112,7 +112,7 @@ farmer:
   pool_public_keys: []
 
   # Replace this with a real puzzle hash
-  # xch_target_address: txch102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
+  # zzz_target_address: tzzz102gkhhzs60grx7cfnpng5n6rjecr89r86l5s8xux2za8k820cxsq64ssdg
 
   # If True, starts an RPC server at the following port
   start_rpc_server: True

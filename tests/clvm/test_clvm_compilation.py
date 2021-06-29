@@ -32,6 +32,11 @@ wallet_program_files = set(
         "caldera/wallet/puzzles/block_program_zero.clvm",
         "caldera/wallet/puzzles/test_generator_deserialize.clvm",
         "caldera/wallet/puzzles/test_multiple_generator_input_arguments.clvm",
+        "caldera/wallet/puzzles/p2_singleton.clvm",
+        "caldera/wallet/puzzles/pool_waitingroom_innerpuz.clvm",
+        "caldera/wallet/puzzles/pool_member_innerpuz.clvm",
+        "caldera/wallet/puzzles/singleton_launcher.clvm",
+        "caldera/wallet/puzzles/p2_singleton_or_delayed_puzhash.clvm",
     ]
 )
 

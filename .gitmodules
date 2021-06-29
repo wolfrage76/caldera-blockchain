@@ -1,7 +1,7 @@
 [submodule "caldera-blockchain-gui"]
 	path = caldera-blockchain-gui
 	url = https://github.com/Caldera-Network/caldera-blockchain-gui.git
-	branch = main
+	branch = pools
 [submodule "mozilla-ca"]
 	path = mozilla-ca
 	url = https://github.com/Caldera-Network/mozilla-ca.git

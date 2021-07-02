@@ -87,7 +87,7 @@ def configure(
             print("Setting Testnet")
             testnet_port = "58620"
             testnet_introducer = "beta1_introducer.caldera.network"
-            testnet = "testnet0"
+            testnet = "testnet4"
             config["full_node"]["port"] = int(testnet_port)
             config["full_node"]["introducer_peer"]["port"] = int(testnet_port)
             config["farmer"]["full_node_peer"]["port"] = int(testnet_port)

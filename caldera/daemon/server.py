@@ -127,6 +127,7 @@ class WebSocketServer:
         self.websocket_server = None
         self.ssl_context = ssl_context_for_server(ca_crt_path, ca_key_path, crt_path, key_path)
         self.shut_down = False
+        self.genesis_initialized = False
 
     async def start(self):
         self.log.info("Starting Daemon Server")
@@ -149,6 +150,17 @@ class WebSocketServer:
             ping_timeout=300,
             ssl=self.ssl_context,
         )
+        # Temporary Flag Drop Code
+        selected = self.net_config["selected_network"]
+        challenge = self.net_config["network_overrides"]["constants"][selected]["GENESIS_CHALLENGE"]
+
+        if challenge is None:
+            self.genesis_initialized = False
+            self.alert_task = asyncio.create_task(self.check_for_alerts())
+        else:
+            self.alert_task = None
+            self.genesis_initialized = True
+
         self.log.info("Waiting Daemon WebSocketServer closure")
 
     def cancel_task_safe(self, task: Optional[asyncio.Task]):
@@ -164,7 +176,48 @@ class WebSocketServer:
         await self.exit()
         if self.websocket_server is not None:
             self.websocket_server.close()
+        self.cancel_task_safe(self.alert_task)
         return {"success": True}
+
+    # Flag Drop Check
+    async def check_for_alerts(self):
+        while True:
+            try:
+                if self.shut_down:
+                    break
+                await asyncio.sleep(2)
+
+                selected = self.net_config["selected_network"]
+                alert_url = self.net_config["ALERTS_URL"]
+                log.debug("Fetching alerts")
+                response = await fetch(alert_url)
+                log.debug(f"Fetched alert: {response}")
+                if response is None:
+                    continue
+
+                json_response = json.loads(response)
+                if "data" in json_response:
+                    pubkey = self.net_config["DEAFWAVE_ALERTS_PUBKEY"]
+                    validated = validate_alert(response, pubkey)
+                    if validated is False:
+                        self.log.error(f"Error unable to validate alert! {response}")
+                        continue
+
+                    data = json_response["data"]
+                    data_json = json.loads(data)
+                    if data_json["ready"] is False:
+                        # Network not launched yet
+                        log.info("Network is not ready yet")
+                        continue
+
+                    challenge = data_json["genesis_challenge"]
+                    self.net_config["network_overrides"]["constants"][selected]["GENESIS_CHALLENGE"] = challenge
+                    save_config(self.root_path, "config.yaml", self.net_config)
+                    self.genesis_initialized = True
+                    break
+            except Exception as e:
+                log.error(f"Exception in check alerts task: {e}")
+    # Flag Drop Check End
 
     async def safe_handle(self, websocket: WebSocketServerProtocol, path: str):
         service_name = ""
@@ -296,7 +349,7 @@ class WebSocketServer:
         return full_response, [websocket]
 
     def get_status(self) -> Dict[str, Any]:
-        response = {"success": True, "genesis_initialized": True}
+        response = {"success": True, "genesis_initialized": self.genesis_initialized}
         return response
 
     def plot_queue_to_payload(self, plot_queue_item, send_full_log: bool) -> Dict[str, Any]:

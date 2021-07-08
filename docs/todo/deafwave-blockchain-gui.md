@@ -1,4 +1,4 @@
-# deafwave-blockchain-gui
+# caldera-blockchain-gui
 
 ## Files To Update
 
@@ -13,15 +13,15 @@
 
 legal@chia.net
 https://trello.com/b/ZuNx7sET
-https://deafwave.net
-Copyright (c) 2021 Deafwave Network
-https://www.deafwaveexplorer.com
+https://caldera.net
+Copyright (c) 2021 Caldera Network
+https://www.calderaexplorer.com
 MOJO
 mojo
 CH
-https://backup.deafwave.net
+https://backup.caldera.net
 
 ## Concerns
-- deafwave_addr
+- caldera_addr
 - Wiki pages
 - ports

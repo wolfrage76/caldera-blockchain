@@ -76,10 +76,7 @@ def show_all_keys(show_mnemonic: bool):
         print("")
         print("Fingerprint:", sk.get_g1().get_fingerprint())
         print("Master public key (m):", sk.get_g1())
-        print(
-            "Farmer public key (m/12381/8620/0/0):",
-            master_sk_to_farmer_sk(sk).get_g1(),
-        )
+        print("Farmer public key (m/12381/8620/0/0):", master_sk_to_farmer_sk(sk).get_g1())
         print("Pool public key (m/12381/8620/1/0):", master_sk_to_pool_sk(sk).get_g1())
         print(
             "First wallet address:",

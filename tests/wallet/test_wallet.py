@@ -491,8 +491,8 @@ class TestWalletSimulator:
 
         assert await wallet.get_confirmed_balance() == funds
         assert await wallet.get_unconfirmed_balance() == funds
-        tx_amount = 3200000000000
-        tx_fee = 300000000000
+        tx_amount = 32000000000000
+        tx_fee = 3000000000000
         tx = await wallet.generate_signed_transaction(
             tx_amount,
             await wallet_node_2.wallet_state_manager.main_wallet.get_new_puzzlehash(),
@@ -535,7 +535,7 @@ class TestWalletSimulator:
             await full_node_1.farm_new_transaction_block(FarmNewBlockProtocol(32 * b"0"))
 
         # Funds have not decreased because stolen_tx was rejected
-        outstanding_coinbase_rewards = 2000000000000
+        outstanding_coinbase_rewards = 10000000000000
         await time_out_assert(5, wallet.get_confirmed_balance, funds + outstanding_coinbase_rewards)
         await time_out_assert(5, wallet.get_confirmed_balance, funds + outstanding_coinbase_rewards)
 

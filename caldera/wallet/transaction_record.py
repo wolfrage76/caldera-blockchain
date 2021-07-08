@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
-from caldera.consensus.coinbase import pool_parent_id, farmer_parent_id
+from caldera.consensus.coinbase import pool_parent_id, farmer_parent_id, postfarm_parent_id
 from caldera.types.blockchain_format.coin import Coin
 from caldera.types.blockchain_format.sized_bytes import bytes32
 from caldera.types.mempool_inclusion_status import MempoolInclusionStatus
@@ -54,8 +54,11 @@ class TransactionRecord(Streamable):
                     return None
                 pool_parent = pool_parent_id(uint32(block_index), genesis_challenge)
                 farmer_parent = farmer_parent_id(uint32(block_index), genesis_challenge)
+                postfarm_parent = postfarm_parent_id(uint32(block_index), genesis_challenge)
                 if pool_parent == self.additions[0].parent_coin_info:
                     return uint32(block_index)
                 if farmer_parent == self.additions[0].parent_coin_info:
+                    return uint32(block_index)
+                if postfarm_parent == self.additions[0].parent_coin_info:
                     return uint32(block_index)
         return None

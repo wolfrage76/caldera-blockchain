@@ -7,11 +7,11 @@ from chiabip158 import PyBIP158
 from clvm.casts import int_from_bytes
 
 from caldera.consensus.block_record import BlockRecord
-from caldera.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from caldera.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward, calculate_postfarm_reward
 from caldera.consensus.block_root_validation import validate_block_merkle_roots
 from caldera.full_node.mempool_check_conditions import mempool_check_conditions_dict
 from caldera.consensus.blockchain_interface import BlockchainInterface
-from caldera.consensus.coinbase import create_farmer_coin, create_pool_coin
+from caldera.consensus.coinbase import create_farmer_coin, create_pool_coin, create_postfarm_coin
 from caldera.consensus.constants import ConsensusConstants
 from caldera.consensus.cost_calculator import NPCResult, calculate_cost_of_program
 from caldera.consensus.find_fork_point import find_fork_point_in_chain
@@ -126,9 +126,16 @@ async def validate_block_body(
             uint64(calculate_base_farmer_reward(prev_transaction_block.height) + prev_transaction_block.fees),
             constants.GENESIS_CHALLENGE,
         )
+        postfarm_coin = create_postfarm_coin(
+            prev_transaction_block_height,
+            constants.POST_FARM_PUZZLE_HASH,
+            calculate_postfarm_reward(prev_transaction_block.height),
+            constants.GENESIS_CHALLENGE,
+        )
         # Adds the previous block
         expected_reward_coins.add(pool_coin)
         expected_reward_coins.add(farmer_coin)
+        expected_reward_coins.add(postfarm_coin)
 
         # For the second block in the chain, don't go back further
         if prev_transaction_block.height > 0:
@@ -147,6 +154,14 @@ async def validate_block_body(
                         curr_b.height,
                         curr_b.farmer_puzzle_hash,
                         calculate_base_farmer_reward(curr_b.height),
+                        constants.GENESIS_CHALLENGE,
+                    )
+                )
+                expected_reward_coins.add(
+                    create_postfarm_coin(
+                        curr_b.height,
+                        constants.POST_FARM_PUZZLE_HASH,
+                        calculate_postfarm_reward(curr_b.height),
                         constants.GENESIS_CHALLENGE,
                     )
                 )

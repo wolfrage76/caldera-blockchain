@@ -36,6 +36,7 @@ class ConsensusConstants:
     GENESIS_CHALLENGE: bytes32
     # Forks of caldera should change this value to provide replay attack protection
     AGG_SIG_ME_ADDITIONAL_DATA: bytes
+    POST_FARM_PUZZLE_HASH: bytes32
     GENESIS_PRE_FARM_POOL_PUZZLE_HASH: bytes32  # The block at height must pay out to this pool puzzle hash
     GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: bytes32  # The block at height must pay out to this farmer puzzle hash
     MAX_VDF_WITNESS_SIZE: int  # The maximum number of classgroup elements within an n-wesolowski proof

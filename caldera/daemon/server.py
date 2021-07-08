@@ -27,6 +27,7 @@ from caldera.util.path import mkdir
 from caldera.util.service_groups import validate_service
 from caldera.util.setproctitle import setproctitle
 from caldera.util.ws_message import WsRpcMessage, create_payload, format_response
+from caldera.util.validate_alert import validate_alert
 
 io_pool_exc = ThreadPoolExecutor()
 
@@ -197,7 +198,7 @@ class WebSocketServer:
 
                 json_response = json.loads(response)
                 if "data" in json_response:
-                    pubkey = self.net_config["DEAFWAVE_ALERTS_PUBKEY"]
+                    pubkey = self.net_config["CALDERA_ALERTS_PUBKEY"]
                     validated = validate_alert(response, pubkey)
                     if validated is False:
                         self.log.error(f"Error unable to validate alert! {response}")

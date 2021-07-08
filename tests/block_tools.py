@@ -26,9 +26,9 @@ from caldera.full_node.mempool_check_conditions import GENERATOR_MOD
 from caldera.plotting.create_plots import create_plots
 from caldera.consensus.block_creation import unfinished_block_to_full_block
 from caldera.consensus.block_record import BlockRecord
-from caldera.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from caldera.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward, calculate_postfarm_reward
 from caldera.consensus.blockchain_interface import BlockchainInterface
-from caldera.consensus.coinbase import create_puzzlehash_for_pk, create_farmer_coin, create_pool_coin
+from caldera.consensus.coinbase import create_postfarm_coin, create_puzzlehash_for_pk, create_farmer_coin, create_pool_coin
 from caldera.consensus.constants import ConsensusConstants
 from caldera.consensus.default_constants import DEFAULT_CONSTANTS
 from caldera.consensus.deficit import calculate_deficit
@@ -110,6 +110,9 @@ test_constants = DEFAULT_CONSTANTS.replace(
         "MEMPOOL_BLOCK_BUFFER": 6,
         "INITIAL_FREEZE_END_TIMESTAMP": int(time.time()) - 1,
         "NETWORK_TYPE": 1,
+        "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex("d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"),
+        "GENESIS_PRE_FARM_FARMER_PUZZLE_HASH": bytes.fromhex("3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af"),
+        "POST_FARM_PUZZLE_HASH": bytes.fromhex("4d7ca818bc2d3af0eeb51d2e93c9bb2ab9a3befc400a233c88f60c20d34b4f53"),
     }
 )
 
@@ -136,8 +139,10 @@ class BlockTools:
         self.keychain.delete_all_keys()
         self.farmer_master_sk_entropy = std_hash(b"block_tools farmer key")
         self.pool_master_sk_entropy = std_hash(b"block_tools pool key")
+        self.postfarm_master_sk_entropy = std_hash(b"block_tools postfarm key")
         self.farmer_master_sk = self.keychain.add_private_key(bytes_to_mnemonic(self.farmer_master_sk_entropy), "")
         self.pool_master_sk = self.keychain.add_private_key(bytes_to_mnemonic(self.pool_master_sk_entropy), "")
+        self.postfarm_master_sk = self.keychain.add_private_key(bytes_to_mnemonic(self.postfarm_master_sk_entropy), "")
         self.farmer_pk = master_sk_to_farmer_sk(self.farmer_master_sk).get_g1()
         self.pool_pk = master_sk_to_pool_sk(self.pool_master_sk).get_g1()
         self.farmer_ph: bytes32 = create_puzzlehash_for_pk(
@@ -145,6 +150,9 @@ class BlockTools:
         )
         self.pool_ph: bytes32 = create_puzzlehash_for_pk(
             master_sk_to_wallet_sk(self.pool_master_sk, uint32(0)).get_g1()
+        )
+        self.postfarm_ph: bytes32 = create_puzzlehash_for_pk(
+            master_sk_to_wallet_sk(self.postfarm_master_sk, uint32(0)).get_g1()
         )
         self.init_plots(root_path)
 
@@ -287,6 +295,9 @@ class BlockTools:
 
     def get_pool_wallet_tool(self) -> WalletTool:
         return WalletTool(self.constants, self.pool_master_sk)
+
+    def get_postfarm_wallet_tool(self) -> WalletTool:
+        return WalletTool(self.constants, self.postfarm_master_sk)
 
     def get_consecutive_blocks(
         self,
@@ -1579,8 +1590,15 @@ def create_test_foliage(
                 uint64(calculate_base_farmer_reward(curr.height) + curr.fees),
                 constants.GENESIS_CHALLENGE,
             )
+
+            postfarm_coin = create_postfarm_coin(
+                curr.height,
+                constants.POST_FARM_PUZZLE_HASH,
+                calculate_postfarm_reward(curr.height),
+                constants.GENESIS_CHALLENGE,
+            )
             assert curr.header_hash == prev_transaction_block.header_hash
-            reward_claims_incorporated += [pool_coin, farmer_coin]
+            reward_claims_incorporated += [pool_coin, farmer_coin, postfarm_coin]
 
             if curr.height > 0:
                 curr = blocks.block_record(curr.prev_hash)
@@ -1598,7 +1616,13 @@ def create_test_foliage(
                         calculate_base_farmer_reward(curr.height),
                         constants.GENESIS_CHALLENGE,
                     )
-                    reward_claims_incorporated += [pool_coin, farmer_coin]
+                    postfarm_coin = create_postfarm_coin(
+                        curr.height,
+                        constants.POST_FARM_PUZZLE_HASH,
+                        calculate_postfarm_reward(curr.height),
+                        constants.GENESIS_CHALLENGE,
+                    )
+                    reward_claims_incorporated += [pool_coin, farmer_coin, postfarm_coin]
                     curr = blocks.block_record(curr.prev_hash)
         additions.extend(reward_claims_incorporated.copy())
         for coin in additions:

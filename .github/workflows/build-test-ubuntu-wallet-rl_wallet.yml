@@ -63,17 +63,17 @@ jobs:
     - name: Checkout test blocks and plots
       uses: actions/checkout@v2
       with:
-        repository: 'Chia-Network/test-cache'
-        path: '.chia'
+        repository: 'Caldera-Network/test-cache'
+        path: '.caldera'
         ref: '0.26.0'
         fetch-depth: 1
 
     - name: Link home directory
       run: |
         cd $HOME
-        ln -s $GITHUB_WORKSPACE/.chia
-        echo "$HOME/.chia"
-        ls -al $HOME/.chia
+        ln -s $GITHUB_WORKSPACE/.caldera
+        echo "$HOME/.caldera"
+        ls -al $HOME/.caldera
 
     - name: Install ubuntu dependencies
       run: |

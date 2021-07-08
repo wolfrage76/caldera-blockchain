@@ -4,21 +4,21 @@ import pytest
 from blspy import AugSchemeMPL
 from chiapos import DiskPlotter
 
-from chia.consensus.coinbase import create_puzzlehash_for_pk
-from chia.plotting.plot_tools import stream_plot_info_ph, stream_plot_info_pk
-from chia.protocols import farmer_protocol
-from chia.rpc.farmer_rpc_api import FarmerRpcApi
-from chia.rpc.farmer_rpc_client import FarmerRpcClient
-from chia.rpc.harvester_rpc_api import HarvesterRpcApi
-from chia.rpc.harvester_rpc_client import HarvesterRpcClient
-from chia.rpc.rpc_server import start_rpc_server
-from chia.types.blockchain_format.sized_bytes import bytes32
-from chia.util.bech32m import decode_puzzle_hash, encode_puzzle_hash
+from caldera.consensus.coinbase import create_puzzlehash_for_pk
+from caldera.plotting.plot_tools import stream_plot_info_ph, stream_plot_info_pk
+from caldera.protocols import farmer_protocol
+from caldera.rpc.farmer_rpc_api import FarmerRpcApi
+from caldera.rpc.farmer_rpc_client import FarmerRpcClient
+from caldera.rpc.harvester_rpc_api import HarvesterRpcApi
+from caldera.rpc.harvester_rpc_client import HarvesterRpcClient
+from caldera.rpc.rpc_server import start_rpc_server
+from caldera.types.blockchain_format.sized_bytes import bytes32
+from caldera.util.bech32m import decode_puzzle_hash, encode_puzzle_hash
 from tests.block_tools import get_plot_dir
-from chia.util.config import load_config
-from chia.util.hash import std_hash
-from chia.util.ints import uint8, uint16, uint32, uint64
-from chia.wallet.derive_keys import master_sk_to_wallet_sk
+from caldera.util.config import load_config
+from caldera.util.hash import std_hash
+from caldera.util.ints import uint8, uint16, uint32, uint64
+from caldera.wallet.derive_keys import master_sk_to_wallet_sk
 from tests.setup_nodes import bt, self_hostname, setup_farmer_harvester, test_constants
 from tests.time_out_assert import time_out_assert
 

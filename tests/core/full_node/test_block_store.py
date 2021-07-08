@@ -6,10 +6,10 @@ from pathlib import Path
 import aiosqlite
 import pytest
 
-from chia.consensus.blockchain import Blockchain
-from chia.full_node.block_store import BlockStore
-from chia.full_node.coin_store import CoinStore
-from chia.util.db_wrapper import DBWrapper
+from caldera.consensus.blockchain import Blockchain
+from caldera.full_node.block_store import BlockStore
+from caldera.full_node.coin_store import CoinStore
+from caldera.util.db_wrapper import DBWrapper
 from tests.setup_nodes import bt, test_constants
 
 

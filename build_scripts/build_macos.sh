@@ -55,7 +55,7 @@ fi
 
 if [ "$NOTARIZE" ]; then
   electron-osx-sign Caldera-darwin-x64/Caldera.app --platform=darwin \
-  --hardened-runtime=true --provisioning-profile=chiablockchain.provisionprofile \
+  --hardened-runtime=true --provisioning-profile=calderablockchain.provisionprofile \
   --entitlements=entitlements.mac.plist --entitlements-inherit=entitlements.mac.plist \
   --no-gatekeeper-assess
 fi

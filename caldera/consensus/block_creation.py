@@ -8,7 +8,11 @@ from blspy import G1Element, G2Element
 from chiabip158 import PyBIP158
 
 from caldera.consensus.block_record import BlockRecord
-from caldera.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward, calculate_postfarm_reward
+from caldera.consensus.block_rewards import (
+    calculate_base_farmer_reward,
+    calculate_pool_reward,
+    calculate_postfarm_reward,
+)
 from caldera.consensus.blockchain_interface import BlockchainInterface
 from caldera.consensus.coinbase import create_farmer_coin, create_pool_coin, create_postfarm_coin
 from caldera.consensus.constants import ConsensusConstants

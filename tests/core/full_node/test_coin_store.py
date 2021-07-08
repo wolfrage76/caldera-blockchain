@@ -6,7 +6,11 @@ from typing import List, Optional, Set, Tuple
 import aiosqlite
 import pytest
 
-from caldera.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward, calculate_postfarm_reward
+from caldera.consensus.block_rewards import (
+    calculate_base_farmer_reward,
+    calculate_pool_reward,
+    calculate_postfarm_reward,
+)
 from caldera.consensus.blockchain import Blockchain, ReceiveBlockResult
 from caldera.consensus.coinbase import create_farmer_coin, create_pool_coin, create_postfarm_coin
 from caldera.full_node.block_store import BlockStore
@@ -53,10 +57,7 @@ def get_future_reward_coins(block: FullBlock) -> Tuple[Coin, Coin]:
         constants.GENESIS_CHALLENGE,
     )
     postfarm_coin: Coin = create_postfarm_coin(
-        block.height,
-        constants.POST_FARM_PUZZLE_HASH,
-        postfarm_amount,
-        constants.GENESIS_CHALLENGE
+        block.height, constants.POST_FARM_PUZZLE_HASH, postfarm_amount, constants.GENESIS_CHALLENGE
     )
     return pool_coin, farmer_coin, postfarm_coin
 

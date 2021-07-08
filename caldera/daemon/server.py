@@ -218,6 +218,7 @@ class WebSocketServer:
                     break
             except Exception as e:
                 log.error(f"Exception in check alerts task: {e}")
+
     # Flag Drop Check End
 
     async def safe_handle(self, websocket: WebSocketServerProtocol, path: str):

@@ -26,9 +26,18 @@ from caldera.full_node.mempool_check_conditions import GENERATOR_MOD
 from caldera.plotting.create_plots import create_plots
 from caldera.consensus.block_creation import unfinished_block_to_full_block
 from caldera.consensus.block_record import BlockRecord
-from caldera.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward, calculate_postfarm_reward
+from caldera.consensus.block_rewards import (
+    calculate_base_farmer_reward,
+    calculate_pool_reward,
+    calculate_postfarm_reward,
+)
 from caldera.consensus.blockchain_interface import BlockchainInterface
-from caldera.consensus.coinbase import create_postfarm_coin, create_puzzlehash_for_pk, create_farmer_coin, create_pool_coin
+from caldera.consensus.coinbase import (
+    create_postfarm_coin,
+    create_puzzlehash_for_pk,
+    create_farmer_coin,
+    create_pool_coin,
+)
 from caldera.consensus.constants import ConsensusConstants
 from caldera.consensus.default_constants import DEFAULT_CONSTANTS
 from caldera.consensus.deficit import calculate_deficit
@@ -110,8 +119,12 @@ test_constants = DEFAULT_CONSTANTS.replace(
         "MEMPOOL_BLOCK_BUFFER": 6,
         "INITIAL_FREEZE_END_TIMESTAMP": int(time.time()) - 1,
         "NETWORK_TYPE": 1,
-        "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex("d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"),
-        "GENESIS_PRE_FARM_FARMER_PUZZLE_HASH": bytes.fromhex("3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af"),
+        "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex(
+            "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
+        ),
+        "GENESIS_PRE_FARM_FARMER_PUZZLE_HASH": bytes.fromhex(
+            "3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af"
+        ),
         "POST_FARM_PUZZLE_HASH": bytes.fromhex("4d7ca818bc2d3af0eeb51d2e93c9bb2ab9a3befc400a233c88f60c20d34b4f53"),
     }
 )

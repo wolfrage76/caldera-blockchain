@@ -268,7 +268,9 @@ async def summary(rpc_port: int, wallet_rpc_port: int, harvester_rpc_port: int, 
 
     if amounts is None:
         if wallet_not_running:
-            print("For details on farmed rewards and fees you should run 'caldera start wallet' and 'caldera wallet show'")
+            print(
+                "For details on farmed rewards and fees you should run 'caldera start wallet' and 'caldera wallet show'"
+            )
         elif wallet_not_ready:
             print("For details on farmed rewards and fees you should run 'caldera wallet show'")
     else:

@@ -404,7 +404,9 @@ class TradeManager:
                 if caldera_discrepancy is None:
                     caldera_discrepancy = get_output_discrepancy_for_puzzle_and_solution(coinsol.coin, puzzle, solution)
                 else:
-                    caldera_discrepancy += get_output_discrepancy_for_puzzle_and_solution(coinsol.coin, puzzle, solution)
+                    caldera_discrepancy += get_output_discrepancy_for_puzzle_and_solution(
+                        coinsol.coin, puzzle, solution
+                    )
                 coinsols.append(coinsol)
 
         caldera_spend_bundle: Optional[SpendBundle] = None

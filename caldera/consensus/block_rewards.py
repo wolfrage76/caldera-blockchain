@@ -50,6 +50,7 @@ def calculate_base_farmer_reward(height: uint32) -> uint64:
     else:
         return uint64(int((1 / 8) * 0.625 * _mojo_per_caldera))
 
+
 def calculate_postfarm_reward(height: uint32) -> uint64:
     """
     Returns the post development reward at a certain block height.

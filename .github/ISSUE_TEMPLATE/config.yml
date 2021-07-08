@@ -7,6 +7,6 @@ contact_links:
     name: Make a Request
     url: >-
       https://github.com/Caldera-Network/caldera-blockchain/discussions/new?category=ideas
-  - about: Get support on the Caldera Keybase chat channels.
-    name: Join the Keybase.io support chat
-    url: 'https://keybase.io/team/caldera_network.public'
+  - about: Get support on the Caldera Discord chat channels.
+    name: Join the Discord support chat
+    url: 'https://discord.gg/2d9VVMgDdx'

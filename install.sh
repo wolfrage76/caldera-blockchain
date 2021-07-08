@@ -121,8 +121,8 @@ python -m pip install -e . --extra-index-url https://pypi.chia.net/simple/
 
 echo ""
 echo "Caldera blockchain install.sh complete."
-echo "For assistance join us on Keybase in the #testnet chat channel:"
-echo "https://keybase.io/team/caldera_network.public"
+echo "For assistance join us on Discord in the #testnet chat channel:"
+echo "https://discord.gg/2d9VVMgDdx"
 echo ""
 echo "Try the Quick Start Guide to running caldera-blockchain:"
 echo "https://github.com/Caldera-Network/caldera-blockchain/wiki/Quick-Start-Guide"

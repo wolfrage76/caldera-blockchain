@@ -424,7 +424,7 @@ class TestPoolWalletRpc:
         await asyncio.sleep(2)
 
         bal = await client.get_wallet_balance(2)
-        assert bal["confirmed_wallet_balance"] == 2 * 1750000000000
+        assert bal["confirmed_wallet_balance"] == 2 * 8750000000000
 
         # Claim 2 * 1.75, and farm a new 1.75
         absorb_tx: TransactionRecord = await client.pw_absorb_rewards(2)
@@ -440,7 +440,7 @@ class TestPoolWalletRpc:
         assert status.current == new_status.current
         assert status.tip_singleton_coin_id != new_status.tip_singleton_coin_id
         bal = await client.get_wallet_balance(2)
-        assert bal["confirmed_wallet_balance"] == 1 * 1750000000000
+        assert bal["confirmed_wallet_balance"] == 1 * 8750000000000
 
         # Claim another 1.75
         absorb_tx: TransactionRecord = await client.pw_absorb_rewards(2)
@@ -469,8 +469,8 @@ class TestPoolWalletRpc:
         for summary in summaries_response:
             if WalletType(int(summary["type"])) == WalletType.POOLING_WALLET:
                 assert False
-        # Balance stars at 6 XCL
-        assert (await wallet_0.get_confirmed_balance()) == 6000000000000
+        # Balance stars at 30 XCL (3 blocks)
+        assert (await wallet_0.get_confirmed_balance()) == 30000000000000
         creation_tx: TransactionRecord = await client.create_new_pool_wallet(
             our_ph, "http://123.45.67.89", 10, "localhost:5000", "new", "FARMING_TO_POOL"
         )
@@ -543,8 +543,8 @@ class TestPoolWalletRpc:
         assert (
             wallet_node_0.wallet_state_manager.get_peak().height == full_node_api.full_node.blockchain.get_peak().height
         )
-        # Balance stars at 6 XCL and 5 more blocks are farmed, total 22 XCL
-        assert (await wallet_0.get_confirmed_balance()) == 21999999999999
+        # Balance stars at 30 XCL and 8 more blocks are farmed, total 80 XCL
+        assert (await wallet_0.get_confirmed_balance()) == 109999999999999
 
     @pytest.mark.asyncio
     async def test_self_pooling_to_pooling(self, setup):

@@ -21,7 +21,7 @@ from caldera.daemon.windows_signal import kill
 from caldera.server.server import ssl_context_for_root, ssl_context_for_server
 from caldera.ssl.create_ssl import get_mozilla_ca_crt
 from caldera.util.caldera_logging import initialize_logging
-from caldera.util.config import load_config
+from caldera.util.config import load_config, save_config
 from caldera.util.json_util import dict_to_json_str
 from caldera.util.path import mkdir
 from caldera.util.service_groups import validate_service

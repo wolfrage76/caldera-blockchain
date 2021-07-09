@@ -42,10 +42,10 @@ dev_dependencies = [
 
 kwargs = dict(
     name="caldera-blockchain",
-    author="Mariano Sorgente",
-    author_email="mariano@caldera.net",
+    author="Chandler Ferry",
+    author_email="outlook@caldera.network",
     description="Caldera blockchain full node, farmer, timelord, and wallet.",
-    url="https://caldera.net/",
+    url="https://caldera.network/",
     license="Apache License",
     python_requires=">=3.7, <4",
     keywords="caldera blockchain node",

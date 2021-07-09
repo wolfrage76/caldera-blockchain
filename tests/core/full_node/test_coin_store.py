@@ -40,7 +40,7 @@ WALLET_A = WalletTool(constants)
 log = logging.getLogger(__name__)
 
 
-def get_future_reward_coins(block: FullBlock) -> Tuple[Coin, Coin]:
+def get_future_reward_coins(block: FullBlock) -> Tuple[Coin, Coin, Coin]:
     pool_amount = calculate_pool_reward(block.height)
     farmer_amount = calculate_base_farmer_reward(block.height)
     postfarm_amount = calculate_postfarm_reward(block.height)

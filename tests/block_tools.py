@@ -156,6 +156,7 @@ class BlockTools:
         self.farmer_master_sk = self.keychain.add_private_key(bytes_to_mnemonic(self.farmer_master_sk_entropy), "")
         self.pool_master_sk = self.keychain.add_private_key(bytes_to_mnemonic(self.pool_master_sk_entropy), "")
         self.postfarm_master_sk = self.keychain.add_private_key(bytes_to_mnemonic(self.postfarm_master_sk_entropy), "")
+        # TODO: Make sure postfarm key is handled properly
         self.farmer_pk = master_sk_to_farmer_sk(self.farmer_master_sk).get_g1()
         self.pool_pk = master_sk_to_pool_sk(self.pool_master_sk).get_g1()
         self.farmer_ph: bytes32 = create_puzzlehash_for_pk(

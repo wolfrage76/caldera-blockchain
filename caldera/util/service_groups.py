@@ -1,7 +1,7 @@
 from typing import KeysView, Generator
 
 SERVICES_FOR_GROUP = {
-    "all": "caldera_harvester caldera_timelord_launcher caldera_timelord caldera_farmer caldera_full_node caldera_wallet".split(),
+    "all": "caldera_harvester caldera_timelord_launcher caldera_timelord caldera_farmer caldera_full_node caldera_wallet".split(),  # noqa
     "node": "caldera_full_node".split(),
     "harvester": "caldera_harvester".split(),
     "farmer": "caldera_harvester caldera_farmer caldera_full_node caldera_wallet".split(),

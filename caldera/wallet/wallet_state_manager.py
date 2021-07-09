@@ -716,6 +716,7 @@ class WalletStateManager:
                         coin,
                         is_coinbase,
                         is_fee_reward,
+                        is_postfarm_reward,
                         uint32(interested_wallet_id),
                         wallet_type,
                         height,
@@ -784,7 +785,7 @@ class WalletStateManager:
             if coinbase:
                 tx_type: int = TransactionType.COINBASE_REWARD.value
             elif postfarm_reward:
-                tx_type: int = TransactionType.POSTFARM_REWARD.value
+                tx_type = TransactionType.POSTFARM_REWARD.value
             else:
                 tx_type = TransactionType.FEE_REWARD.value
             tx_record = TransactionRecord(

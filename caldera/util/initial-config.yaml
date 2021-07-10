@@ -13,26 +13,30 @@ network_overrides: &network_overrides
       NETWORK_TYPE: 0
       GENESIS_CHALLENGE: null
     testnet0:
+      NETWORK_TYPE: 1
       MIN_PLOT_SIZE: 18
       GENESIS_CHALLENGE: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-      NETWORK_TYPE: 1
       GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
       GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
-    testnet4:
-      DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_CHALLENGE: 8907116f0ecc4ccc443e38e881577503770474b6b705b6996fc88ee450ceaf92
+    testnet5:
       NETWORK_TYPE: 1
+      GENESIS_CHALLENGE: 178ffc9117714fa111082b4355a6b6f79e1caa9f28b7b87d83bf859e0acdce4b
+      POST_FARM_PUZZLE_HASH: 95c259eaf17836095a7bfb5b1254b53c554985364c349f4a6764787c21d425ad
+      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: 95c259eaf17836095a7bfb5b1254b53c554985364c349f4a6764787c21d425ad
+      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 95c259eaf17836095a7bfb5b1254b53c554985364c349f4a6764787c21d425ad
+      DIFFICULTY_CONSTANT_FACTOR: 10052721566054
       EPOCH_BLOCKS: 768
-      DIFFICULTY_STARTING: 3670000 # ((2^67)/4)/10052721566054
+      DIFFICULTY_STARTING: 917500 # ((2^67)/16)/10052721566054
   config:
     mainnet:
       address_prefix: "xcl"
       default_full_node_port: 8620
     testnet0:
       address_prefix: "txcl"
-    testnet4:
+      default_full_node_port: 58621
+    testnet5:
       address_prefix: "txcl"
-      default_full_node_port: 58620
+      default_full_node_port: 8630
 
 selected_network: &selected_network "mainnet"
 ALERTS_URL: https://download.caldera.network/notify/mainnet_alert.txt

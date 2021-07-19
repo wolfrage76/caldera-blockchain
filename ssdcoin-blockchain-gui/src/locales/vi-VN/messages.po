@@ -6,16 +6,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: vi_VN\n"
-"Project-Id-Version: hddcoin-blockchain\n"
+"Project-Id-Version: ssdcoin-blockchain\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2021-06-30 06:03\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: hddcoin-blockchain\n"
+"X-Crowdin-Project: ssdcoin-blockchain\n"
 "X-Crowdin-Project-ID: 440660\n"
 "X-Crowdin-Language: vi\n"
-"X-Crowdin-File: /[HDDcoin-Network.hddcoin-blockchain-gui] main/src/locales/en-US/messages.po\n"
+"X-Crowdin-File: /[SSDCoin-Network.ssdcoin-blockchain-gui] main/src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 118\n"
 
 #: src/components/plot/add/PlotAddNFT.tsx:62
@@ -23,8 +23,8 @@ msgid "(Optional)"
 msgstr ""
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:64
-msgid "*Want to explore HDDcoin’s blocks further? Check out <0>HDDcoin Explorer</0> built by an open source developer."
-msgstr "* Bạn muốn khám phá thêm về HDDcoin Blockchain? Xem <0> HDDcoin Explorer </0> được xây dựng bởi các nhà phát triển nguồn mở."
+msgid "*Want to explore SSDCoin’s blocks further? Check out <0>SSDCoin Explorer</0> built by an open source developer."
+msgstr "* Bạn muốn khám phá thêm về SSDCoin Blockchain? Xem <0> SSDCoin Explorer </0> được xây dựng bởi các nhà phát triển nguồn mở."
 
 #: src/components/plot/add/PlotAddNFT.tsx:127
 msgid "+ Add New Plot NFT"
@@ -44,8 +44,8 @@ msgstr "Harvester là một dịch vụ chạy trên một máy chứa các tệ
 
 #: src/electron/main.tsx:422
 #: src/electron/main.tsx:509
-msgid "About HDDcoin Blockchain"
-msgstr "Về HDDcoin Blockchain"
+msgid "About SSDCoin Blockchain"
+msgstr "Về SSDCoin Blockchain"
 
 #: src/components/trading/ViewOffer.jsx:74
 msgid "Accept"
@@ -207,8 +207,8 @@ msgid "Block VDF Iterations"
 msgstr "Khối VDF lặp lại"
 
 #: src/components/block/Block.jsx:338
-msgid "Block at height {0} in the HDDcoin blockchain"
-msgstr "Khối tại height {0} trong HDDcoin blockchain"
+msgid "Block at height {0} in the SSDCoin blockchain"
+msgstr "Khối tại height {0} trong SSDCoin blockchain"
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -299,16 +299,16 @@ msgid "Chat on KeyBase"
 msgstr "Chat trên Keybase"
 
 #: src/electron/main.tsx:419
-msgid "HDDcoin"
-msgstr "HDDcoin"
+msgid "SSDCoin"
+msgstr "SSDCoin"
 
 #: src/electron/main.tsx:358
-msgid "HDDcoin Blockchain Wiki"
-msgstr "HDDcoin Blockchain Wiki"
+msgid "SSDCoin Blockchain Wiki"
+msgstr "SSDCoin Blockchain Wiki"
 
 #: src/components/wallet/standard/WalletStandard.tsx:630
-msgid "HDDcoin Wallet"
-msgstr "Ví HDDcoin"
+msgid "SSDCoin Wallet"
+msgstr "Ví SSDCoin"
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:36
 msgid "Choose Number of Plots"
@@ -669,8 +669,8 @@ msgid "Edit"
 msgstr "Chỉnh sửa"
 
 #: src/components/wallet/WalletImport.tsx:147
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your HDDcoin wallet."
-msgstr "Nhập 24 từ ghi nhớ mà bạn đã lưu để khôi phục ví HDDcoin của bạn."
+msgid "Enter the 24 word mnemonic that you have saved in order to restore your SSDCoin wallet."
+msgstr "Nhập 24 từ ghi nhớ mà bạn đã lưu để khôi phục ví SSDCoin của bạn."
 
 #: src/components/farm/FarmerStatus.tsx:21
 #: src/components/farm/FarmerStatus.tsx:22
@@ -683,8 +683,8 @@ msgid "Error"
 msgstr "Lỗi"
 
 #: src/components/wallet/standard/WalletStandard.tsx:453
-msgid "Error: Cannot send hddcoin to coloured address. Please enter a hddcoin address."
-msgstr "Lỗi: Không thể gửi hddcoin đến địa chỉ coloured. Vui lòng nhập địa chỉ hddcoin."
+msgid "Error: Cannot send ssdcoin to coloured address. Please enter a ssdcoin address."
+msgstr "Lỗi: Không thể gửi ssdcoin đến địa chỉ coloured. Vui lòng nhập địa chỉ ssdcoin."
 
 #: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:15
 msgid "Estimated Network Space"
@@ -1431,8 +1431,8 @@ msgid "Plots Passed Filter"
 msgstr "Plot đã lọc"
 
 #: src/components/plot/overview/PlotOverviewHero.tsx:28
-msgid "Plots are allocated space on your hard drive used to farm and earn HDDcoin. <0>Learn more</0>"
-msgstr "Plot được phân bổ không gian trên ổ cứng của bạn dùng để farm và thu về HDDcoin. <0> Tìm hiểu thêm </0>"
+msgid "Plots are allocated space on your hard drive used to farm and earn SSDCoin. <0>Learn more</0>"
+msgstr "Plot được phân bổ không gian trên ổ cứng của bạn dùng để farm và thu về SSDCoin. <0> Tìm hiểu thêm </0>"
 
 #: src/components/plot/queue/PlotQueueIndicator.tsx:34
 msgid "Plotting"
@@ -1850,8 +1850,8 @@ msgstr "Chi tiêu thời gian khoảng (số khối): {thời gian khoảng các
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:401
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:448
-msgid "Spending Limit (hddcoin per interval): {0}"
-msgstr "Giới hạn Chi tiêu (hddcoin cho mỗi khoảng thời gian): {0}"
+msgid "Spending Limit (ssdcoin per interval): {0}"
+msgstr "Giới hạn Chi tiêu (ssdcoin cho mỗi khoảng thời gian): {0}"
 
 #: src/components/fullNode/FullNode.jsx:100
 msgid "State"
@@ -1899,8 +1899,8 @@ msgstr "Tình trạng:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the HDDcoin blockchain"
-#~ msgstr "Sub Block at height {0} in the HDDcoin blockchain"
+#~ msgid "Sub Block at height {0} in the SSDCoin blockchain"
+#~ msgstr "Sub Block at height {0} in the SSDCoin blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:347
 msgid "Submit"
@@ -2027,8 +2027,8 @@ msgid "This feature is available only from the GUI."
 msgstr "Tính năng này chỉ khả dụng trên GUI."
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:26
-msgid "This is the amount of HDDcoin that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and HDDcoin that you have just spent but is not yet in the blockchain."
-msgstr "Đây là số lượng HDDcoin mà bạn hiện có thể sử dụng để thực hiện các giao dịch. Nó không bao gồm phần thưởng farm đang chờ xử lý, các giao dịch đến đang chờ xử lý và HDDcoin mà bạn vừa chi tiêu nhưng chưa có trong blockchain."
+msgid "This is the amount of SSDCoin that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and SSDCoin that you have just spent but is not yet in the blockchain."
+msgstr "Đây là số lượng SSDCoin mà bạn hiện có thể sử dụng để thực hiện các giao dịch. Nó không bao gồm phần thưởng farm đang chờ xử lý, các giao dịch đến đang chờ xử lý và SSDCoin mà bạn vừa chi tiêu nhưng chưa có trong blockchain."
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:26
 msgid "This is the pending change, which are change coins which you have sent to yourself, but have not been confirmed yet."
@@ -2047,7 +2047,7 @@ msgid "This is the time the block was created by the farmer, which is before it 
 msgstr "Đây là thời gian khối được tạo ra bởi farmer, trước khi nó được hoàn thiện với một bằng chứng về thời gian"
 
 #: src/components/wallet/card/WalletCardTotalBalance.tsx:34
-msgid "This is the total amount of hddcoin in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+msgid "This is the total amount of ssdcoin in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
 msgstr "Đây là tổng lượng HDD trong chuỗi khối ở khối phụ cao nhất hiện tại được kiểm soát bởi các khóa riêng của bạn. Nó bao gồm phần thưởng farm bị đóng băng, nhưng không phải là các giao dịch đến và đi đang chờ xử lý."
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:29
@@ -2089,8 +2089,8 @@ msgid "This trade was included on blockchain at this block height"
 msgstr "Giao dịch này đã được đưa vào blockchain ở chiều cao khối này"
 
 #: src/components/app/AppTimeBombAlert.tsx:19
-msgid "This version of HDDcoin is no longer compatible with the blockchain and can not safely farm."
-msgstr "Phiên bản HDDcoin này không còn tương thích với blockchain và không thể farm một cách an toàn."
+msgid "This version of SSDCoin is no longer compatible with the blockchain and can not safely farm."
+msgstr "Phiên bản SSDCoin này không còn tương thích với blockchain và không thể farm một cách an toàn."
 
 #: src/components/fullNode/FullNode.jsx:92
 msgid "Time Created"
@@ -2114,8 +2114,8 @@ msgstr "Đến"
 msgid "Total Balance"
 msgstr "Tổng số dư"
 
-#: src/components/farm/card/FarmCardTotalHDDcoinFarmed.tsx:15
-#~ msgid "Total HDDcoin Farmed"
+#: src/components/farm/card/FarmCardTotalSSDCoinFarmed.tsx:15
+#~ msgid "Total SSDCoin Farmed"
 #~ msgstr ""
 
 #: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:21
@@ -2278,7 +2278,7 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:30
-#~ msgid "WalletItem.hddcoinWallet"
+#~ msgid "WalletItem.ssdcoinWallet"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:48
@@ -2315,8 +2315,8 @@ msgid "Want to Join a Pool? Create a Plot NFT"
 msgstr ""
 
 #: src/components/plot/overview/PlotOverviewPlots.tsx:133
-msgid "Want to earn more HDDcoin? Add more plots to your farm."
-msgstr "Muốn thêm HDDcoin? Thêm nhiều plot vào farm của bạn."
+msgid "Want to earn more SSDCoin? Add more plots to your farm."
+msgstr "Muốn thêm SSDCoin? Thêm nhiều plot vào farm của bạn."
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:86
 msgid "Want to have a delay before the next plot starts?"
@@ -2331,8 +2331,8 @@ msgid "Weight is the total added difficulty of all sub blocks up to and includin
 msgstr "Trọng lượng là tổng độ khó cộng thêm của tất cả các khối phụ lên đến và bao gồm khối này"
 
 #: src/components/selectKey/SelectKey.tsx:114
-msgid "Welcome to HDDcoin. Please log in with an existing key, or create a new key."
-msgstr "Chào mừng đến với HDDcoin. Vui lòng đăng nhập bằng khóa hiện có hoặc tạo khóa mới."
+msgid "Welcome to SSDCoin. Please log in with an existing key, or create a new key."
+msgstr "Chào mừng đến với SSDCoin. Vui lòng đăng nhập bằng khóa hiện có hoặc tạo khóa mới."
 
 #: src/components/wallet/WalletAdd.tsx:66
 msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
@@ -2402,8 +2402,8 @@ msgid "You need to claim your rewards first"
 msgstr ""
 
 #: src/components/app/AppTimeBomb.tsx:28
-#~ msgid "You need to upgrade the HDDcoin application as this version will stop working soon!"
-#~ msgstr "You need to upgrade the HDDcoin application as this version will stop working soon!"
+#~ msgid "You need to upgrade the SSDCoin application as this version will stop working soon!"
+#~ msgstr "You need to upgrade the SSDCoin application as this version will stop working soon!"
 
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:135
 msgid "You will recieve <0/> to {0}"
@@ -2486,9 +2486,9 @@ msgstr ""
 msgid "{currencyCode} Block Rewards"
 msgstr "{currencyCode} phần thưởng khối"
 
-#: src/components/farm/card/FarmCardTotalHDDcoinFarmed.tsx:29
-msgid "{currencyCode} Total HDDcoin Farmed"
-msgstr "{currencyCode} Tổng số HDDcoin thu được"
+#: src/components/farm/card/FarmCardTotalSSDCoinFarmed.tsx:29
+msgid "{currencyCode} Total SSDCoin Farmed"
+msgstr "{currencyCode} Tổng số SSDCoin thu được"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:28
 msgid "{currencyCode} User Transaction Fees"

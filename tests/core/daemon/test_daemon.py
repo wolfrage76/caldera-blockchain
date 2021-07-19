@@ -3,12 +3,12 @@ import json
 
 import aiohttp
 import pytest
-from hddcoin.server.outbound_message import NodeType
-from hddcoin.server.server import ssl_context_for_server
-from hddcoin.types.peer_info import PeerInfo
+from ssdcoin.server.outbound_message import NodeType
+from ssdcoin.server.server import ssl_context_for_server
+from ssdcoin.types.peer_info import PeerInfo
 from tests.block_tools import BlockTools
-from hddcoin.util.ints import uint16
-from hddcoin.util.ws_message import create_payload
+from ssdcoin.util.ints import uint16
+from ssdcoin.util.ws_message import create_payload
 from tests.core.node_height import node_height_at_least
 from tests.setup_nodes import setup_daemon, self_hostname, setup_full_system
 from tests.simulation.test_simulation import test_constants_modified
@@ -90,7 +90,7 @@ class TestDaemon:
 
         read_handler = asyncio.create_task(reader(ws, message_queue))
         data = {}
-        payload = create_payload("get_blockchain_state", data, service_name, "hddcoin_full_node")
+        payload = create_payload("get_blockchain_state", data, service_name, "ssdcoin_full_node")
         await ws.send_str(payload)
 
         await asyncio.sleep(5)

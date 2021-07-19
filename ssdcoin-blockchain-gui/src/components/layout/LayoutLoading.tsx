@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Typography } from '@material-ui/core';
-import { Loading } from '@hddcoin/core';
+import { Loading } from '@ssdcoin/core';
 import LayoutHero from './LayoutHero';
 
 type Props = {

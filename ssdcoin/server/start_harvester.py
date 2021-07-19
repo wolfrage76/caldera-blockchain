@@ -1,16 +1,16 @@
 import pathlib
 from typing import Dict
 
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.default_constants import DEFAULT_CONSTANTS
-from hddcoin.harvester.harvester import Harvester
-from hddcoin.harvester.harvester_api import HarvesterAPI
-from hddcoin.rpc.harvester_rpc_api import HarvesterRpcApi
-from hddcoin.server.outbound_message import NodeType
-from hddcoin.server.start_service import run_service
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.config import load_config_cli
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.default_constants import DEFAULT_CONSTANTS
+from ssdcoin.harvester.harvester import Harvester
+from ssdcoin.harvester.harvester_api import HarvesterAPI
+from ssdcoin.rpc.harvester_rpc_api import HarvesterRpcApi
+from ssdcoin.server.outbound_message import NodeType
+from ssdcoin.server.start_service import run_service
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.config import load_config_cli
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
 
 # See: https://bugs.python.org/issue29288
 "".encode("idna")

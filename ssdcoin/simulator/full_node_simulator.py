@@ -1,12 +1,12 @@
 from typing import List, Optional
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.full_node.full_node_api import FullNodeAPI
-from hddcoin.protocols.full_node_protocol import RespondBlock
-from hddcoin.simulator.simulator_protocol import FarmNewBlockProtocol, ReorgProtocol
-from hddcoin.types.full_block import FullBlock
-from hddcoin.util.api_decorators import api_request
-from hddcoin.util.ints import uint8
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.full_node.full_node_api import FullNodeAPI
+from ssdcoin.protocols.full_node_protocol import RespondBlock
+from ssdcoin.simulator.simulator_protocol import FarmNewBlockProtocol, ReorgProtocol
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.util.api_decorators import api_request
+from ssdcoin.util.ints import uint8
 
 
 class FullNodeSimulator(FullNodeAPI):

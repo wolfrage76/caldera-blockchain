@@ -4,8 +4,8 @@ import time
 from collections import Counter
 from typing import Optional
 
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.server.outbound_message import Message
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.server.outbound_message import Message
 
 log = logging.getLogger(__name__)
 

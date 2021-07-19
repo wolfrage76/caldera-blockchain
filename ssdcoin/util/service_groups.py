@@ -1,19 +1,19 @@
 from typing import KeysView, Generator
 
 SERVICES_FOR_GROUP = {
-    "all": "hddcoin_harvester hddcoin_timelord_launcher hddcoin_timelord hddcoin_farmer hddcoin_full_node hddcoin_wallet".split(),
-    "node": "hddcoin_full_node".split(),
-    "harvester": "hddcoin_harvester".split(),
-    "farmer": "hddcoin_harvester hddcoin_farmer hddcoin_full_node hddcoin_wallet".split(),
-    "farmer-no-wallet": "hddcoin_harvester hddcoin_farmer hddcoin_full_node".split(),
-    "farmer-only": "hddcoin_farmer".split(),
-    "timelord": "hddcoin_timelord_launcher hddcoin_timelord hddcoin_full_node".split(),
-    "timelord-only": "hddcoin_timelord".split(),
-    "timelord-launcher-only": "hddcoin_timelord_launcher".split(),
-    "wallet": "hddcoin_wallet hddcoin_full_node".split(),
-    "wallet-only": "hddcoin_wallet".split(),
-    "introducer": "hddcoin_introducer".split(),
-    "simulator": "hddcoin_full_node_simulator".split(),
+    "all": "ssdcoin_harvester ssdcoin_timelord_launcher ssdcoin_timelord ssdcoin_farmer ssdcoin_full_node ssdcoin_wallet".split(),
+    "node": "ssdcoin_full_node".split(),
+    "harvester": "ssdcoin_harvester".split(),
+    "farmer": "ssdcoin_harvester ssdcoin_farmer ssdcoin_full_node ssdcoin_wallet".split(),
+    "farmer-no-wallet": "ssdcoin_harvester ssdcoin_farmer ssdcoin_full_node".split(),
+    "farmer-only": "ssdcoin_farmer".split(),
+    "timelord": "ssdcoin_timelord_launcher ssdcoin_timelord ssdcoin_full_node".split(),
+    "timelord-only": "ssdcoin_timelord".split(),
+    "timelord-launcher-only": "ssdcoin_timelord_launcher".split(),
+    "wallet": "ssdcoin_wallet ssdcoin_full_node".split(),
+    "wallet-only": "ssdcoin_wallet".split(),
+    "introducer": "ssdcoin_introducer".split(),
+    "simulator": "ssdcoin_full_node_simulator".split(),
 }
 
 

@@ -12,7 +12,7 @@ import {
   RadioGroup,
   Fee,
   TextField,
-} from '@hddcoin/core';
+} from '@ssdcoin/core';
 import {
   Grid,
   FormControl,

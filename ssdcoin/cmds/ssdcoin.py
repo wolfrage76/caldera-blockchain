@@ -1,18 +1,18 @@
 import click
 
-from hddcoin import __version__
-from hddcoin.cmds.configure import configure_cmd
-from hddcoin.cmds.farm import farm_cmd
-from hddcoin.cmds.init import init_cmd
-from hddcoin.cmds.keys import keys_cmd
-from hddcoin.cmds.netspace import netspace_cmd
-from hddcoin.cmds.plots import plots_cmd
-from hddcoin.cmds.show import show_cmd
-from hddcoin.cmds.start import start_cmd
-from hddcoin.cmds.stop import stop_cmd
-from hddcoin.cmds.wallet import wallet_cmd
-from hddcoin.cmds.plotnft import plotnft_cmd
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin import __version__
+from ssdcoin.cmds.configure import configure_cmd
+from ssdcoin.cmds.farm import farm_cmd
+from ssdcoin.cmds.init import init_cmd
+from ssdcoin.cmds.keys import keys_cmd
+from ssdcoin.cmds.netspace import netspace_cmd
+from ssdcoin.cmds.plots import plots_cmd
+from ssdcoin.cmds.show import show_cmd
+from ssdcoin.cmds.start import start_cmd
+from ssdcoin.cmds.stop import stop_cmd
+from ssdcoin.cmds.wallet import wallet_cmd
+from ssdcoin.cmds.plotnft import plotnft_cmd
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -34,8 +34,8 @@ def monkey_patch_click() -> None:
 
 
 @click.group(
-    help=f"\n  Manage hddcoin blockchain infrastructure ({__version__})\n",
-    epilog="Try 'hddcoin start node', 'hddcoin netspace -d 192', or 'hddcoin show -s'",
+    help=f"\n  Manage ssdcoin blockchain infrastructure ({__version__})\n",
+    epilog="Try 'ssdcoin start node', 'ssdcoin netspace -d 192', or 'ssdcoin show -s'",
     context_settings=CONTEXT_SETTINGS,
 )
 @click.option("--root-path", default=DEFAULT_ROOT_PATH, help="Config file root", type=click.Path(), show_default=True)
@@ -47,15 +47,15 @@ def cli(ctx: click.Context, root_path: str) -> None:
     ctx.obj["root_path"] = Path(root_path)
 
 
-@cli.command("version", short_help="Show hddcoin version")
+@cli.command("version", short_help="Show ssdcoin version")
 def version_cmd() -> None:
     print(__version__)
 
 
-@cli.command("run_daemon", short_help="Runs hddcoin daemon")
+@cli.command("run_daemon", short_help="Runs ssdcoin daemon")
 @click.pass_context
 def run_daemon_cmd(ctx: click.Context) -> None:
-    from hddcoin.daemon.server import async_run_daemon
+    from ssdcoin.daemon.server import async_run_daemon
     import asyncio
 
     asyncio.get_event_loop().run_until_complete(async_run_daemon(ctx.obj["root_path"]))

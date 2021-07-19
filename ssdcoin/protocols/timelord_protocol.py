@@ -1,14 +1,14 @@
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
-from hddcoin.types.blockchain_format.foliage import Foliage
-from hddcoin.types.blockchain_format.reward_chain_block import RewardChainBlock, RewardChainBlockUnfinished
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.foliage import Foliage
+from ssdcoin.types.blockchain_format.reward_chain_block import RewardChainBlock, RewardChainBlockUnfinished
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.streamable import Streamable, streamable
 
 """
 Protocol between timelord and full node.

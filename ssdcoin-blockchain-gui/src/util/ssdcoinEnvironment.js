@@ -9,7 +9,7 @@ const fs = require('fs');
 const PY_MAC_DIST_FOLDER = '../../../app.asar.unpacked/daemon';
 const PY_WIN_DIST_FOLDER = '../../../app.asar.unpacked/daemon';
 const PY_DIST_FILE = 'daemon';
-const PY_FOLDER = '../hddcoin/daemon';
+const PY_FOLDER = '../ssdcoin/daemon';
 const PY_MODULE = 'server'; // without .py suffix
 
 let pyProc = null;
@@ -45,10 +45,10 @@ const getExecutablePath = (dist_file) => {
   return path.join(__dirname, PY_MAC_DIST_FOLDER, dist_file);
 };
 
-const getHDDcoinVersion = () => {
+const getSSDCoinVersion = () => {
   let version = null;
-  const exePath = getExecutablePath('hddcoin');
-  // first see if we can get a hddcoin exe in a standard location relative to where we are
+  const exePath = getExecutablePath('ssdcoin');
+  // first see if we can get a ssdcoin exe in a standard location relative to where we are
   try {
     version = child_process
       .execFileSync(exePath, ['version'], {
@@ -56,7 +56,7 @@ const getHDDcoinVersion = () => {
       })
       .trim();
   } catch (e1) {
-    // that didn't work, let's try as if we're in the venv or hddcoin is on the path
+    // that didn't work, let's try as if we're in the venv or ssdcoin is on the path
     try {
       version = child_process
         .execFileSync(path.basename(exePath), ['version'], {
@@ -71,7 +71,7 @@ const getHDDcoinVersion = () => {
   return version;
 };
 
-const startHDDcoinDaemon = () => {
+const startSSDCoinDaemon = () => {
   let script = getScriptPath(PY_DIST_FILE);
   let processOptions = {};
   //processOptions.detached = true;
@@ -138,7 +138,7 @@ const startHDDcoinDaemon = () => {
 };
 
 module.exports = {
-  startHDDcoinDaemon,
-  getHDDcoinVersion,
+  startSSDCoinDaemon,
+  getSSDCoinVersion,
   guessPackaged,
 };

@@ -3,13 +3,13 @@ from unittest import TestCase
 
 from blspy import AugSchemeMPL, BasicSchemeMPL, G1Element, G2Element
 
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.condition_tools import ConditionOpcode
-from hddcoin.util.hash import std_hash
-from hddcoin.wallet.puzzles import (
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.condition_tools import ConditionOpcode
+from ssdcoin.util.hash import std_hash
+from ssdcoin.wallet.puzzles import (
     p2_conditions,
     p2_delegated_conditions,
     p2_delegated_puzzle,

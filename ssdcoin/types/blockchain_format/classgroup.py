@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.types.blockchain_format.sized_bytes import bytes100
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.types.blockchain_format.sized_bytes import bytes100
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

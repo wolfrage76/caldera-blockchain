@@ -9,7 +9,7 @@ import {
   FormatBytes,
   StateColor,
   Address,
-} from '@hddcoin/core';
+} from '@ssdcoin/core';
 import {
   Box,
   Typography,
@@ -131,7 +131,7 @@ export default function PlotOverviewPlots() {
           <Flex flexGrow={1}>
             <Typography variant="body2">
               <Trans>
-                Want to earn more HDDcoin? Add more plots to your farm.
+                Want to earn more SSDCoin? Add more plots to your farm.
               </Trans>
             </Typography>
           </Flex>

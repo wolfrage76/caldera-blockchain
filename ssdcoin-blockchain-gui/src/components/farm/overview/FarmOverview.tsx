@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
-import { Flex, More } from '@hddcoin/core';
+import { Flex, More } from '@ssdcoin/core';
 import { useSelector } from 'react-redux';
 import {
   Box,

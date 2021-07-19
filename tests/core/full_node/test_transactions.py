@@ -4,13 +4,13 @@ from typing import Optional
 
 import pytest
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from hddcoin.full_node.full_node_api import FullNodeAPI
-from hddcoin.protocols import full_node_protocol
-from hddcoin.simulator.simulator_protocol import FarmNewBlockProtocol
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.ints import uint16, uint32
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from ssdcoin.full_node.full_node_api import FullNodeAPI
+from ssdcoin.protocols import full_node_protocol
+from ssdcoin.simulator.simulator_protocol import FarmNewBlockProtocol
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.ints import uint16, uint32
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
 

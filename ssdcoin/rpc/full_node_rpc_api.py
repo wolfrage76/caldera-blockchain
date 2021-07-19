@@ -1,27 +1,27 @@
 from typing import Any, Callable, Dict, List, Optional
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.pos_quality import UI_ACTUAL_SPACE_CONSTANT_FACTOR
-from hddcoin.full_node.full_node import FullNode
-from hddcoin.full_node.mempool_check_conditions import get_puzzle_and_solution_for_coin
-from hddcoin.types.blockchain_format.program import Program, SerializedProgram
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_record import CoinRecord
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.generator_types import BlockGenerator
-from hddcoin.types.mempool_inclusion_status import MempoolInclusionStatus
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.types.unfinished_header_block import UnfinishedHeaderBlock
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.ints import uint32, uint64, uint128
-from hddcoin.util.ws_message import WsRpcMessage, create_payload_dict
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.pos_quality import UI_ACTUAL_SPACE_CONSTANT_FACTOR
+from ssdcoin.full_node.full_node import FullNode
+from ssdcoin.full_node.mempool_check_conditions import get_puzzle_and_solution_for_coin
+from ssdcoin.types.blockchain_format.program import Program, SerializedProgram
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_record import CoinRecord
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.generator_types import BlockGenerator
+from ssdcoin.types.mempool_inclusion_status import MempoolInclusionStatus
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.types.unfinished_header_block import UnfinishedHeaderBlock
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.ints import uint32, uint64, uint128
+from ssdcoin.util.ws_message import WsRpcMessage, create_payload_dict
 
 
 class FullNodeRpcApi:
     def __init__(self, service: FullNode):
         self.service = service
-        self.service_name = "hddcoin_full_node"
+        self.service_name = "ssdcoin_full_node"
         self.cached_blockchain_state: Optional[Dict] = None
 
     def get_routes(self) -> Dict[str, Callable]:

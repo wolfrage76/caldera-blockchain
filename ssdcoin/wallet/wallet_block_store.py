@@ -3,16 +3,16 @@ from typing import Dict, List, Optional, Tuple
 
 import aiosqlite
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint32, uint64
-from hddcoin.util.lru_cache import LRUCache
-from hddcoin.util.streamable import Streamable, streamable
-from hddcoin.wallet.block_record import HeaderBlockRecord
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint32, uint64
+from ssdcoin.util.lru_cache import LRUCache
+from ssdcoin.util.streamable import Streamable, streamable
+from ssdcoin.wallet.block_record import HeaderBlockRecord
 
 
 @dataclass(frozen=True)

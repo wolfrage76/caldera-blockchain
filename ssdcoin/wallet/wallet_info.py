@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import List
 
-from hddcoin.util.ints import uint8, uint32
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.util.ints import uint8, uint32
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

@@ -2,13 +2,13 @@ from typing import List, Optional
 
 import aiosqlite
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_record import CoinRecord
-from hddcoin.types.full_block import FullBlock
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint32, uint64
-from hddcoin.util.lru_cache import LRUCache
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_record import CoinRecord
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint32, uint64
+from ssdcoin.util.lru_cache import LRUCache
 
 
 class CoinStore:

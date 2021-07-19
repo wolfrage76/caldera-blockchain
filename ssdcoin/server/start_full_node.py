@@ -3,15 +3,15 @@ import pathlib
 from multiprocessing import freeze_support
 from typing import Dict
 
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.default_constants import DEFAULT_CONSTANTS
-from hddcoin.full_node.full_node import FullNode
-from hddcoin.full_node.full_node_api import FullNodeAPI
-from hddcoin.rpc.full_node_rpc_api import FullNodeRpcApi
-from hddcoin.server.outbound_message import NodeType
-from hddcoin.server.start_service import run_service
-from hddcoin.util.config import load_config_cli
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.default_constants import DEFAULT_CONSTANTS
+from ssdcoin.full_node.full_node import FullNode
+from ssdcoin.full_node.full_node_api import FullNodeAPI
+from ssdcoin.rpc.full_node_rpc_api import FullNodeRpcApi
+from ssdcoin.server.outbound_message import NodeType
+from ssdcoin.server.start_service import run_service
+from ssdcoin.util.config import load_config_cli
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
 
 # See: https://bugs.python.org/issue29288
 "".encode("idna")

@@ -6,11 +6,11 @@ from bitstring import BitArray
 from blspy import G1Element, AugSchemeMPL, PrivateKey
 from chiapos import Verifier
 
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint8
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint8
+from ssdcoin.util.streamable import Streamable, streamable
 
 log = logging.getLogger(__name__)
 

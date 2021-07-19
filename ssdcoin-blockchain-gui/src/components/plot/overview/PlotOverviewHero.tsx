@@ -2,8 +2,8 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import { useHistory } from 'react-router-dom';
 import { Button, Grid, Typography, Divider } from '@material-ui/core';
-import { CardHero, Link } from '@hddcoin/core';
-import { PlotHero as PlotHeroIcon } from '@hddcoin/icons';
+import { CardHero, Link } from '@ssdcoin/core';
+import { PlotHero as PlotHeroIcon } from '@ssdcoin/icons';
 import PlotAddDirectoryDialog from '../PlotAddDirectoryDialog';
 import useOpenDialog from '../../../hooks/useOpenDialog';
 
@@ -27,11 +27,11 @@ export default function PlotOverviewHero() {
           <Typography variant="body1">
             <Trans>
               {
-                'Plots are allocated space on your hard drive used to farm and earn HDDcoin. '
+                'Plots are allocated space on your hard drive used to farm and earn SSDCoin. '
               }
               <Link
                 target="_blank"
-                href="https://github.com/HDDcoin-Network/hddcoin-blockchain/wiki/Network-Architecture"
+                href="https://github.com/SSDCoin-Network/ssdcoin-blockchain/wiki/Network-Architecture"
               >
                 Learn more
               </Link>

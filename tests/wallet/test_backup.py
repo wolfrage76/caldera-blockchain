@@ -4,12 +4,12 @@
 #
 # import pytest
 #
-# from hddcoin.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
-# from hddcoin.simulator.simulator_protocol import FarmNewBlockProtocol
-# from hddcoin.types.peer_info import PeerInfo
-# from hddcoin.util.ints import uint16, uint32, uint64
+# from ssdcoin.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
+# from ssdcoin.simulator.simulator_protocol import FarmNewBlockProtocol
+# from ssdcoin.types.peer_info import PeerInfo
+# from ssdcoin.util.ints import uint16, uint32, uint64
 # from tests.setup_nodes import setup_simulators_and_wallets
-# from hddcoin.wallet.cc_wallet.cc_wallet import CCWallet
+# from ssdcoin.wallet.cc_wallet.cc_wallet import CCWallet
 # from tests.time_out_assert import time_out_assert
 #
 #

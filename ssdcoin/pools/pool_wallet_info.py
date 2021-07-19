@@ -4,13 +4,13 @@ from typing import Optional, Dict
 
 from blspy import G1Element
 
-from hddcoin.protocols.pool_protocol import POOL_PROTOCOL_VERSION
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.ints import uint32, uint8
-from hddcoin.util.streamable import streamable, Streamable
+from ssdcoin.protocols.pool_protocol import POOL_PROTOCOL_VERSION
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.ints import uint32, uint8
+from ssdcoin.util.streamable import streamable, Streamable
 
 
 class PoolSingletonState(IntEnum):

@@ -4,14 +4,14 @@ import logging
 import pytest
 from clvm.casts import int_to_bytes
 
-from hddcoin.consensus.blockchain import ReceiveBlockResult
-from hddcoin.protocols import full_node_protocol
-from hddcoin.types.announcement import Announcement
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.condition_with_args import ConditionWithArgs
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.errors import ConsensusError, Err
-from hddcoin.util.ints import uint64
+from ssdcoin.consensus.blockchain import ReceiveBlockResult
+from ssdcoin.protocols import full_node_protocol
+from ssdcoin.types.announcement import Announcement
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.condition_with_args import ConditionWithArgs
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.errors import ConsensusError, Err
+from ssdcoin.util.ints import uint64
 from tests.wallet_tools import WalletTool
 from tests.core.full_node.test_full_node import connect_and_get_peer
 from tests.setup_nodes import bt, setup_two_nodes, test_constants

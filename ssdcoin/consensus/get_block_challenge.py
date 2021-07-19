@@ -1,15 +1,15 @@
 import logging
 from typing import List, Union
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.types.unfinished_block import UnfinishedBlock
-from hddcoin.types.unfinished_header_block import UnfinishedHeaderBlock
-from hddcoin.util.ints import uint64
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.types.unfinished_block import UnfinishedBlock
+from ssdcoin.types.unfinished_header_block import UnfinishedHeaderBlock
+from ssdcoin.util.ints import uint64
 
 log = logging.getLogger(__name__)
 

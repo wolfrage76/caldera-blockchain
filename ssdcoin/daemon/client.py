@@ -6,11 +6,11 @@ from typing import Any, Dict, Optional
 
 import websockets
 
-from hddcoin.server.server import ssl_context_for_client
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.config import load_config
-from hddcoin.util.json_util import dict_to_json_str
-from hddcoin.util.ws_message import WsRpcMessage, create_payload_dict
+from ssdcoin.server.server import ssl_context_for_client
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.config import load_config
+from ssdcoin.util.json_util import dict_to_json_str
+from ssdcoin.util.ws_message import WsRpcMessage, create_payload_dict
 
 
 class DaemonProxy:

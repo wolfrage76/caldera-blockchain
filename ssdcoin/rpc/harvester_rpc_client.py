@@ -1,13 +1,13 @@
 from typing import Any, Dict, List
 
-from hddcoin.rpc.rpc_client import RpcClient
+from ssdcoin.rpc.rpc_client import RpcClient
 
 
 class HarvesterRpcClient(RpcClient):
     """
-    Client to HDDcoin RPC, connects to a local harvester. Uses HTTP/JSON, and converts back from
+    Client to SSDCoin RPC, connects to a local harvester. Uses HTTP/JSON, and converts back from
     JSON into native python objects before returning. All api calls use POST requests.
-    Note that this is not the same as the peer protocol, or wallet protocol (which run HDDcoin's
+    Note that this is not the same as the peer protocol, or wallet protocol (which run SSDCoin's
     protocol on top of TCP), it's a separate protocol on top of HTTP thats provides easy access
     to the full node.
     """

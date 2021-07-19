@@ -7,30 +7,30 @@ import blspy
 from blspy import G1Element, G2Element
 from chiabip158 import PyBIP158
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.consensus.coinbase import create_farmer_coin, create_pool_coin
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.cost_calculator import NPCResult, calculate_cost_of_program
-from hddcoin.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from hddcoin.full_node.signage_point import SignagePoint
-from hddcoin.types.blockchain_format.coin import Coin, hash_coin_list
-from hddcoin.types.blockchain_format.foliage import Foliage, FoliageBlockData, FoliageTransactionBlock, TransactionsInfo
-from hddcoin.types.blockchain_format.pool_target import PoolTarget
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace
-from hddcoin.types.blockchain_format.reward_chain_block import RewardChainBlock, RewardChainBlockUnfinished
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.generator_types import BlockGenerator
-from hddcoin.types.unfinished_block import UnfinishedBlock
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
-from hddcoin.util.merkle_set import MerkleSet
-from hddcoin.util.prev_transaction_block import get_prev_transaction_block
-from hddcoin.util.recursive_replace import recursive_replace
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.consensus.coinbase import create_farmer_coin, create_pool_coin
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.cost_calculator import NPCResult, calculate_cost_of_program
+from ssdcoin.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from ssdcoin.full_node.signage_point import SignagePoint
+from ssdcoin.types.blockchain_format.coin import Coin, hash_coin_list
+from ssdcoin.types.blockchain_format.foliage import Foliage, FoliageBlockData, FoliageTransactionBlock, TransactionsInfo
+from ssdcoin.types.blockchain_format.pool_target import PoolTarget
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace
+from ssdcoin.types.blockchain_format.reward_chain_block import RewardChainBlock, RewardChainBlockUnfinished
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.generator_types import BlockGenerator
+from ssdcoin.types.unfinished_block import UnfinishedBlock
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.merkle_set import MerkleSet
+from ssdcoin.util.prev_transaction_block import get_prev_transaction_block
+from ssdcoin.util.recursive_replace import recursive_replace
 
 log = logging.getLogger(__name__)
 

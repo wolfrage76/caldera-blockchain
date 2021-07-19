@@ -43,7 +43,7 @@ export default function LocaleToggle(props: Props) {
     handleClose();
 
     openExternal(
-      'https://github.com/HDDcoin-Network/hddcoin-blockchain-gui/tree/main/src/locales/README.md',
+      'https://github.com/SSDCoin-Network/ssdcoin-blockchain-gui/tree/main/src/locales/README.md',
     );
   }
 

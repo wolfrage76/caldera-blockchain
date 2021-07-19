@@ -1,8 +1,8 @@
 from typing import Optional
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.util.ints import uint8, uint32
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.util.ints import uint8, uint32
 
 
 def calculate_deficit(

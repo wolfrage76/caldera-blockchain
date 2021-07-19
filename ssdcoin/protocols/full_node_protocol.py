@@ -1,16 +1,16 @@
 from dataclasses import dataclass
 from typing import List, Optional
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.peer_info import TimestampedPeerInfo
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.types.unfinished_block import UnfinishedBlock
-from hddcoin.types.weight_proof import WeightProof
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.peer_info import TimestampedPeerInfo
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.types.unfinished_block import UnfinishedBlock
+from ssdcoin.types.weight_proof import WeightProof
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.streamable import Streamable, streamable
 
 """
 Protocol between full nodes.

@@ -7,13 +7,13 @@ from typing import Callable, Dict, List, Optional, Set, Tuple
 
 from blspy import G1Element
 
-import hddcoin.server.ws_connection as ws  # lgtm [py/import-and-import-from]
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.plotting.plot_tools import PlotInfo
-from hddcoin.plotting.plot_tools import add_plot_directory as add_plot_directory_pt
-from hddcoin.plotting.plot_tools import get_plot_directories as get_plot_directories_pt
-from hddcoin.plotting.plot_tools import load_plots
-from hddcoin.plotting.plot_tools import remove_plot_directory as remove_plot_directory_pt
+import ssdcoin.server.ws_connection as ws  # lgtm [py/import-and-import-from]
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.plotting.plot_tools import PlotInfo
+from ssdcoin.plotting.plot_tools import add_plot_directory as add_plot_directory_pt
+from ssdcoin.plotting.plot_tools import get_plot_directories as get_plot_directories_pt
+from ssdcoin.plotting.plot_tools import load_plots
+from ssdcoin.plotting.plot_tools import remove_plot_directory as remove_plot_directory_pt
 
 log = logging.getLogger(__name__)
 
@@ -72,7 +72,7 @@ class Harvester:
         if self.state_changed_callback is not None:
             self.state_changed_callback(change)
 
-    def on_disconnect(self, connection: ws.WSHDDcoinConnection):
+    def on_disconnect(self, connection: ws.WSSSDCoinConnection):
         self.log.info(f"peer disconnected {connection.get_peer_info()}")
         self._state_changed("close_connection")
 

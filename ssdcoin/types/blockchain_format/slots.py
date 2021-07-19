@@ -3,11 +3,11 @@ from typing import Optional
 
 from blspy import G2Element
 
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
-from hddcoin.util.ints import uint8, uint64
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
+from ssdcoin.util.ints import uint8, uint64
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

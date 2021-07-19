@@ -1,9 +1,9 @@
 from typing import Optional, Tuple, Union
 
-from hddcoin.consensus.pot_iterations import calculate_ip_iters, calculate_iterations_quality, calculate_sp_iters
-from hddcoin.types.blockchain_format.reward_chain_block import RewardChainBlock, RewardChainBlockUnfinished
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.ints import uint64
+from ssdcoin.consensus.pot_iterations import calculate_ip_iters, calculate_iterations_quality, calculate_sp_iters
+from ssdcoin.types.blockchain_format.reward_chain_block import RewardChainBlock, RewardChainBlockUnfinished
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.ints import uint64
 
 
 def iters_from_block(

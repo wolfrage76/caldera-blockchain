@@ -1,23 +1,23 @@
 import asyncio
-from hddcoin.util.config import load_config, save_config
+from ssdcoin.util.config import load_config, save_config
 import logging
 from pathlib import Path
 
 import pytest
 
-from hddcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from hddcoin.rpc.full_node_rpc_api import FullNodeRpcApi
-from hddcoin.rpc.full_node_rpc_client import FullNodeRpcClient
-from hddcoin.rpc.rpc_server import start_rpc_server
-from hddcoin.rpc.wallet_rpc_api import WalletRpcApi
-from hddcoin.rpc.wallet_rpc_client import WalletRpcClient
-from hddcoin.simulator.simulator_protocol import FarmNewBlockProtocol
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.bech32m import encode_puzzle_hash
-from hddcoin.consensus.coinbase import create_puzzlehash_for_pk
-from hddcoin.wallet.derive_keys import master_sk_to_wallet_sk
-from hddcoin.util.ints import uint16, uint32
-from hddcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from ssdcoin.rpc.full_node_rpc_api import FullNodeRpcApi
+from ssdcoin.rpc.full_node_rpc_client import FullNodeRpcClient
+from ssdcoin.rpc.rpc_server import start_rpc_server
+from ssdcoin.rpc.wallet_rpc_api import WalletRpcApi
+from ssdcoin.rpc.wallet_rpc_client import WalletRpcClient
+from ssdcoin.simulator.simulator_protocol import FarmNewBlockProtocol
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.bech32m import encode_puzzle_hash
+from ssdcoin.consensus.coinbase import create_puzzlehash_for_pk
+from ssdcoin.wallet.derive_keys import master_sk_to_wallet_sk
+from ssdcoin.util.ints import uint16, uint32
+from ssdcoin.wallet.transaction_record import TransactionRecord
 from tests.setup_nodes import bt, setup_simulators_and_wallets, self_hostname
 from tests.time_out_assert import time_out_assert
 

@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import { useWatch, useFormContext } from 'react-hook-form';
 import TextField, { TextFieldProps } from '../TextField';
-import { hddcoin_to_mojo } from '../../../../util/hddcoin';
+import { ssdcoin_to_mojo } from '../../../../util/ssdcoin';
 import useCurrencyCode from '../../../../hooks/useCurrencyCode';
 import FormatLargeNumber from '../FormatLargeNumber';
 import Flex from '../Flex';
@@ -28,7 +28,7 @@ export default function Amount(props: AmountProps) {
     name,
   });
 
-  const mojo = hddcoin_to_mojo(value);
+  const mojo = ssdcoin_to_mojo(value);
 
   return (
     <FormControl variant={variant} fullWidth={fullWidth}>

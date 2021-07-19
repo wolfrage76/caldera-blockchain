@@ -3,20 +3,20 @@ from typing import Tuple, List, Optional
 from blspy import G1Element
 from clvm.casts import int_from_bytes, int_to_bytes
 
-from hddcoin.clvm.singleton import SINGLETON_LAUNCHER
-from hddcoin.consensus.block_rewards import calculate_pool_reward
-from hddcoin.consensus.coinbase import pool_parent_id
-from hddcoin.pools.pool_wallet_info import PoolState, LEAVING_POOL, SELF_POOLING
+from ssdcoin.clvm.singleton import SINGLETON_LAUNCHER
+from ssdcoin.consensus.block_rewards import calculate_pool_reward
+from ssdcoin.consensus.coinbase import pool_parent_id
+from ssdcoin.pools.pool_wallet_info import PoolState, LEAVING_POOL, SELF_POOLING
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program, SerializedProgram
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program, SerializedProgram
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.wallet.puzzles.load_clvm import load_clvm
-from hddcoin.wallet.puzzles.singleton_top_layer import puzzle_for_singleton
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.wallet.puzzles.load_clvm import load_clvm
+from ssdcoin.wallet.puzzles.singleton_top_layer import puzzle_for_singleton
 
-from hddcoin.util.ints import uint32, uint64
+from ssdcoin.util.ints import uint32, uint64
 
 log = logging.getLogger(__name__)
 # "Full" is the outer singleton, with the inner puzzle filled in
@@ -388,7 +388,7 @@ def solution_to_extra_data(full_spend: CoinSolution) -> Optional[PoolState]:
         if inner_solution.rest().first().as_int() != 0:
             return None
 
-        # This is referred to as p1 in the hddcoinlisp code
+        # This is referred to as p1 in the ssdcoinlisp code
         # spend_type is absorbing money if p1 is a cons box, spend_type is escape if p1 is an atom
         # TODO: The comment above, and in the CLVM, seems wrong
         extra_data = inner_solution.first()

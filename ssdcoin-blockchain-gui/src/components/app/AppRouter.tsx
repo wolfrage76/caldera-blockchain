@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Trans } from '@lingui/macro';
-import { PrivateRoute } from '@hddcoin/core';
+import { PrivateRoute } from '@ssdcoin/core';
 import SelectKey from '../selectKey/SelectKey';
 import WalletAdd from '../wallet/WalletAdd';
 import WalletImport from '../wallet/WalletImport';

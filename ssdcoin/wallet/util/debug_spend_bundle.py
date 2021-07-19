@@ -4,12 +4,12 @@ from blspy import AugSchemeMPL
 from clvm import KEYWORD_FROM_ATOM
 from clvm_tools.binutils import disassemble as bu_disassemble
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program, INFINITE_COST
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.util.condition_tools import conditions_dict_for_solution, pkm_pairs_for_conditions_dict
-from hddcoin.util.hash import std_hash
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program, INFINITE_COST
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.util.condition_tools import conditions_dict_for_solution, pkm_pairs_for_conditions_dict
+from ssdcoin.util.hash import std_hash
 
 CONDITIONS = dict((k, bytes(v)[0]) for k, v in ConditionOpcode.__members__.items())  # pylint: disable=E1101
 KFA = {v: k for k, v in CONDITIONS.items()}

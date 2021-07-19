@@ -2,10 +2,10 @@ from typing import List, Optional
 
 import aiosqlite
 
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint32
-from hddcoin.wallet.util.wallet_types import WalletType
-from hddcoin.wallet.wallet_action import WalletAction
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint32
+from ssdcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.wallet_action import WalletAction
 
 
 class WalletActionStore:

@@ -1,13 +1,13 @@
 from clvm_tools import binutils
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.program import Program
 from typing import List, Optional, Tuple
 from blspy import G1Element
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.util.ints import uint64
-from hddcoin.wallet.puzzles.load_clvm import load_clvm
-from hddcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.util.ints import uint64
+from ssdcoin.wallet.puzzles.load_clvm import load_clvm
+from ssdcoin.types.condition_opcodes import ConditionOpcode
 
 
 SINGLETON_TOP_LAYER_MOD = load_clvm("singleton_top_layer.clvm")

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
-import { AlertDialog } from '@hddcoin/core';
+import { AlertDialog } from '@ssdcoin/core';
 import {
   Typography,
   Button,
@@ -20,7 +20,7 @@ import {
 } from '../../../modules/createWallet';
 import { useStyles } from './WalletCreate';
 import { create_rl_admin_action } from '../../../modules/message';
-import { hddcoin_to_mojo } from '../../../util/hddcoin';
+import { ssdcoin_to_mojo } from '../../../util/ssdcoin';
 import { openDialog } from '../../../modules/dialog';
 
 export const customStyles = makeStyles((theme) => ({
@@ -76,7 +76,7 @@ export const CreateRLAdminWallet = () => {
   const custom = customStyles();
   const dispatch = useDispatch();
   let interval_input = null;
-  let hddcoinper_input = null;
+  let ssdcoinper_input = null;
   let userpubkey_input = null;
   let amount_input = null;
   let fee_input = null;
@@ -104,10 +104,10 @@ export const CreateRLAdminWallet = () => {
       return;
     }
     if (
-      hddcoinper_input.value === '' ||
-      Number(hddcoinper_input.value) === 0 ||
-      !Number(hddcoinper_input.value) ||
-      isNaN(Number(hddcoinper_input.value))
+      ssdcoinper_input.value === '' ||
+      Number(ssdcoinper_input.value) === 0 ||
+      !Number(ssdcoinper_input.value) ||
+      isNaN(Number(ssdcoinper_input.value))
     ) {
       dispatch(
         openDialog(
@@ -156,18 +156,18 @@ export const CreateRLAdminWallet = () => {
     dispatch(createState(true, true));
     const interval = interval_input.value;
     const interval_value = Number.parseInt(Number(interval));
-    const hddcoinper = hddcoin_to_mojo(hddcoinper_input.value);
-    const hddcoinper_value = Number.parseInt(Number(hddcoinper));
+    const ssdcoinper = ssdcoin_to_mojo(ssdcoinper_input.value);
+    const ssdcoinper_value = Number.parseInt(Number(ssdcoinper));
     const userpubkey = userpubkey_input.value;
-    const amount = hddcoin_to_mojo(amount_input.value);
+    const amount = ssdcoin_to_mojo(amount_input.value);
     const amount_value = Number.parseInt(Number(amount));
-    // var fee = hddcoin_to_mojo(fee_input.value);
+    // var fee = ssdcoin_to_mojo(fee_input.value);
     // TODO(lipa): send fee to server
     // const fee_value = parseInt(Number(fee));
     dispatch(
       create_rl_admin_action(
         interval_value,
-        hddcoinper_value,
+        ssdcoinper_value,
         userpubkey,
         amount_value,
       ),
@@ -225,7 +225,7 @@ export const CreateRLAdminWallet = () => {
               color="secondary"
               fullWidth
               inputRef={(input) => {
-                hddcoinper_input = input;
+                ssdcoinper_input = input;
               }}
               label={<Trans>Spendable Amount</Trans>}
             />

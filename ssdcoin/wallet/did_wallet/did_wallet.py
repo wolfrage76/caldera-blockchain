@@ -6,28 +6,28 @@ from typing import Dict, Optional, List, Any, Set, Tuple, Union
 
 from blspy import AugSchemeMPL, G1Element
 from secrets import token_bytes
-from hddcoin.protocols import wallet_protocol
-from hddcoin.protocols.wallet_protocol import RespondAdditions, RejectAdditionsRequest
-from hddcoin.server.outbound_message import NodeType
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.announcement import Announcement
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.wallet.util.transaction_type import TransactionType
-from hddcoin.util.ints import uint64, uint32, uint8
+from ssdcoin.protocols import wallet_protocol
+from ssdcoin.protocols.wallet_protocol import RespondAdditions, RejectAdditionsRequest
+from ssdcoin.server.outbound_message import NodeType
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.announcement import Announcement
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.wallet.util.transaction_type import TransactionType
+from ssdcoin.util.ints import uint64, uint32, uint8
 
-from hddcoin.wallet.did_wallet.did_info import DIDInfo
-from hddcoin.wallet.lineage_proof import LineageProof
-from hddcoin.wallet.transaction_record import TransactionRecord
-from hddcoin.wallet.util.wallet_types import WalletType
-from hddcoin.wallet.wallet import Wallet
-from hddcoin.wallet.wallet_coin_record import WalletCoinRecord
-from hddcoin.wallet.wallet_info import WalletInfo
-from hddcoin.wallet.derivation_record import DerivationRecord
-from hddcoin.wallet.did_wallet import did_wallet_puzzles
-from hddcoin.wallet.derive_keys import master_sk_to_wallet_sk
+from ssdcoin.wallet.did_wallet.did_info import DIDInfo
+from ssdcoin.wallet.lineage_proof import LineageProof
+from ssdcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.wallet import Wallet
+from ssdcoin.wallet.wallet_coin_record import WalletCoinRecord
+from ssdcoin.wallet.wallet_info import WalletInfo
+from ssdcoin.wallet.derivation_record import DerivationRecord
+from ssdcoin.wallet.did_wallet import did_wallet_puzzles
+from ssdcoin.wallet.derive_keys import master_sk_to_wallet_sk
 
 
 class DIDWallet:

@@ -1,4 +1,4 @@
-; See hddcoin/types/condition_opcodes.py
+; See ssdcoin/types/condition_opcodes.py
 
 (
     (defconstant AGG_SIG_UNSAFE 49)

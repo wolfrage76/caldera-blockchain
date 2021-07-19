@@ -7,19 +7,19 @@ import time
 from pprint import pprint
 from typing import List, Dict, Optional, Callable
 
-from hddcoin.cmds.wallet_funcs import print_balance, wallet_coin_unit
-from hddcoin.pools.pool_wallet_info import PoolWalletInfo, PoolSingletonState
-from hddcoin.protocols.pool_protocol import POOL_PROTOCOL_VERSION
-from hddcoin.rpc.farmer_rpc_client import FarmerRpcClient
-from hddcoin.rpc.wallet_rpc_client import WalletRpcClient
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.bech32m import encode_puzzle_hash
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.config import load_config
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
-from hddcoin.util.ints import uint16, uint32
-from hddcoin.wallet.transaction_record import TransactionRecord
-from hddcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.cmds.wallet_funcs import print_balance, wallet_coin_unit
+from ssdcoin.pools.pool_wallet_info import PoolWalletInfo, PoolSingletonState
+from ssdcoin.protocols.pool_protocol import POOL_PROTOCOL_VERSION
+from ssdcoin.rpc.farmer_rpc_client import FarmerRpcClient
+from ssdcoin.rpc.wallet_rpc_client import WalletRpcClient
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.bech32m import encode_puzzle_hash
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.config import load_config
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin.util.ints import uint16, uint32
+from ssdcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.util.wallet_types import WalletType
 
 
 async def create_pool_args(pool_url: str) -> Dict:
@@ -85,7 +85,7 @@ async def create(args: dict, wallet_client: WalletRpcClient, fingerprint: int) -
                 tx = await wallet_client.get_transaction(str(1), tx_record.name)
                 if len(tx.sent_to) > 0:
                     print(f"Transaction submitted to nodes: {tx.sent_to}")
-                    print(f"Do hddcoin wallet get_transaction -f {fingerprint} -tx 0x{tx_record.name} to get status")
+                    print(f"Do ssdcoin wallet get_transaction -f {fingerprint} -tx 0x{tx_record.name} to get status")
                     return None
         except Exception as e:
             print(f"Error creating plot NFT: {e}")
@@ -160,7 +160,7 @@ async def show(args: dict, wallet_client: WalletRpcClient, fingerprint: int) -> 
         if isinstance(e, aiohttp.ClientConnectorError):
             print(
                 f"Connection error. Check if farmer is running at {farmer_rpc_port}."
-                f" You can run the farmer by:\n    hddcoin start farmer-only"
+                f" You can run the farmer by:\n    ssdcoin start farmer-only"
             )
         else:
             print(f"Exception from 'wallet' {e}")
@@ -224,7 +224,7 @@ async def get_login_link(launcher_id_str: str) -> None:
         if isinstance(e, aiohttp.ClientConnectorError):
             print(
                 f"Connection error. Check if farmer is running at {farmer_rpc_port}."
-                f" You can run the farmer by:\n    hddcoin start farmer-only"
+                f" You can run the farmer by:\n    ssdcoin start farmer-only"
             )
         else:
             print(f"Exception from 'farmer' {e}")
@@ -251,7 +251,7 @@ async def submit_tx_with_confirmation(
                 tx = await wallet_client.get_transaction(str(1), tx_record.name)
                 if len(tx.sent_to) > 0:
                     print(f"Transaction submitted to nodes: {tx.sent_to}")
-                    print(f"Do hddcoin wallet get_transaction -f {fingerprint} -tx 0x{tx_record.name} to get status")
+                    print(f"Do ssdcoin wallet get_transaction -f {fingerprint} -tx 0x{tx_record.name} to get status")
                     return None
         except Exception as e:
             print(f"Error performing operation on Plot NFT -f {fingerprint} wallet id: {wallet_id}: {e}")

@@ -4,26 +4,26 @@ import logging
 import time
 from typing import Dict, List, Optional, Set, Tuple
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.difficulty_adjustment import can_finish_sub_and_full_epoch
-from hddcoin.consensus.make_sub_epoch_summary import next_sub_epoch_summary
-from hddcoin.consensus.multiprocess_validation import PreValidationResult
-from hddcoin.consensus.pot_iterations import calculate_sp_interval_iters
-from hddcoin.full_node.signage_point import SignagePoint
-from hddcoin.protocols import timelord_protocol
-from hddcoin.server.outbound_message import Message
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.blockchain_format.vdf import VDFInfo
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.generator_types import CompressorArg
-from hddcoin.types.unfinished_block import UnfinishedBlock
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
-from hddcoin.util.lru_cache import LRUCache
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.difficulty_adjustment import can_finish_sub_and_full_epoch
+from ssdcoin.consensus.make_sub_epoch_summary import next_sub_epoch_summary
+from ssdcoin.consensus.multiprocess_validation import PreValidationResult
+from ssdcoin.consensus.pot_iterations import calculate_sp_interval_iters
+from ssdcoin.full_node.signage_point import SignagePoint
+from ssdcoin.protocols import timelord_protocol
+from ssdcoin.server.outbound_message import Message
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.blockchain_format.vdf import VDFInfo
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.generator_types import CompressorArg
+from ssdcoin.types.unfinished_block import UnfinishedBlock
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.lru_cache import LRUCache
 
 log = logging.getLogger(__name__)
 

@@ -4,26 +4,26 @@ from typing import Any, Dict, List, Optional, Set
 
 from blspy import G1Element
 
-from hddcoin.consensus.cost_calculator import calculate_cost_of_program, NPCResult
-from hddcoin.full_node.bundle_tools import simple_solution_generator
-from hddcoin.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program, SerializedProgram
-from hddcoin.types.announcement import Announcement
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.generator_types import BlockGenerator
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
-from hddcoin.util.hash import std_hash
-from hddcoin.wallet.derivation_record import DerivationRecord
-from hddcoin.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
+from ssdcoin.consensus.cost_calculator import calculate_cost_of_program, NPCResult
+from ssdcoin.full_node.bundle_tools import simple_solution_generator
+from ssdcoin.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program, SerializedProgram
+from ssdcoin.types.announcement import Announcement
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.generator_types import BlockGenerator
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.hash import std_hash
+from ssdcoin.wallet.derivation_record import DerivationRecord
+from ssdcoin.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
     DEFAULT_HIDDEN_PUZZLE_HASH,
     calculate_synthetic_secret_key,
     puzzle_for_pk,
     solution_for_conditions,
 )
-from hddcoin.wallet.puzzles.puzzle_utils import (
+from ssdcoin.wallet.puzzles.puzzle_utils import (
     make_assert_coin_announcement,
     make_assert_puzzle_announcement,
     make_assert_my_coin_id_condition,
@@ -33,13 +33,13 @@ from hddcoin.wallet.puzzles.puzzle_utils import (
     make_create_coin_condition,
     make_reserve_fee_condition,
 )
-from hddcoin.wallet.secret_key_store import SecretKeyStore
-from hddcoin.wallet.sign_coin_solutions import sign_coin_solutions
-from hddcoin.wallet.transaction_record import TransactionRecord
-from hddcoin.wallet.util.transaction_type import TransactionType
-from hddcoin.wallet.util.wallet_types import WalletType
-from hddcoin.wallet.wallet_coin_record import WalletCoinRecord
-from hddcoin.wallet.wallet_info import WalletInfo
+from ssdcoin.wallet.secret_key_store import SecretKeyStore
+from ssdcoin.wallet.sign_coin_solutions import sign_coin_solutions
+from ssdcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.util.transaction_type import TransactionType
+from ssdcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.wallet_coin_record import WalletCoinRecord
+from ssdcoin.wallet.wallet_info import WalletInfo
 
 
 class Wallet:
@@ -437,14 +437,14 @@ class Wallet:
         await self.wallet_state_manager.add_pending_transaction(tx)
 
     # This is to be aggregated together with a coloured coin offer to ensure that the trade happens
-    async def create_spend_bundle_relative_hddcoin(self, hddcoin_amount: int, exclude: List[Coin]) -> SpendBundle:
+    async def create_spend_bundle_relative_ssdcoin(self, ssdcoin_amount: int, exclude: List[Coin]) -> SpendBundle:
         list_of_solutions = []
         utxos = None
 
         # If we're losing value then get coins with at least that much value
         # If we're gaining value then our amount doesn't matter
-        if hddcoin_amount < 0:
-            utxos = await self.select_coins(abs(hddcoin_amount), exclude)
+        if ssdcoin_amount < 0:
+            utxos = await self.select_coins(abs(ssdcoin_amount), exclude)
         else:
             utxos = await self.select_coins(0, exclude)
 
@@ -452,7 +452,7 @@ class Wallet:
 
         # Calculate output amount given sum of utxos
         spend_value = sum([coin.amount for coin in utxos])
-        hddcoin_amount = spend_value + hddcoin_amount
+        ssdcoin_amount = spend_value + ssdcoin_amount
 
         # Create coin solutions for each utxo
         output_created = None
@@ -460,7 +460,7 @@ class Wallet:
             puzzle = await self.puzzle_for_puzzle_hash(coin.puzzle_hash)
             if output_created is None:
                 newpuzhash = await self.get_new_puzzlehash()
-                primaries = [{"puzzlehash": newpuzhash, "amount": hddcoin_amount}]
+                primaries = [{"puzzlehash": newpuzhash, "amount": ssdcoin_amount}]
                 solution = self.make_solution(primaries=primaries)
                 output_created = coin
             list_of_solutions.append(CoinSolution(coin, puzzle, solution))

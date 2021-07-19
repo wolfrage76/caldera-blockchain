@@ -5,21 +5,21 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 
-from hddcoin import __version__
-from hddcoin.consensus.coinbase import create_puzzlehash_for_pk
-from hddcoin.ssl.create_ssl import generate_ca_signed_cert, get_hddcoin_ca_crt_key, make_ca_cert
-from hddcoin.util.bech32m import encode_puzzle_hash
-from hddcoin.util.config import (
-    create_default_hddcoin_config,
+from ssdcoin import __version__
+from ssdcoin.consensus.coinbase import create_puzzlehash_for_pk
+from ssdcoin.ssl.create_ssl import generate_ca_signed_cert, get_ssdcoin_ca_crt_key, make_ca_cert
+from ssdcoin.util.bech32m import encode_puzzle_hash
+from ssdcoin.util.config import (
+    create_default_ssdcoin_config,
     initial_config_file,
     load_config,
     save_config,
     unflatten_properties,
 )
-from hddcoin.util.ints import uint32
-from hddcoin.util.keychain import Keychain
-from hddcoin.util.path import mkdir
-from hddcoin.wallet.derive_keys import master_sk_to_pool_sk, master_sk_to_wallet_sk
+from ssdcoin.util.ints import uint32
+from ssdcoin.util.keychain import Keychain
+from ssdcoin.util.path import mkdir
+from ssdcoin.wallet.derive_keys import master_sk_to_pool_sk, master_sk_to_wallet_sk
 
 private_node_names = {"full_node", "wallet", "farmer", "harvester", "timelord", "daemon"}
 public_node_names = {"full_node", "wallet", "farmer", "introducer", "timelord"}
@@ -50,7 +50,7 @@ def check_keys(new_root: Path) -> None:
     keychain: Keychain = Keychain()
     all_sks = keychain.get_all_private_keys()
     if len(all_sks) == 0:
-        print("No keys are present in the keychain. Generate them with 'hddcoin keys generate'")
+        print("No keys are present in the keychain. Generate them with 'ssdcoin keys generate'")
         return None
 
     config: Dict = load_config(new_root, "config.yaml")
@@ -176,11 +176,11 @@ def create_all_ssl(root: Path):
 
     private_ca_key_path = ca_dir / "private_ca.key"
     private_ca_crt_path = ca_dir / "private_ca.crt"
-    hddcoin_ca_crt, hddcoin_ca_key = get_hddcoin_ca_crt_key()
-    hddcoin_ca_crt_path = ca_dir / "hddcoin_ca.crt"
-    hddcoin_ca_key_path = ca_dir / "hddcoin_ca.key"
-    hddcoin_ca_crt_path.write_bytes(hddcoin_ca_crt)
-    hddcoin_ca_key_path.write_bytes(hddcoin_ca_key)
+    ssdcoin_ca_crt, ssdcoin_ca_key = get_ssdcoin_ca_crt_key()
+    ssdcoin_ca_crt_path = ca_dir / "ssdcoin_ca.crt"
+    ssdcoin_ca_key_path = ca_dir / "ssdcoin_ca.key"
+    ssdcoin_ca_crt_path.write_bytes(ssdcoin_ca_crt)
+    ssdcoin_ca_key_path.write_bytes(ssdcoin_ca_key)
 
     if not private_ca_key_path.exists() or not private_ca_crt_path.exists():
         # Create private CA
@@ -197,8 +197,8 @@ def create_all_ssl(root: Path):
         ca_crt = private_ca_crt_path.read_bytes()
         generate_ssl_for_nodes(ssl_dir, ca_crt, ca_key, True)
 
-    hddcoin_ca_crt, hddcoin_ca_key = get_hddcoin_ca_crt_key()
-    generate_ssl_for_nodes(ssl_dir, hddcoin_ca_crt, hddcoin_ca_key, False, overwrite=False)
+    ssdcoin_ca_crt, ssdcoin_ca_key = get_ssdcoin_ca_crt_key()
+    generate_ssl_for_nodes(ssl_dir, ssdcoin_ca_crt, ssdcoin_ca_key, False, overwrite=False)
 
 
 def generate_ssl_for_nodes(ssl_dir: Path, ca_crt: bytes, ca_key: bytes, private: bool, overwrite=True):
@@ -245,16 +245,16 @@ def init(create_certs: Optional[Path], root_path: Path):
         else:
             print(f"** {root_path} does not exist. Executing core init **")
             # sanity check here to prevent infinite recursion
-            if hddcoin_init(root_path) == 0 and root_path.exists():
+            if ssdcoin_init(root_path) == 0 and root_path.exists():
                 return init(create_certs, root_path)
 
             print(f"** {root_path} was not created. Exiting **")
             return -1
     else:
-        return hddcoin_init(root_path)
+        return ssdcoin_init(root_path)
 
 
-def hddcoin_version_number() -> Tuple[str, str, str, str]:
+def ssdcoin_version_number() -> Tuple[str, str, str, str]:
     scm_full_version = __version__
     left_full_version = scm_full_version.split("+")
 
@@ -302,37 +302,37 @@ def hddcoin_version_number() -> Tuple[str, str, str, str]:
     return major_release_number, minor_release_number, patch_release_number, dev_release_number
 
 
-def hddcoin_minor_release_number():
-    res = int(hddcoin_version_number()[2])
+def ssdcoin_minor_release_number():
+    res = int(ssdcoin_version_number()[2])
     print(f"Install release number: {res}")
     return res
 
 
-def hddcoin_full_version_str() -> str:
-    major, minor, patch, dev = hddcoin_version_number()
+def ssdcoin_full_version_str() -> str:
+    major, minor, patch, dev = ssdcoin_version_number()
     return f"{major}.{minor}.{patch}{dev}"
 
 
-def hddcoin_init(root_path: Path):
-    if os.environ.get("HDDCOIN_ROOT", None) is not None:
+def ssdcoin_init(root_path: Path):
+    if os.environ.get("SSDCOIN_ROOT", None) is not None:
         print(
-            f"warning, your HDDCOIN_ROOT is set to {os.environ['HDDCOIN_ROOT']}. "
-            f"Please unset the environment variable and run hddcoin init again\n"
+            f"warning, your SSDCOIN_ROOT is set to {os.environ['SSDCOIN_ROOT']}. "
+            f"Please unset the environment variable and run ssdcoin init again\n"
             f"or manually migrate config.yaml"
         )
 
-    print(f"HDDcoin directory {root_path}")
+    print(f"SSDCoin directory {root_path}")
     if root_path.is_dir() and Path(root_path / "config" / "config.yaml").exists():
-        # This is reached if HDDCOIN_ROOT is set, or if user has run hddcoin init twice
+        # This is reached if SSDCOIN_ROOT is set, or if user has run ssdcoin init twice
         # before a new update.
         check_keys(root_path)
         print(f"{root_path} already exists, no migration action taken")
         return -1
 
-    create_default_hddcoin_config(root_path)
+    create_default_ssdcoin_config(root_path)
     create_all_ssl(root_path)
     check_keys(root_path)
     print("")
-    print("To see your keys, run 'hddcoin keys show --show-mnemonic-seed'")
+    print("To see your keys, run 'ssdcoin keys show --show-mnemonic-seed'")
 
     return 0

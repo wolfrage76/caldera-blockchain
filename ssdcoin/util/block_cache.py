@@ -1,13 +1,13 @@
 import logging
 from typing import Dict, List, Optional
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.types.weight_proof import SubEpochChallengeSegment, SubEpochSegments
-from hddcoin.util.ints import uint32
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.types.weight_proof import SubEpochChallengeSegment, SubEpochSegments
+from ssdcoin.util.ints import uint32
 
 
 class BlockCache(BlockchainInterface):

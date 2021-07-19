@@ -1,7 +1,7 @@
 from secrets import token_bytes
 
-from hddcoin.consensus.default_constants import DEFAULT_CONSTANTS
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace  # pylint: disable=E0401
+from ssdcoin.consensus.default_constants import DEFAULT_CONSTANTS
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace  # pylint: disable=E0401
 
 
 class TestProofOfSpace:

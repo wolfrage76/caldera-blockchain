@@ -6,7 +6,7 @@ is returned literally.
 """
 
 
-from hddcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.program import Program
 
 from .load_clvm import load_clvm
 

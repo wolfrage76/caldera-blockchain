@@ -2,9 +2,9 @@ from dataclasses import dataclass
 from enum import IntEnum
 from typing import Any, Optional
 
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.util.ints import uint8, uint16
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.util.ints import uint8, uint16
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 class NodeType(IntEnum):

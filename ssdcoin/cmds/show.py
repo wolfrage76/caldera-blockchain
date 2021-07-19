@@ -19,16 +19,16 @@ async def show_async(
 
     from time import localtime, struct_time
     from typing import List, Optional
-    from hddcoin.consensus.block_record import BlockRecord
-    from hddcoin.rpc.full_node_rpc_client import FullNodeRpcClient
-    from hddcoin.server.outbound_message import NodeType
-    from hddcoin.types.full_block import FullBlock
-    from hddcoin.util.bech32m import encode_puzzle_hash
-    from hddcoin.util.byte_types import hexstr_to_bytes
-    from hddcoin.util.config import load_config
-    from hddcoin.util.default_root import DEFAULT_ROOT_PATH
-    from hddcoin.util.ints import uint16
-    from hddcoin.util.misc import format_bytes
+    from ssdcoin.consensus.block_record import BlockRecord
+    from ssdcoin.rpc.full_node_rpc_client import FullNodeRpcClient
+    from ssdcoin.server.outbound_message import NodeType
+    from ssdcoin.types.full_block import FullBlock
+    from ssdcoin.util.bech32m import encode_puzzle_hash
+    from ssdcoin.util.byte_types import hexstr_to_bytes
+    from ssdcoin.util.config import load_config
+    from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
+    from ssdcoin.util.ints import uint16
+    from ssdcoin.util.misc import format_bytes
 
     try:
         config = load_config(DEFAULT_ROOT_PATH, "config.yaml")
@@ -62,7 +62,7 @@ async def show_async(
                 print(f"Current Blockchain Status: Not Synced. Peak height: {peak.height}")
             else:
                 print("\nSearching for an initial chain\n")
-                print("You may be able to expedite with 'hddcoin show -a host:port' using a known node.\n")
+                print("You may be able to expedite with 'ssdcoin show -a host:port' using a known node.\n")
 
             if peak is not None:
                 if peak.is_transaction_block:

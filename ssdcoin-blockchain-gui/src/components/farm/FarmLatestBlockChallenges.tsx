@@ -2,7 +2,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import { useSelector } from 'react-redux';
 import { Typography } from '@material-ui/core';
-import { Link, Table, Card } from '@hddcoin/core';
+import { Link, Table, Card } from '@ssdcoin/core';
 import type { RootState } from '../../modules/rootReducer';
 import type { Row } from '../core/components/Table/Table';
 
@@ -62,13 +62,13 @@ export default function FarmLatestBlockChallenges() {
       />
       <Typography variant="caption">
         <Trans>
-          *Want to explore HDDcoin’s blocks further? Check out{' '}
+          *Want to explore SSDCoin’s blocks further? Check out{' '}
           <Link
             color="primary"
-            href="https://www.hddcoinexplorer.com/"
+            href="https://www.ssdcoinexplorer.com/"
             target="_blank"
           >
-            HDDcoin Explorer
+            SSDCoin Explorer
           </Link>{' '}
           built by an open source developer.
         </Trans>

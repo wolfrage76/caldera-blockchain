@@ -12,7 +12,7 @@ const convert = (amount, from, to) => {
   return Number.parseFloat(amountInFromUnit.div(units.getUnit(to)));
 };
 
-class HDDcoin {
+class SSDCoin {
   constructor(value, unit) {
     this._value = value;
     this._unit = unit;
@@ -73,42 +73,42 @@ class HDDcoin {
   }
 }
 
-export const hddcoin_formatter = (value, unit) => new HDDcoin(value, unit);
+export const ssdcoin_formatter = (value, unit) => new SSDCoin(value, unit);
 
-hddcoin_formatter.convert = convert;
-hddcoin_formatter.setDisplay = units.setDisplay;
-hddcoin_formatter.setUnit = units.setUnit;
-hddcoin_formatter.getUnit = units.getUnit;
-hddcoin_formatter.setFiat = (currency, rate, display = null) => {
+ssdcoin_formatter.convert = convert;
+ssdcoin_formatter.setDisplay = units.setDisplay;
+ssdcoin_formatter.setUnit = units.setUnit;
+ssdcoin_formatter.getUnit = units.getUnit;
+ssdcoin_formatter.setFiat = (currency, rate, display = null) => {
   units.setUnit(currency, 1 / rate, display);
 };
 
-export const mojo_to_hddcoin = (mojo) => {
-  return hddcoin_formatter(Number.parseInt(mojo), 'mojo').to('hddcoin').value();
+export const mojo_to_ssdcoin = (mojo) => {
+  return ssdcoin_formatter(Number.parseInt(mojo), 'mojo').to('ssdcoin').value();
 };
 
-export const hddcoin_to_mojo = (hddcoin) => {
-  return hddcoin_formatter(Number.parseFloat(Number(hddcoin)), 'hddcoin')
+export const ssdcoin_to_mojo = (ssdcoin) => {
+  return ssdcoin_formatter(Number.parseFloat(Number(ssdcoin)), 'ssdcoin')
     .to('mojo')
     .value();
 };
 
-export const mojo_to_hddcoin_string = (mojo) => {
-  return hddcoin_formatter(Number(mojo), 'mojo').to('hddcoin').toString();
+export const mojo_to_ssdcoin_string = (mojo) => {
+  return ssdcoin_formatter(Number(mojo), 'mojo').to('ssdcoin').toString();
 };
 
 export const mojo_to_colouredcoin = (mojo) => {
-  return hddcoin_formatter(Number.parseInt(mojo), 'mojo')
+  return ssdcoin_formatter(Number.parseInt(mojo), 'mojo')
     .to('colouredcoin')
     .value();
 };
 
 export const colouredcoin_to_mojo = (colouredcoin) => {
-  return hddcoin_formatter(Number.parseFloat(Number(colouredcoin)), 'colouredcoin')
+  return ssdcoin_formatter(Number.parseFloat(Number(colouredcoin)), 'colouredcoin')
     .to('mojo')
     .value();
 };
 
 export const mojo_to_colouredcoin_string = (mojo) => {
-  return hddcoin_formatter(Number(mojo), 'mojo').to('colouredcoin').toString();
+  return ssdcoin_formatter(Number(mojo), 'mojo').to('colouredcoin').toString();
 };

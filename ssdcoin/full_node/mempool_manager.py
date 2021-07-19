@@ -8,32 +8,32 @@ from typing import Dict, List, Optional, Set, Tuple
 from blspy import AugSchemeMPL, G1Element
 from chiabip158 import PyBIP158
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.cost_calculator import NPCResult, calculate_cost_of_program
-from hddcoin.full_node.bundle_tools import simple_solution_generator
-from hddcoin.full_node.coin_store import CoinStore
-from hddcoin.full_node.mempool import Mempool
-from hddcoin.full_node.mempool_check_conditions import mempool_check_conditions_dict, get_name_puzzle_conditions
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import SerializedProgram
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_record import CoinRecord
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.condition_with_args import ConditionWithArgs
-from hddcoin.types.mempool_inclusion_status import MempoolInclusionStatus
-from hddcoin.types.mempool_item import MempoolItem
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.clvm import int_from_bytes
-from hddcoin.util.condition_tools import (
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.cost_calculator import NPCResult, calculate_cost_of_program
+from ssdcoin.full_node.bundle_tools import simple_solution_generator
+from ssdcoin.full_node.coin_store import CoinStore
+from ssdcoin.full_node.mempool import Mempool
+from ssdcoin.full_node.mempool_check_conditions import mempool_check_conditions_dict, get_name_puzzle_conditions
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import SerializedProgram
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_record import CoinRecord
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.condition_with_args import ConditionWithArgs
+from ssdcoin.types.mempool_inclusion_status import MempoolInclusionStatus
+from ssdcoin.types.mempool_item import MempoolItem
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.clvm import int_from_bytes
+from ssdcoin.util.condition_tools import (
     pkm_pairs_for_conditions_dict,
     coin_announcements_names_for_npc,
     puzzle_announcements_names_for_npc,
 )
-from hddcoin.util.errors import Err
-from hddcoin.util.generator_tools import additions_for_npc
-from hddcoin.util.ints import uint32, uint64
-from hddcoin.util.streamable import recurse_jsonify
+from ssdcoin.util.errors import Err
+from ssdcoin.util.generator_tools import additions_for_npc
+from ssdcoin.util.ints import uint32, uint64
+from ssdcoin.util.streamable import recurse_jsonify
 
 log = logging.getLogger(__name__)
 
@@ -394,7 +394,7 @@ class MempoolManager:
                 log.warning(f"{npc.puzzle_hash} != {coin_record.coin.puzzle_hash}")
                 return None, MempoolInclusionStatus.FAILED, Err.WRONG_PUZZLE_HASH
 
-            hddcoinlisp_height = (
+            ssdcoinlisp_height = (
                 self.peak.prev_transaction_block_height if not self.peak.is_transaction_block else self.peak.height
             )
             assert self.peak.timestamp is not None
@@ -403,7 +403,7 @@ class MempoolManager:
                 coin_announcements_in_spend,
                 puzzle_announcements_in_spend,
                 npc.condition_dict,
-                uint32(hddcoinlisp_height),
+                uint32(ssdcoinlisp_height),
                 self.peak.timestamp,
             )
 

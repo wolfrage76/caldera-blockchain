@@ -2,10 +2,10 @@ from typing import List, Optional
 
 import aiosqlite
 
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint32
-from hddcoin.wallet.util.wallet_types import WalletType
-from hddcoin.wallet.wallet_info import WalletInfo
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint32
+from ssdcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.wallet_info import WalletInfo
 
 
 class WalletUserStore:
@@ -48,7 +48,7 @@ class WalletUserStore:
     async def init_wallet(self):
         all_wallets = await self.get_all_wallet_info_entries()
         if len(all_wallets) == 0:
-            await self.create_wallet("HDDcoin Wallet", WalletType.STANDARD_WALLET, "")
+            await self.create_wallet("SSDCoin Wallet", WalletType.STANDARD_WALLET, "")
 
     async def _clear_database(self):
         cursor = await self.db_connection.execute("DELETE FROM users_wallets")

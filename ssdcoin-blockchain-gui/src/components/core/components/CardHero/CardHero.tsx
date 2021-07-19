@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Card, CardContent } from '@material-ui/core';
-import { Flex } from '@hddcoin/core';
+import { Flex } from '@ssdcoin/core';
 
 const StyledContent = styled(CardContent)`
   padding: ${({ theme }) =>

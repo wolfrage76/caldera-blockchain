@@ -9,38 +9,38 @@ from typing import Dict, Optional, List
 
 import pytest
 
-from hddcoin.consensus.pot_iterations import is_overflow_block
-from hddcoin.full_node.bundle_tools import detect_potential_template_generator
-from hddcoin.full_node.full_node_api import FullNodeAPI
-from hddcoin.full_node.signage_point import SignagePoint
-from hddcoin.protocols import full_node_protocol as fnp, full_node_protocol
-from hddcoin.protocols import timelord_protocol
-from hddcoin.protocols.full_node_protocol import RespondTransaction
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.server.address_manager import AddressManager
-from hddcoin.server.outbound_message import Message
-from hddcoin.simulator.simulator_protocol import FarmNewBlockProtocol
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.program import SerializedProgram
-from hddcoin.types.blockchain_format.vdf import CompressibleVDFField, VDFProof
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.condition_with_args import ConditionWithArgs
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.mempool_inclusion_status import MempoolInclusionStatus
-from hddcoin.types.peer_info import PeerInfo, TimestampedPeerInfo
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.types.unfinished_block import UnfinishedBlock
+from ssdcoin.consensus.pot_iterations import is_overflow_block
+from ssdcoin.full_node.bundle_tools import detect_potential_template_generator
+from ssdcoin.full_node.full_node_api import FullNodeAPI
+from ssdcoin.full_node.signage_point import SignagePoint
+from ssdcoin.protocols import full_node_protocol as fnp, full_node_protocol
+from ssdcoin.protocols import timelord_protocol
+from ssdcoin.protocols.full_node_protocol import RespondTransaction
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.server.address_manager import AddressManager
+from ssdcoin.server.outbound_message import Message
+from ssdcoin.simulator.simulator_protocol import FarmNewBlockProtocol
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.program import SerializedProgram
+from ssdcoin.types.blockchain_format.vdf import CompressibleVDFField, VDFProof
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.condition_with_args import ConditionWithArgs
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.mempool_inclusion_status import MempoolInclusionStatus
+from ssdcoin.types.peer_info import PeerInfo, TimestampedPeerInfo
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.types.unfinished_block import UnfinishedBlock
 from tests.block_tools import get_signage_point
-from hddcoin.util.clvm import int_to_bytes
-from hddcoin.util.errors import Err
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint8, uint16, uint32, uint64
-from hddcoin.util.recursive_replace import recursive_replace
-from hddcoin.util.vdf_prover import get_vdf_info_and_proof
+from ssdcoin.util.clvm import int_to_bytes
+from ssdcoin.util.errors import Err
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint8, uint16, uint32, uint64
+from ssdcoin.util.recursive_replace import recursive_replace
+from ssdcoin.util.vdf_prover import get_vdf_info_and_proof
 from tests.wallet_tools import WalletTool
 from tests.core.fixtures import empty_blockchain  # noqa: F401
-from hddcoin.wallet.cc_wallet.cc_wallet import CCWallet
-from hddcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.cc_wallet.cc_wallet import CCWallet
+from ssdcoin.wallet.transaction_record import TransactionRecord
 
 from tests.connection_utils import add_dummy_connection, connect_and_get_peer
 from tests.core.full_node.test_coin_store import get_future_reward_coins

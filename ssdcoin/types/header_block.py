@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 from typing import List, Optional
 
-from hddcoin.types.blockchain_format.foliage import Foliage, FoliageTransactionBlock, TransactionsInfo
-from hddcoin.types.blockchain_format.reward_chain_block import RewardChainBlock
-from hddcoin.types.blockchain_format.vdf import VDFProof
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.foliage import Foliage, FoliageTransactionBlock, TransactionsInfo
+from ssdcoin.types.blockchain_format.reward_chain_block import RewardChainBlock
+from ssdcoin.types.blockchain_format.vdf import VDFProof
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

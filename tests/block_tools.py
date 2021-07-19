@@ -14,72 +14,72 @@ from typing import Callable, Dict, List, Optional, Tuple, Any
 from blspy import AugSchemeMPL, G1Element, G2Element, PrivateKey
 from chiabip158 import PyBIP158
 
-from hddcoin.cmds.init_funcs import create_all_ssl, create_default_hddcoin_config
-from hddcoin.full_node.bundle_tools import (
+from ssdcoin.cmds.init_funcs import create_all_ssl, create_default_ssdcoin_config
+from ssdcoin.full_node.bundle_tools import (
     best_solution_generator_from_template,
     detect_potential_template_generator,
     simple_solution_generator,
 )
-from hddcoin.util.errors import Err
-from hddcoin.full_node.generator import setup_generator_args
-from hddcoin.full_node.mempool_check_conditions import GENERATOR_MOD
-from hddcoin.plotting.create_plots import create_plots
-from hddcoin.consensus.block_creation import unfinished_block_to_full_block
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.consensus.coinbase import create_puzzlehash_for_pk, create_farmer_coin, create_pool_coin
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.default_constants import DEFAULT_CONSTANTS
-from hddcoin.consensus.deficit import calculate_deficit
-from hddcoin.consensus.full_block_to_block_record import block_to_block_record
-from hddcoin.consensus.make_sub_epoch_summary import next_sub_epoch_summary
-from hddcoin.consensus.cost_calculator import NPCResult, calculate_cost_of_program
-from hddcoin.consensus.pot_iterations import (
+from ssdcoin.util.errors import Err
+from ssdcoin.full_node.generator import setup_generator_args
+from ssdcoin.full_node.mempool_check_conditions import GENERATOR_MOD
+from ssdcoin.plotting.create_plots import create_plots
+from ssdcoin.consensus.block_creation import unfinished_block_to_full_block
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.consensus.coinbase import create_puzzlehash_for_pk, create_farmer_coin, create_pool_coin
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.default_constants import DEFAULT_CONSTANTS
+from ssdcoin.consensus.deficit import calculate_deficit
+from ssdcoin.consensus.full_block_to_block_record import block_to_block_record
+from ssdcoin.consensus.make_sub_epoch_summary import next_sub_epoch_summary
+from ssdcoin.consensus.cost_calculator import NPCResult, calculate_cost_of_program
+from ssdcoin.consensus.pot_iterations import (
     calculate_ip_iters,
     calculate_iterations_quality,
     calculate_sp_interval_iters,
     calculate_sp_iters,
     is_overflow_block,
 )
-from hddcoin.consensus.vdf_info_computation import get_signage_point_vdf_info
-from hddcoin.full_node.signage_point import SignagePoint
-from hddcoin.plotting.plot_tools import PlotInfo, load_plots, parse_plot_info
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.coin import Coin, hash_coin_list
-from hddcoin.types.blockchain_format.foliage import Foliage, FoliageBlockData, FoliageTransactionBlock, TransactionsInfo
-from hddcoin.types.blockchain_format.pool_target import PoolTarget
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace
-from hddcoin.types.blockchain_format.reward_chain_block import RewardChainBlockUnfinished
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.slots import (
+from ssdcoin.consensus.vdf_info_computation import get_signage_point_vdf_info
+from ssdcoin.full_node.signage_point import SignagePoint
+from ssdcoin.plotting.plot_tools import PlotInfo, load_plots, parse_plot_info
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.coin import Coin, hash_coin_list
+from ssdcoin.types.blockchain_format.foliage import Foliage, FoliageBlockData, FoliageTransactionBlock, TransactionsInfo
+from ssdcoin.types.blockchain_format.pool_target import PoolTarget
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace
+from ssdcoin.types.blockchain_format.reward_chain_block import RewardChainBlockUnfinished
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.slots import (
     ChallengeChainSubSlot,
     InfusedChallengeChainSubSlot,
     RewardChainSubSlot,
     SubSlotProofs,
 )
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
-from hddcoin.types.condition_with_args import ConditionWithArgs
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.generator_types import BlockGenerator, CompressorArg
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.types.unfinished_block import UnfinishedBlock
-from hddcoin.types.name_puzzle_condition import NPC
-from hddcoin.util.bech32m import encode_puzzle_hash
-from hddcoin.util.block_cache import BlockCache
-from hddcoin.util.condition_tools import ConditionOpcode, conditions_by_opcode
-from hddcoin.util.config import load_config, save_config
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint8, uint16, uint32, uint64, uint128
-from hddcoin.util.keychain import Keychain, bytes_to_mnemonic
-from hddcoin.util.merkle_set import MerkleSet
-from hddcoin.util.prev_transaction_block import get_prev_transaction_block
-from hddcoin.util.path import mkdir
-from hddcoin.util.vdf_prover import get_vdf_info_and_proof
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
+from ssdcoin.types.condition_with_args import ConditionWithArgs
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.generator_types import BlockGenerator, CompressorArg
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.types.unfinished_block import UnfinishedBlock
+from ssdcoin.types.name_puzzle_condition import NPC
+from ssdcoin.util.bech32m import encode_puzzle_hash
+from ssdcoin.util.block_cache import BlockCache
+from ssdcoin.util.condition_tools import ConditionOpcode, conditions_by_opcode
+from ssdcoin.util.config import load_config, save_config
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint8, uint16, uint32, uint64, uint128
+from ssdcoin.util.keychain import Keychain, bytes_to_mnemonic
+from ssdcoin.util.merkle_set import MerkleSet
+from ssdcoin.util.prev_transaction_block import get_prev_transaction_block
+from ssdcoin.util.path import mkdir
+from ssdcoin.util.vdf_prover import get_vdf_info_and_proof
 from tests.wallet_tools import WalletTool
-from hddcoin.wallet.derive_keys import (
+from ssdcoin.wallet.derive_keys import (
     master_sk_to_farmer_sk,
     master_sk_to_local_sk,
     master_sk_to_pool_sk,
@@ -131,7 +131,7 @@ class BlockTools:
             root_path = Path(self._tempdir.name)
 
         self.root_path = root_path
-        create_default_hddcoin_config(root_path)
+        create_default_ssdcoin_config(root_path)
         self.keychain = Keychain("testing-1.8.0", True)
         self.keychain.delete_all_keys()
         self.farmer_master_sk_entropy = std_hash(b"block_tools farmer key")
@@ -155,7 +155,7 @@ class BlockTools:
 
         self.farmer_pubkeys: List[G1Element] = [master_sk_to_farmer_sk(sk).get_g1() for sk in self.all_sks]
         if len(self.pool_pubkeys) == 0 or len(self.farmer_pubkeys) == 0:
-            raise RuntimeError("Keys not generated. Run `hddcoin generate keys`")
+            raise RuntimeError("Keys not generated. Run `ssdcoin generate keys`")
 
         self.load_plots()
         self.local_sk_cache: Dict[bytes32, Tuple[PrivateKey, Any]] = {}
@@ -1219,7 +1219,7 @@ def get_challenges(
 
 
 def get_plot_dir() -> Path:
-    cache_path = Path(os.path.expanduser(os.getenv("HDDCOIN_ROOT", "~/.hddcoin/"))) / "test-plots"
+    cache_path = Path(os.path.expanduser(os.getenv("SSDCOIN_ROOT", "~/.ssdcoin/"))) / "test-plots"
     mkdir(cache_path)
     return cache_path
 

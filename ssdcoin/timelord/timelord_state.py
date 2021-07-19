@@ -1,16 +1,16 @@
 import logging
 from typing import List, Optional, Tuple, Union
 
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.protocols import timelord_protocol
-from hddcoin.timelord.iters_from_block import iters_from_block
-from hddcoin.timelord.types import Chain, StateType
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.slots import ChallengeBlockInfo
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.protocols import timelord_protocol
+from ssdcoin.timelord.iters_from_block import iters_from_block
+from ssdcoin.timelord.types import Chain, StateType
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.slots import ChallengeBlockInfo
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
 
 log = logging.getLogger(__name__)
 

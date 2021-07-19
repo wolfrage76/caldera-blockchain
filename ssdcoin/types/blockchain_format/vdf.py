@@ -7,11 +7,11 @@ from functools import lru_cache
 
 from chiavdf import create_discriminant, verify_n_wesolowski
 
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.sized_bytes import bytes32, bytes100
-from hddcoin.util.ints import uint8, uint64
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32, bytes100
+from ssdcoin.util.ints import uint8, uint64
+from ssdcoin.util.streamable import Streamable, streamable
 
 log = logging.getLogger(__name__)
 

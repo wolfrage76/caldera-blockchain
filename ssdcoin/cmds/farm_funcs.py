@@ -2,16 +2,16 @@ from typing import Any, Dict, List, Optional
 
 import aiohttp
 
-from hddcoin.cmds.units import units
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.rpc.farmer_rpc_client import FarmerRpcClient
-from hddcoin.rpc.full_node_rpc_client import FullNodeRpcClient
-from hddcoin.rpc.wallet_rpc_client import WalletRpcClient
-from hddcoin.util.config import load_config
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
-from hddcoin.util.ints import uint16
-from hddcoin.util.misc import format_bytes
-from hddcoin.util.misc import format_minutes
+from ssdcoin.cmds.units import units
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.rpc.farmer_rpc_client import FarmerRpcClient
+from ssdcoin.rpc.full_node_rpc_client import FullNodeRpcClient
+from ssdcoin.rpc.wallet_rpc_client import WalletRpcClient
+from ssdcoin.util.config import load_config
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin.util.ints import uint16
+from ssdcoin.util.misc import format_bytes
+from ssdcoin.util.misc import format_minutes
 
 SECONDS_PER_BLOCK = (24 * 3600) / 4608
 
@@ -206,9 +206,9 @@ async def summary(rpc_port: int, wallet_rpc_port: int, harvester_rpc_port: int, 
         print("Farming")
 
     if amounts is not None:
-        print(f"Total hddcoin farmed: {amounts['farmed_amount'] / units['hddcoin']}")
-        print(f"User transaction fees: {amounts['fee_amount'] / units['hddcoin']}")
-        print(f"Block rewards: {(amounts['farmer_reward_amount'] + amounts['pool_reward_amount']) / units['hddcoin']}")
+        print(f"Total ssdcoin farmed: {amounts['farmed_amount'] / units['ssdcoin']}")
+        print(f"User transaction fees: {amounts['fee_amount'] / units['ssdcoin']}")
+        print(f"Block rewards: {(amounts['farmer_reward_amount'] + amounts['pool_reward_amount']) / units['ssdcoin']}")
         print(f"Last height farmed: {amounts['last_height_farmed']}")
 
     total_plot_size = 0
@@ -250,8 +250,8 @@ async def summary(rpc_port: int, wallet_rpc_port: int, harvester_rpc_port: int, 
 
     if amounts is None:
         if wallet_not_running:
-            print("For details on farmed rewards and fees you should run 'hddcoin start wallet' and 'hddcoin wallet show'")
+            print("For details on farmed rewards and fees you should run 'ssdcoin start wallet' and 'ssdcoin wallet show'")
         elif wallet_not_ready:
-            print("For details on farmed rewards and fees you should run 'hddcoin wallet show'")
+            print("For details on farmed rewards and fees you should run 'ssdcoin wallet show'")
     else:
-        print("Note: log into your key using 'hddcoin wallet show' to see rewards for each key")
+        print("Note: log into your key using 'ssdcoin wallet show' to see rewards for each key")

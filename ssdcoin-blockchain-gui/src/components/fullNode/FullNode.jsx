@@ -9,8 +9,8 @@ import {
   Loading,
   StateColor,
   Table,
-} from '@hddcoin/core';
-import { Status } from '@hddcoin/icons';
+} from '@ssdcoin/core';
+import { Status } from '@ssdcoin/icons';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Box, Tooltip, Typography } from '@material-ui/core';

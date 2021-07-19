@@ -1,8 +1,8 @@
 from typing import Tuple
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.util.ints import uint128
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.util.ints import uint128
 
 
 def get_prev_transaction_block(

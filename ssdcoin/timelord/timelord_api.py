@@ -1,10 +1,10 @@
 import logging
 from typing import Callable, Optional
 
-from hddcoin.protocols import timelord_protocol
-from hddcoin.timelord.timelord import Chain, IterationType, Timelord, iters_from_block
-from hddcoin.util.api_decorators import api_request
-from hddcoin.util.ints import uint64
+from ssdcoin.protocols import timelord_protocol
+from ssdcoin.timelord.timelord import Chain, IterationType, Timelord, iters_from_block
+from ssdcoin.util.api_decorators import api_request
+from ssdcoin.util.ints import uint64
 
 log = logging.getLogger(__name__)
 

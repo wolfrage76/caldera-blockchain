@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from hddcoin.types.blockchain_format.slots import (
+from ssdcoin.types.blockchain_format.slots import (
     ChallengeChainSubSlot,
     InfusedChallengeChainSubSlot,
     RewardChainSubSlot,
     SubSlotProofs,
 )
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

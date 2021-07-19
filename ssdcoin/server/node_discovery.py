@@ -9,18 +9,18 @@ from typing import Dict, Optional, List, Set
 
 import aiosqlite
 
-import hddcoin.server.ws_connection as ws
+import ssdcoin.server.ws_connection as ws
 import dns.asyncresolver
-from hddcoin.protocols import full_node_protocol, introducer_protocol
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.server.address_manager import AddressManager, ExtendedPeerInfo
-from hddcoin.server.address_manager_store import AddressManagerStore
-from hddcoin.server.outbound_message import NodeType, make_msg
-from hddcoin.server.server import HDDcoinServer
-from hddcoin.types.peer_info import PeerInfo, TimestampedPeerInfo
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint64
-from hddcoin.util.path import mkdir, path_from_root
+from ssdcoin.protocols import full_node_protocol, introducer_protocol
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.server.address_manager import AddressManager, ExtendedPeerInfo
+from ssdcoin.server.address_manager_store import AddressManagerStore
+from ssdcoin.server.outbound_message import NodeType, make_msg
+from ssdcoin.server.server import SSDCoinServer
+from ssdcoin.types.peer_info import PeerInfo, TimestampedPeerInfo
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint64
+from ssdcoin.util.path import mkdir, path_from_root
 
 MAX_PEERS_RECEIVED_PER_REQUEST = 1000
 MAX_TOTAL_PEERS_RECEIVED = 3000
@@ -37,7 +37,7 @@ class FullNodeDiscovery:
 
     def __init__(
         self,
-        server: HDDcoinServer,
+        server: SSDCoinServer,
         root_path: Path,
         target_outbound_count: int,
         peer_db_path: str,
@@ -48,7 +48,7 @@ class FullNodeDiscovery:
         default_port: Optional[int],
         log,
     ):
-        self.server: HDDcoinServer = server
+        self.server: SSDCoinServer = server
         self.message_queue: asyncio.Queue = asyncio.Queue()
         self.is_closed = False
         self.target_outbound_count = target_outbound_count
@@ -127,7 +127,7 @@ class FullNodeDiscovery:
     def add_message(self, message, data):
         self.message_queue.put_nowait((message, data))
 
-    async def on_connect(self, peer: ws.WSHDDcoinConnection):
+    async def on_connect(self, peer: ws.WSSSDCoinConnection):
         if (
             peer.is_outbound is False
             and peer.peer_server_port is not None
@@ -154,7 +154,7 @@ class FullNodeDiscovery:
             await peer.send_message(msg)
 
     # Updates timestamps each time we receive a message for outbound connections.
-    async def update_peer_timestamp_on_message(self, peer: ws.WSHDDcoinConnection):
+    async def update_peer_timestamp_on_message(self, peer: ws.WSSSDCoinConnection):
         if (
             peer.is_outbound
             and peer.peer_server_port is not None
@@ -192,7 +192,7 @@ class FullNodeDiscovery:
         if self.introducer_info is None:
             return None
 
-        async def on_connect(peer: ws.WSHDDcoinConnection):
+        async def on_connect(peer: ws.WSSSDCoinConnection):
             msg = make_msg(ProtocolMessageTypes.request_peers_introducer, introducer_protocol.RequestPeersIntroducer())
             await peer.send_message(msg)
 

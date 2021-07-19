@@ -8,26 +8,26 @@ from typing import Optional, List, Dict
 import pytest
 from blspy import G1Element, AugSchemeMPL
 
-from hddcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from hddcoin.plotting.create_plots import create_plots
-from hddcoin.pools.pool_wallet_info import PoolWalletInfo, PoolSingletonState
-from hddcoin.protocols import full_node_protocol
-from hddcoin.rpc.rpc_server import start_rpc_server
-from hddcoin.rpc.wallet_rpc_api import WalletRpcApi
-from hddcoin.rpc.wallet_rpc_client import WalletRpcClient
-from hddcoin.simulator.simulator_protocol import FarmNewBlockProtocol, ReorgProtocol
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from ssdcoin.plotting.create_plots import create_plots
+from ssdcoin.pools.pool_wallet_info import PoolWalletInfo, PoolSingletonState
+from ssdcoin.protocols import full_node_protocol
+from ssdcoin.rpc.rpc_server import start_rpc_server
+from ssdcoin.rpc.wallet_rpc_api import WalletRpcApi
+from ssdcoin.rpc.wallet_rpc_client import WalletRpcClient
+from ssdcoin.simulator.simulator_protocol import FarmNewBlockProtocol, ReorgProtocol
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
 
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.bech32m import encode_puzzle_hash
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.bech32m import encode_puzzle_hash
 from tests.block_tools import get_plot_dir, get_plot_tmp_dir
-from hddcoin.util.config import load_config
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint16, uint32
-from hddcoin.wallet.derive_keys import master_sk_to_local_sk
-from hddcoin.wallet.transaction_record import TransactionRecord
-from hddcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.util.config import load_config
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint16, uint32
+from ssdcoin.wallet.derive_keys import master_sk_to_local_sk
+from ssdcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.util.wallet_types import WalletType
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets, bt
 from tests.time_out_assert import time_out_assert
 
@@ -668,11 +668,11 @@ class TestPoolWalletRpc:
                 if WalletType(int(summary["type"])) == WalletType.POOLING_WALLET:
                     assert False
 
-            async def have_hddcoin():
+            async def have_ssdcoin():
                 await self.farm_blocks(full_node_api, our_ph, 1)
                 return (await wallets[0].get_confirmed_balance()) > 0
 
-            await time_out_assert(timeout=WAIT_SECS, function=have_hddcoin)
+            await time_out_assert(timeout=WAIT_SECS, function=have_ssdcoin)
 
             creation_tx: TransactionRecord = await client.create_new_pool_wallet(
                 our_ph, "", 0, "localhost:5000", "new", "SELF_POOLING"
@@ -780,11 +780,11 @@ class TestPoolWalletRpc:
                 if WalletType(int(summary["type"])) == WalletType.POOLING_WALLET:
                     assert False
 
-            async def have_hddcoin():
+            async def have_ssdcoin():
                 await self.farm_blocks(full_node_api, our_ph, 1)
                 return (await wallets[0].get_confirmed_balance()) > 0
 
-            await time_out_assert(timeout=WAIT_SECS, function=have_hddcoin)
+            await time_out_assert(timeout=WAIT_SECS, function=have_ssdcoin)
 
             creation_tx: TransactionRecord = await client.create_new_pool_wallet(
                 pool_a_ph, "https://pool-a.org", 5, "localhost:5000", "new", "FARMING_TO_POOL"

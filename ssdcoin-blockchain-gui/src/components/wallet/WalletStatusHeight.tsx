@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { FormatLargeNumber } from '@hddcoin/core';
+import { FormatLargeNumber } from '@ssdcoin/core';
 import type { RootState } from '../../modules/rootReducer';
 
 export default function WalletStatusHeight() {

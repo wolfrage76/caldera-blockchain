@@ -6,14 +6,14 @@ import io
 from clvm_tools import binutils
 from pytest import raises
 
-from hddcoin.protocols.wallet_protocol import RespondRemovals
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.weight_proof import SubEpochChallengeSegment
-from hddcoin.util.ints import uint8, uint32
-from hddcoin.util.streamable import (
+from ssdcoin.protocols.wallet_protocol import RespondRemovals
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.weight_proof import SubEpochChallengeSegment
+from ssdcoin.util.ints import uint8, uint32
+from ssdcoin.util.streamable import (
     Streamable,
     streamable,
     parse_bool,

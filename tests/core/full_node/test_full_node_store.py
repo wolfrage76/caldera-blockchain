@@ -6,19 +6,19 @@ from typing import List, Optional
 
 import pytest
 
-from hddcoin.consensus.blockchain import ReceiveBlockResult
-from hddcoin.consensus.multiprocess_validation import PreValidationResult
-from hddcoin.consensus.pot_iterations import is_overflow_block
-from hddcoin.full_node.full_node_store import FullNodeStore
-from hddcoin.full_node.signage_point import SignagePoint
-from hddcoin.protocols import timelord_protocol
-from hddcoin.protocols.timelord_protocol import NewInfusionPointVDF
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.unfinished_block import UnfinishedBlock
-from hddcoin.util.block_cache import BlockCache
+from ssdcoin.consensus.blockchain import ReceiveBlockResult
+from ssdcoin.consensus.multiprocess_validation import PreValidationResult
+from ssdcoin.consensus.pot_iterations import is_overflow_block
+from ssdcoin.full_node.full_node_store import FullNodeStore
+from ssdcoin.full_node.signage_point import SignagePoint
+from ssdcoin.protocols import timelord_protocol
+from ssdcoin.protocols.timelord_protocol import NewInfusionPointVDF
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.unfinished_block import UnfinishedBlock
+from ssdcoin.util.block_cache import BlockCache
 from tests.block_tools import get_signage_point, BlockTools
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
 from tests.core.fixtures import default_1000_blocks, create_blockchain  # noqa: F401
 from tests.setup_nodes import test_constants as test_constants_original
 

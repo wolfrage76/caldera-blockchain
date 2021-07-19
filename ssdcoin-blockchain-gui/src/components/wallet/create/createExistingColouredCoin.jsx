@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
-import { AlertDialog } from '@hddcoin/core';
+import { AlertDialog } from '@ssdcoin/core';
 import {
   Typography,
   Button,
@@ -19,7 +19,7 @@ import {
   CREATE_CC_WALLET_OPTIONS,
 } from '../../../modules/createWallet';
 import { useStyles } from './WalletCreate';
-import { hddcoin_to_mojo } from '../../../util/hddcoin';
+import { ssdcoin_to_mojo } from '../../../util/ssdcoin';
 import { create_cc_for_colour_action } from '../../../modules/message';
 import { openDialog } from '../../../modules/dialog';
 
@@ -75,7 +75,7 @@ export const CreateExistingCCWallet = () => {
     }
     dispatch(createState(true, true));
     const colour = colour_string.value;
-    const fee = hddcoin_to_mojo(fee_input.value);
+    const fee = ssdcoin_to_mojo(fee_input.value);
     dispatch(create_cc_for_colour_action(colour, fee));
   }
 

@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 from typing import Any, List
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.clvm import int_to_bytes
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint64
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.clvm import int_to_bytes
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint64
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

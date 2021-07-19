@@ -4,14 +4,14 @@ from secrets import token_bytes
 from blspy import AugSchemeMPL, PrivateKey
 from clvm_tools import binutils
 
-from hddcoin.consensus.default_constants import DEFAULT_CONSTANTS
-from hddcoin.types.blockchain_format.program import Program, INFINITE_COST
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.condition_with_args import ConditionWithArgs
-from hddcoin.util.ints import uint32
+from ssdcoin.consensus.default_constants import DEFAULT_CONSTANTS
+from ssdcoin.types.blockchain_format.program import Program, INFINITE_COST
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.condition_with_args import ConditionWithArgs
+from ssdcoin.util.ints import uint32
 from tests.wallet_tools import WalletTool
-from hddcoin.wallet.derive_keys import master_sk_to_wallet_sk
-from hddcoin.wallet.puzzles.p2_delegated_puzzle import puzzle_for_pk
+from ssdcoin.wallet.derive_keys import master_sk_to_wallet_sk
+from ssdcoin.wallet.puzzles.p2_delegated_puzzle import puzzle_for_pk
 
 
 def float_to_str(f):
@@ -29,7 +29,7 @@ def float_to_str(f):
     return float_string
 
 
-def run_and_return_cost_time(hddcoinlisp):
+def run_and_return_cost_time(ssdcoinlisp):
 
     start = time.time()
     clvm_loop = "((c (q ((c (f (a)) (c (f (a)) (c (f (r (a))) (c (f (r (r (a))))"
@@ -37,7 +37,7 @@ def run_and_return_cost_time(hddcoinlisp):
     " (c (- (f (r (a))) (q 1)) (c (f (r (r (a)))) (q ()))))))"
     " ((c (f (r (r (a)))) (q ()))))) (q (q ()))) (a)))) (a))))"
     loop_program = Program.to(binutils.assemble(clvm_loop))
-    clvm_loop_solution = f"(1000 {hddcoinlisp})"
+    clvm_loop_solution = f"(1000 {ssdcoinlisp})"
     solution_program = Program.to(binutils.assemble(clvm_loop_solution))
 
     cost, sexp = loop_program.run_with_cost(solution_program, INFINITE_COST)

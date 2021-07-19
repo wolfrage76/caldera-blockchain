@@ -4,11 +4,11 @@ from secrets import token_bytes
 import aiosqlite
 import pytest
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint64
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint64
 
-from hddcoin.wallet.wallet_interested_store import WalletInterestedStore
+from ssdcoin.wallet.wallet_interested_store import WalletInterestedStore
 
 
 @pytest.fixture(scope="module")

@@ -3,18 +3,18 @@ import time
 
 import pytest
 
-from hddcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from hddcoin.consensus.blockchain import ReceiveBlockResult
-from hddcoin.protocols import full_node_protocol, wallet_protocol
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.server.outbound_message import Message
-from hddcoin.simulator.full_node_simulator import FullNodeSimulator
-from hddcoin.simulator.simulator_protocol import FarmNewBlockProtocol
-from hddcoin.types.mempool_inclusion_status import MempoolInclusionStatus
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.errors import Err
-from hddcoin.util.ints import uint16, uint32
-from hddcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from ssdcoin.consensus.blockchain import ReceiveBlockResult
+from ssdcoin.protocols import full_node_protocol, wallet_protocol
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.server.outbound_message import Message
+from ssdcoin.simulator.full_node_simulator import FullNodeSimulator
+from ssdcoin.simulator.simulator_protocol import FarmNewBlockProtocol
+from ssdcoin.types.mempool_inclusion_status import MempoolInclusionStatus
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.errors import Err
+from ssdcoin.util.ints import uint16, uint32
+from ssdcoin.wallet.transaction_record import TransactionRecord
 from tests.core.full_node.test_full_node import add_dummy_connection
 from tests.setup_nodes import bt, self_hostname, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert

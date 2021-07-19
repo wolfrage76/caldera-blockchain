@@ -8,14 +8,14 @@ import aiosqlite
 import pytest
 from clvm_tools import binutils
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program, SerializedProgram
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint64
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program, SerializedProgram
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint64
 
-from hddcoin.wallet.wallet_pool_store import WalletPoolStore
+from ssdcoin.wallet.wallet_pool_store import WalletPoolStore
 
 log = logging.getLogger(__name__)
 

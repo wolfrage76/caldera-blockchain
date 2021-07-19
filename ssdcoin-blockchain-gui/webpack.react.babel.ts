@@ -72,8 +72,8 @@ export default {
       'node_modules',
     ],
     alias: {
-      "@hddcoin/core": `${__dirname}/src/components/core`,
-      "@hddcoin/icons": `${__dirname}/src/components/icons`,
+      "@ssdcoin/core": `${__dirname}/src/components/core`,
+      "@ssdcoin/icons": `${__dirname}/src/components/icons`,
       crypto: 'crypto-browserify',
       stream: 'stream-browserify',
     },

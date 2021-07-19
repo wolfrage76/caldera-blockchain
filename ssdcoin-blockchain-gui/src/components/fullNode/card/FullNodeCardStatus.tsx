@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
 import { useSelector } from 'react-redux';
-import { FormatLargeNumber } from '@hddcoin/core';
+import { FormatLargeNumber } from '@ssdcoin/core';
 import styled from 'styled-components';
 import FarmCard from '../../farm/card/FarmCard';
 import type { RootState } from '../../../modules/rootReducer';

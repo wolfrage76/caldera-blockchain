@@ -1,9 +1,9 @@
 from typing import List
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import SerializedProgram
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.condition_tools import (
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import SerializedProgram
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.condition_tools import (
     conditions_dict_for_solution,
     created_outputs_for_conditions_dict,
 )

@@ -5,7 +5,7 @@ import WalletGraph from '../WalletGraph';
 import FarmCard from '../../farm/card/FarmCard';
 import useWallet from '../../../hooks/useWallet';
 import useCurrencyCode from '../../../hooks/useCurrencyCode';
-import { mojo_to_hddcoin_string } from '../../../util/hddcoin';
+import { mojo_to_ssdcoin_string } from '../../../util/ssdcoin';
 
 const StyledGraphContainer = styled.div`
   margin-left: -1rem;
@@ -32,14 +32,14 @@ export default function WalletCardTotalBalance(props: Props) {
       title={<Trans>Total Balance</Trans>}
       tooltip={
         <Trans>
-          This is the total amount of hddcoin in the blockchain at the current peak
+          This is the total amount of ssdcoin in the blockchain at the current peak
           sub block that is controlled by your private keys. It includes frozen
           farming rewards, but not pending incoming and outgoing transactions.
         </Trans>
       }
       value={
         <>
-          {mojo_to_hddcoin_string(value)} {currencyCode}
+          {mojo_to_ssdcoin_string(value)} {currencyCode}
         </>
       }
       description={

@@ -3,17 +3,17 @@ import asyncio
 from blspy import G2Element
 from clvm_tools import binutils
 
-from hddcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from hddcoin.rpc.full_node_rpc_client import FullNodeRpcClient
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.bech32m import decode_puzzle_hash
-from hddcoin.util.condition_tools import parse_sexp_to_conditions
-from hddcoin.util.config import load_config
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
-from hddcoin.util.ints import uint32, uint16
+from ssdcoin.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from ssdcoin.rpc.full_node_rpc_client import FullNodeRpcClient
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.bech32m import decode_puzzle_hash
+from ssdcoin.util.condition_tools import parse_sexp_to_conditions
+from ssdcoin.util.config import load_config
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin.util.ints import uint32, uint16
 
 
 def print_conditions(spend_bundle: SpendBundle):
@@ -45,8 +45,8 @@ async def main() -> None:
         print(farmer_prefarm.amount, farmer_amounts)
         assert farmer_amounts == farmer_prefarm.amount // 2
         assert pool_amounts == pool_prefarm.amount // 2
-        address1 = "hdd1tm2fmappqenrj3c9ngej8k33pujvspxxea6zpu7p4sx0lvle62es9ae95j"  # HDDcoin Network Inc Reserves Account-1
-        address2 = "hdd1tm2fmappqenrj3c9ngej8k33pujvspxxea6zpu7p4sx0lvle62es9ae95j"  # HDDcoin Network Inc Reserves Account-1
+        address1 = "hdd1tm2fmappqenrj3c9ngej8k33pujvspxxea6zpu7p4sx0lvle62es9ae95j"  # SSDCoin Network Inc Reserves Account-1
+        address2 = "hdd1tm2fmappqenrj3c9ngej8k33pujvspxxea6zpu7p4sx0lvle62es9ae95j"  # SSDCoin Network Inc Reserves Account-1
 
         ph1 = decode_puzzle_hash(address1)
         ph2 = decode_puzzle_hash(address2)

@@ -9,28 +9,28 @@ from typing import Callable, Dict, List, Optional, Tuple, Set
 
 from chiavdf import create_discriminant
 
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.pot_iterations import calculate_sp_iters, is_overflow_block
-from hddcoin.protocols import timelord_protocol
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.server.outbound_message import NodeType, make_msg
-from hddcoin.server.server import HDDcoinServer
-from hddcoin.timelord.iters_from_block import iters_from_block
-from hddcoin.timelord.timelord_state import LastState
-from hddcoin.timelord.types import Chain, IterationType, StateType
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.reward_chain_block import RewardChainBlock
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.slots import (
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.pot_iterations import calculate_sp_iters, is_overflow_block
+from ssdcoin.protocols import timelord_protocol
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.server.outbound_message import NodeType, make_msg
+from ssdcoin.server.server import SSDCoinServer
+from ssdcoin.timelord.iters_from_block import iters_from_block
+from ssdcoin.timelord.timelord_state import LastState
+from ssdcoin.timelord.types import Chain, IterationType, StateType
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.reward_chain_block import RewardChainBlock
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.slots import (
     ChallengeChainSubSlot,
     InfusedChallengeChainSubSlot,
     RewardChainSubSlot,
     SubSlotProofs,
 )
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
 
 log = logging.getLogger(__name__)
 
@@ -44,7 +44,7 @@ class Timelord:
         self.free_clients: List[Tuple[str, asyncio.StreamReader, asyncio.StreamWriter]] = []
         self.potential_free_clients: List = []
         self.ip_whitelist = self.config["vdf_clients"]["ip"]
-        self.server: Optional[HDDcoinServer] = None
+        self.server: Optional[SSDCoinServer] = None
         self.chain_type_to_stream: Dict[Chain, Tuple[str, asyncio.StreamReader, asyncio.StreamWriter]] = {}
         self.chain_start_time: Dict = {}
         # Chains that currently don't have a vdf_client.
@@ -116,7 +116,7 @@ class Timelord:
     async def _await_closed(self):
         pass
 
-    def set_server(self, server: HDDcoinServer):
+    def set_server(self, server: SSDCoinServer):
         self.server = server
 
     async def _handle_client(self, reader: asyncio.StreamReader, writer: asyncio.StreamWriter):

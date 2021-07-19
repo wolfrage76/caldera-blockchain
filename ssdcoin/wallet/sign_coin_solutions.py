@@ -4,9 +4,9 @@ from typing import List, Any
 import blspy
 from blspy import AugSchemeMPL
 
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.condition_tools import conditions_dict_for_solution, pkm_pairs_for_conditions_dict
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.condition_tools import conditions_dict_for_solution, pkm_pairs_for_conditions_dict
 
 
 async def sign_coin_solutions(

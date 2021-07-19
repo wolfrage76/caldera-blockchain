@@ -9,15 +9,15 @@ from PyInstaller.utils.hooks import collect_submodules, copy_metadata
 
 THIS_IS_WINDOWS = platform.system().lower().startswith("win")
 
-ROOT = pathlib.Path(importlib.import_module("hddcoin").__file__).absolute().parent.parent
+ROOT = pathlib.Path(importlib.import_module("ssdcoin").__file__).absolute().parent.parent
 
 
 def solve_name_collision_problem(analysis):
     """
-    There is a collision between the `hddcoin` file name (which is the executable)
-    and the `hddcoin` directory, which contains non-code resources like `english.txt`.
+    There is a collision between the `ssdcoin` file name (which is the executable)
+    and the `ssdcoin` directory, which contains non-code resources like `english.txt`.
     We move all the resources in the zipped area so there is no
-    need to create the `hddcoin` directory, since the names collide.
+    need to create the `ssdcoin` directory, since the names collide.
 
     Fetching data now requires going into a zip file, so it will be slower.
     It's best if files that are used frequently are cached.
@@ -31,7 +31,7 @@ def solve_name_collision_problem(analysis):
     zipped = []
     datas = []
     for data in analysis.datas:
-        if str(data[0]).startswith("hddcoin/"):
+        if str(data[0]).startswith("ssdcoin/"):
             zipped.append(data)
         else:
             datas.append(data)
@@ -48,7 +48,7 @@ keyring_imports = collect_submodules("keyring.backends")
 # keyring uses entrypoints to read keyring.backends from metadata file entry_points.txt.
 keyring_datas = copy_metadata("keyring")[0]
 
-version_data = copy_metadata(get_distribution("hddcoin-blockchain"))[0]
+version_data = copy_metadata(get_distribution("ssdcoin-blockchain"))[0]
 
 block_cipher = None
 
@@ -61,9 +61,9 @@ SERVERS = [
     "timelord",
 ]
 
-# TODO: collapse all these entry points into one `hddcoin_exec` entrypoint that accepts the server as a parameter
+# TODO: collapse all these entry points into one `ssdcoin_exec` entrypoint that accepts the server as a parameter
 
-entry_points = ["hddcoin.cmds.hddcoin"] + [f"hddcoin.server.start_{s}" for s in SERVERS]
+entry_points = ["ssdcoin.cmds.ssdcoin"] + [f"ssdcoin.server.start_{s}" for s in SERVERS]
 
 hiddenimports = []
 hiddenimports.extend(entry_points)
@@ -77,10 +77,10 @@ if THIS_IS_WINDOWS:
 
 # this probably isn't necessary
 if THIS_IS_WINDOWS:
-    entry_points.extend(["aiohttp", "hddcoin.util.bip39"])
+    entry_points.extend(["aiohttp", "ssdcoin.util.bip39"])
 
 if THIS_IS_WINDOWS:
-    hddcoin_mod = importlib.import_module("hddcoin")
+    ssdcoin_mod = importlib.import_module("ssdcoin")
     dll_paths = ROOT / "*.dll"
 
     binaries = [
@@ -101,10 +101,10 @@ if THIS_IS_WINDOWS:
 
 datas = []
 
-datas.append((f"{ROOT}/hddcoin/util/english.txt", "hddcoin/util"))
-datas.append((f"{ROOT}/hddcoin/util/initial-config.yaml", "hddcoin/util"))
-datas.append((f"{ROOT}/hddcoin/wallet/puzzles/*.hex", "hddcoin/wallet/puzzles"))
-datas.append((f"{ROOT}/hddcoin/ssl/*", "hddcoin/ssl"))
+datas.append((f"{ROOT}/ssdcoin/util/english.txt", "ssdcoin/util"))
+datas.append((f"{ROOT}/ssdcoin/util/initial-config.yaml", "ssdcoin/util"))
+datas.append((f"{ROOT}/ssdcoin/wallet/puzzles/*.hex", "ssdcoin/wallet/puzzles"))
+datas.append((f"{ROOT}/ssdcoin/ssl/*", "ssdcoin/ssl"))
 datas.append((f"{ROOT}/mozilla-ca/*", "mozilla-ca"))
 datas.append(version_data)
 
@@ -154,11 +154,11 @@ def add_binary(name, path_to_script, collect_args):
 
 COLLECT_ARGS = []
 
-add_binary("hddcoin", f"{ROOT}/hddcoin/cmds/hddcoin.py", COLLECT_ARGS)
-add_binary("daemon", f"{ROOT}/hddcoin/daemon/server.py", COLLECT_ARGS)
+add_binary("ssdcoin", f"{ROOT}/ssdcoin/cmds/ssdcoin.py", COLLECT_ARGS)
+add_binary("daemon", f"{ROOT}/ssdcoin/daemon/server.py", COLLECT_ARGS)
 
 for server in SERVERS:
-    add_binary(f"start_{server}", f"{ROOT}/hddcoin/server/start_{server}.py", COLLECT_ARGS)
+    add_binary(f"start_{server}", f"{ROOT}/ssdcoin/server/start_{server}.py", COLLECT_ARGS)
 
 COLLECT_KWARGS = dict(
     strip=False,

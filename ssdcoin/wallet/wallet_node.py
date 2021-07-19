@@ -9,14 +9,14 @@ from typing import Callable, Dict, List, Optional, Set, Tuple, Union, Any
 
 from blspy import PrivateKey
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.multiprocess_validation import PreValidationResult
-from hddcoin.pools.pool_puzzles import SINGLETON_LAUNCHER_HASH
-from hddcoin.protocols import wallet_protocol
-from hddcoin.protocols.full_node_protocol import RequestProofOfWeight, RespondProofOfWeight
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.protocols.wallet_protocol import (
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.multiprocess_validation import PreValidationResult
+from ssdcoin.pools.pool_puzzles import SINGLETON_LAUNCHER_HASH
+from ssdcoin.protocols import wallet_protocol
+from ssdcoin.protocols.full_node_protocol import RequestProofOfWeight, RespondProofOfWeight
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.protocols.wallet_protocol import (
     RejectAdditionsRequest,
     RejectRemovalsRequest,
     RequestAdditions,
@@ -26,40 +26,40 @@ from hddcoin.protocols.wallet_protocol import (
     RespondHeaderBlocks,
     RespondRemovals,
 )
-from hddcoin.server.node_discovery import WalletPeers
-from hddcoin.server.outbound_message import Message, NodeType, make_msg
-from hddcoin.server.server import HDDcoinServer
-from hddcoin.server.ws_connection import WSHDDcoinConnection
-from hddcoin.types.blockchain_format.coin import Coin, hash_coin_list
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.types.mempool_inclusion_status import MempoolInclusionStatus
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.errors import Err, ValidationError
-from hddcoin.util.ints import uint32, uint128
-from hddcoin.util.keychain import Keychain
-from hddcoin.util.lru_cache import LRUCache
-from hddcoin.util.merkle_set import MerkleSet, confirm_included_already_hashed, confirm_not_included_already_hashed
-from hddcoin.util.path import mkdir, path_from_root
-from hddcoin.wallet.block_record import HeaderBlockRecord
-from hddcoin.wallet.derivation_record import DerivationRecord
-from hddcoin.wallet.settings.settings_objects import BackupInitialized
-from hddcoin.wallet.transaction_record import TransactionRecord
-from hddcoin.wallet.util.backup_utils import open_backup_file
-from hddcoin.wallet.util.wallet_types import WalletType
-from hddcoin.wallet.wallet_action import WalletAction
-from hddcoin.wallet.wallet_blockchain import ReceiveBlockResult
-from hddcoin.wallet.wallet_state_manager import WalletStateManager
-from hddcoin.util.profiler import profile_task
+from ssdcoin.server.node_discovery import WalletPeers
+from ssdcoin.server.outbound_message import Message, NodeType, make_msg
+from ssdcoin.server.server import SSDCoinServer
+from ssdcoin.server.ws_connection import WSSSDCoinConnection
+from ssdcoin.types.blockchain_format.coin import Coin, hash_coin_list
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.types.mempool_inclusion_status import MempoolInclusionStatus
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.errors import Err, ValidationError
+from ssdcoin.util.ints import uint32, uint128
+from ssdcoin.util.keychain import Keychain
+from ssdcoin.util.lru_cache import LRUCache
+from ssdcoin.util.merkle_set import MerkleSet, confirm_included_already_hashed, confirm_not_included_already_hashed
+from ssdcoin.util.path import mkdir, path_from_root
+from ssdcoin.wallet.block_record import HeaderBlockRecord
+from ssdcoin.wallet.derivation_record import DerivationRecord
+from ssdcoin.wallet.settings.settings_objects import BackupInitialized
+from ssdcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.util.backup_utils import open_backup_file
+from ssdcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.wallet_action import WalletAction
+from ssdcoin.wallet.wallet_blockchain import ReceiveBlockResult
+from ssdcoin.wallet.wallet_state_manager import WalletStateManager
+from ssdcoin.util.profiler import profile_task
 
 
 class WalletNode:
     key_config: Dict
     config: Dict
     constants: ConsensusConstants
-    server: Optional[HDDcoinServer]
+    server: Optional[SSDCoinServer]
     log: logging.Logger
     wallet_peers: WalletPeers
     # Maintains the state of the wallet (blockchain and transactions), handles DB connections
@@ -118,7 +118,7 @@ class WalletNode:
     def get_key_for_fingerprint(self, fingerprint: Optional[int]) -> Optional[PrivateKey]:
         private_keys = self.keychain.get_all_private_keys()
         if len(private_keys) == 0:
-            self.log.warning("No keys present. Create keys with the UI, or with the 'hddcoin keys' program.")
+            self.log.warning("No keys present. Create keys with the UI, or with the 'ssdcoin keys' program.")
             return None
 
         private_key: Optional[PrivateKey] = None
@@ -319,7 +319,7 @@ class WalletNode:
 
         return messages
 
-    def set_server(self, server: HDDcoinServer):
+    def set_server(self, server: SSDCoinServer):
         self.server = server
         DNS_SERVERS_EMPTY: list = []
         # TODO: Perhaps use a different set of DNS seeders for wallets, to split the traffic.
@@ -336,7 +336,7 @@ class WalletNode:
             self.log,
         )
 
-    async def on_connect(self, peer: WSHDDcoinConnection):
+    async def on_connect(self, peer: WSSSDCoinConnection):
         if self.wallet_state_manager is None or self.backup_initialized is False:
             return None
         messages_peer_ids = await self._messages_to_resend()
@@ -381,7 +381,7 @@ class WalletNode:
                 return True
         return False
 
-    async def complete_blocks(self, header_blocks: List[HeaderBlock], peer: WSHDDcoinConnection):
+    async def complete_blocks(self, header_blocks: List[HeaderBlock], peer: WSSSDCoinConnection):
         if self.wallet_state_manager is None:
             return None
         header_block_records: List[HeaderBlockRecord] = []
@@ -431,7 +431,7 @@ class WalletNode:
                 else:
                     self.log.debug(f"Result: {result}")
 
-    async def new_peak_wallet(self, peak: wallet_protocol.NewPeakWallet, peer: WSHDDcoinConnection):
+    async def new_peak_wallet(self, peak: wallet_protocol.NewPeakWallet, peer: WSSSDCoinConnection):
         if self.wallet_state_manager is None:
             return
 
@@ -619,7 +619,7 @@ class WalletNode:
             self.log.info("Not performing sync, already caught up.")
             return None
 
-        peers: List[WSHDDcoinConnection] = self.server.get_full_node_connections()
+        peers: List[WSSSDCoinConnection] = self.server.get_full_node_connections()
         if len(peers) == 0:
             self.log.info("No peers to sync to")
             return None
@@ -662,7 +662,7 @@ class WalletNode:
 
     async def fetch_blocks_and_validate(
         self,
-        peer: WSHDDcoinConnection,
+        peer: WSSSDCoinConnection,
         height_start: uint32,
         height_end: uint32,
         fork_point_with_peak: Optional[uint32],
@@ -915,7 +915,7 @@ class WalletNode:
         return additional_coin_spends
 
     async def get_additions(
-        self, peer: WSHDDcoinConnection, block_i, additions: Optional[List[bytes32]], get_all_additions: bool = False
+        self, peer: WSSSDCoinConnection, block_i, additions: Optional[List[bytes32]], get_all_additions: bool = False
     ) -> Optional[List[Coin]]:
         if (additions is not None and len(additions) > 0) or get_all_additions:
             if get_all_additions:
@@ -949,7 +949,7 @@ class WalletNode:
             return []  # No added coins
 
     async def get_removals(
-        self, peer: WSHDDcoinConnection, block_i, additions, removals, request_all_removals=False
+        self, peer: WSSSDCoinConnection, block_i, additions, removals, request_all_removals=False
     ) -> Optional[List[Coin]]:
         assert self.wallet_state_manager is not None
         # Check if we need all removals

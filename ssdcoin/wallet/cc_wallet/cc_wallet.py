@@ -8,23 +8,23 @@ from typing import Any, Dict, List, Optional, Set
 
 from blspy import AugSchemeMPL, G2Element
 
-from hddcoin.consensus.cost_calculator import calculate_cost_of_program, NPCResult
-from hddcoin.full_node.bundle_tools import simple_solution_generator
-from hddcoin.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from hddcoin.protocols.wallet_protocol import PuzzleSolutionResponse
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.generator_types import BlockGenerator
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.condition_tools import conditions_dict_for_solution, pkm_pairs_for_conditions_dict
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
-from hddcoin.util.json_util import dict_to_json_str
-from hddcoin.wallet.block_record import HeaderBlockRecord
-from hddcoin.wallet.cc_wallet.cc_info import CCInfo
-from hddcoin.wallet.cc_wallet.cc_utils import (
+from ssdcoin.consensus.cost_calculator import calculate_cost_of_program, NPCResult
+from ssdcoin.full_node.bundle_tools import simple_solution_generator
+from ssdcoin.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from ssdcoin.protocols.wallet_protocol import PuzzleSolutionResponse
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.generator_types import BlockGenerator
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.condition_tools import conditions_dict_for_solution, pkm_pairs_for_conditions_dict
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.json_util import dict_to_json_str
+from ssdcoin.wallet.block_record import HeaderBlockRecord
+from ssdcoin.wallet.cc_wallet.cc_info import CCInfo
+from ssdcoin.wallet.cc_wallet.cc_utils import (
     CC_MOD,
     SpendableCC,
     cc_puzzle_for_inner_puzzle,
@@ -33,22 +33,22 @@ from hddcoin.wallet.cc_wallet.cc_utils import (
     spend_bundle_for_spendable_ccs,
     uncurry_cc,
 )
-from hddcoin.wallet.derivation_record import DerivationRecord
-from hddcoin.wallet.puzzles.genesis_by_coin_id_with_0 import (
+from ssdcoin.wallet.derivation_record import DerivationRecord
+from ssdcoin.wallet.puzzles.genesis_by_coin_id_with_0 import (
     create_genesis_or_zero_coin_checker,
     genesis_coin_id_for_genesis_coin_checker,
     lineage_proof_for_genesis,
 )
-from hddcoin.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
+from ssdcoin.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
     DEFAULT_HIDDEN_PUZZLE_HASH,
     calculate_synthetic_secret_key,
 )
-from hddcoin.wallet.transaction_record import TransactionRecord
-from hddcoin.wallet.util.transaction_type import TransactionType
-from hddcoin.wallet.util.wallet_types import WalletType
-from hddcoin.wallet.wallet import Wallet
-from hddcoin.wallet.wallet_coin_record import WalletCoinRecord
-from hddcoin.wallet.wallet_info import WalletInfo
+from ssdcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.util.transaction_type import TransactionType
+from ssdcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.wallet import Wallet
+from ssdcoin.wallet.wallet_coin_record import WalletCoinRecord
+from ssdcoin.wallet.wallet_info import WalletInfo
 
 
 class CCWallet:

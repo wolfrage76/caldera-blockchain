@@ -11,11 +11,11 @@ from concurrent.futures.thread import ThreadPoolExecutor
 from blspy import G1Element, PrivateKey
 from chiapos import DiskProver
 
-from hddcoin.consensus.pos_quality import UI_ACTUAL_SPACE_CONSTANT_FACTOR, _expected_plot_size
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.config import load_config, save_config
-from hddcoin.wallet.derive_keys import master_sk_to_local_sk
+from ssdcoin.consensus.pos_quality import UI_ACTUAL_SPACE_CONSTANT_FACTOR, _expected_plot_size
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.config import load_config, save_config
+from ssdcoin.wallet.derive_keys import master_sk_to_local_sk
 
 log = logging.getLogger(__name__)
 

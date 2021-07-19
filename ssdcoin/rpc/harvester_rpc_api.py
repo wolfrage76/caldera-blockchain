@@ -1,13 +1,13 @@
 from typing import Callable, Dict, List
 
-from hddcoin.harvester.harvester import Harvester
-from hddcoin.util.ws_message import WsRpcMessage, create_payload_dict
+from ssdcoin.harvester.harvester import Harvester
+from ssdcoin.util.ws_message import WsRpcMessage, create_payload_dict
 
 
 class HarvesterRpcApi:
     def __init__(self, harvester: Harvester):
         self.service = harvester
-        self.service_name = "hddcoin_harvester"
+        self.service_name = "ssdcoin_harvester"
 
     def get_routes(self) -> Dict[str, Callable]:
         return {

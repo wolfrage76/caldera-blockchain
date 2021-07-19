@@ -2,9 +2,9 @@ from typing import Any
 
 import aiosqlite
 
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.streamable import Streamable
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.streamable import Streamable
 
 
 class KeyValStore:

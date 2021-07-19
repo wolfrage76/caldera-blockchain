@@ -16,24 +16,24 @@ from typing import Any, Dict, List, Optional, TextIO, Tuple, cast
 
 from websockets import ConnectionClosedOK, WebSocketException, WebSocketServerProtocol, serve
 
-from hddcoin.cmds.init_funcs import hddcoin_init
-from hddcoin.daemon.windows_signal import kill
-from hddcoin.server.server import ssl_context_for_root, ssl_context_for_server
-from hddcoin.ssl.create_ssl import get_mozilla_ca_crt
-from hddcoin.util.hddcoin_logging import initialize_logging
-from hddcoin.util.config import load_config
-from hddcoin.util.json_util import dict_to_json_str
-from hddcoin.util.path import mkdir
-from hddcoin.util.service_groups import validate_service
-from hddcoin.util.setproctitle import setproctitle
-from hddcoin.util.ws_message import WsRpcMessage, create_payload, format_response
+from ssdcoin.cmds.init_funcs import ssdcoin_init
+from ssdcoin.daemon.windows_signal import kill
+from ssdcoin.server.server import ssl_context_for_root, ssl_context_for_server
+from ssdcoin.ssl.create_ssl import get_mozilla_ca_crt
+from ssdcoin.util.ssdcoin_logging import initialize_logging
+from ssdcoin.util.config import load_config
+from ssdcoin.util.json_util import dict_to_json_str
+from ssdcoin.util.path import mkdir
+from ssdcoin.util.service_groups import validate_service
+from ssdcoin.util.setproctitle import setproctitle
+from ssdcoin.util.ws_message import WsRpcMessage, create_payload, format_response
 
 io_pool_exc = ThreadPoolExecutor()
 
 try:
     from aiohttp import ClientSession, web
 except ModuleNotFoundError:
-    print("Error: Make sure to run . ./activate from the project folder before starting HDDcoin.")
+    print("Error: Make sure to run . ./activate from the project folder before starting SSDCoin.")
     quit()
 
 try:
@@ -45,7 +45,7 @@ except ImportError:
 
 log = logging.getLogger(__name__)
 
-service_plotter = "hddcoin plots create"
+service_plotter = "ssdcoin plots create"
 
 
 async def fetch(url: str):
@@ -78,15 +78,15 @@ class PlotEvent(str, Enum):
 # determine if application is a script file or frozen exe
 if getattr(sys, "frozen", False):
     name_map = {
-        "hddcoin": "hddcoin",
-        "hddcoin_wallet": "start_wallet",
-        "hddcoin_full_node": "start_full_node",
-        "hddcoin_harvester": "start_harvester",
-        "hddcoin_farmer": "start_farmer",
-        "hddcoin_introducer": "start_introducer",
-        "hddcoin_timelord": "start_timelord",
-        "hddcoin_timelord_launcher": "timelord_launcher",
-        "hddcoin_full_node_simulator": "start_simulator",
+        "ssdcoin": "ssdcoin",
+        "ssdcoin_wallet": "start_wallet",
+        "ssdcoin_full_node": "start_full_node",
+        "ssdcoin_harvester": "start_harvester",
+        "ssdcoin_farmer": "start_farmer",
+        "ssdcoin_introducer": "start_introducer",
+        "ssdcoin_timelord": "start_timelord",
+        "ssdcoin_timelord_launcher": "timelord_launcher",
+        "ssdcoin_full_node_simulator": "start_simulator",
     }
 
     def executable_for_service(service_name: str) -> str:
@@ -692,7 +692,7 @@ class WebSocketServer:
 
         # TODO: fix this hack
         asyncio.get_event_loop().call_later(5, lambda *args: sys.exit(0))
-        log.info("hddcoin daemon exiting in 5 seconds")
+        log.info("ssdcoin daemon exiting in 5 seconds")
 
         response = {"success": True}
         return response
@@ -749,8 +749,8 @@ def plotter_log_path(root_path: Path, id: str):
 
 
 def launch_plotter(root_path: Path, service_name: str, service_array: List[str], id: str):
-    # we need to pass on the possibly altered HDDCOIN_ROOT
-    os.environ["HDDCOIN_ROOT"] = str(root_path)
+    # we need to pass on the possibly altered SSDCOIN_ROOT
+    os.environ["SSDCOIN_ROOT"] = str(root_path)
     service_executable = executable_for_service(service_array[0])
 
     # Swap service name with name of executable
@@ -799,14 +799,14 @@ def launch_service(root_path: Path, service_command) -> Tuple[subprocess.Popen, 
     """
     Launch a child process.
     """
-    # set up HDDCOIN_ROOT
+    # set up SSDCOIN_ROOT
     # invoke correct script
     # save away PID
 
-    # we need to pass on the possibly altered HDDCOIN_ROOT
-    os.environ["HDDCOIN_ROOT"] = str(root_path)
+    # we need to pass on the possibly altered SSDCOIN_ROOT
+    os.environ["SSDCOIN_ROOT"] = str(root_path)
 
-    log.debug(f"Launching service with HDDCOIN_ROOT: {os.environ['HDDCOIN_ROOT']}")
+    log.debug(f"Launching service with SSDCOIN_ROOT: {os.environ['SSDCOIN_ROOT']}")
 
     # Insert proper e
     service_array = service_command.split()
@@ -975,9 +975,9 @@ def singleton(lockfile: Path, text: str = "semaphore") -> Optional[TextIO]:
 
 
 async def async_run_daemon(root_path: Path) -> int:
-    hddcoin_init(root_path)
+    ssdcoin_init(root_path)
     config = load_config(root_path, "config.yaml")
-    setproctitle("hddcoin_daemon")
+    setproctitle("ssdcoin_daemon")
     initialize_logging("daemon", config["logging"], root_path)
     lockfile = singleton(daemon_launch_lock_path(root_path))
     crt_path = root_path / config["daemon_ssl"]["private_crt"]
@@ -1015,7 +1015,7 @@ def run_daemon(root_path: Path) -> int:
 
 
 def main() -> int:
-    from hddcoin.util.default_root import DEFAULT_ROOT_PATH
+    from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
 
     return run_daemon(DEFAULT_ROOT_PATH)
 

@@ -3,12 +3,12 @@ from typing import Dict, List, Optional, Set
 import aiosqlite
 import sqlite3
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint32, uint64
-from hddcoin.wallet.util.wallet_types import WalletType
-from hddcoin.wallet.wallet_coin_record import WalletCoinRecord
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint32, uint64
+from ssdcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.wallet_coin_record import WalletCoinRecord
 
 
 class WalletCoinStore:

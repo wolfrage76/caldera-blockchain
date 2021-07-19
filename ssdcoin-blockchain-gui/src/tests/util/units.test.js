@@ -2,8 +2,8 @@ const units = require('../../util/units');
 
 describe('units', () => {
   describe('#getUnit', () => {
-    it('gets unit of hddcoin', () => {
-      const result = units.getUnit('hddcoin');
+    it('gets unit of ssdcoin', () => {
+      const result = units.getUnit('ssdcoin');
 
       expect(result).toBe(1);
     });
@@ -18,11 +18,11 @@ describe('units', () => {
       expect(result).toBe(1e-9);
     });
     it('supports uppercase characters', () => {
-      const result = units.getUnit('HDDCOIN');
+      const result = units.getUnit('SSDCOIN');
 
       expect(result).toBe(1);
     });
-    it('gets unit of hddcoin using alias', () => {
+    it('gets unit of ssdcoin using alias', () => {
       const result = units.getUnit('ch');
 
       expect(result).toBe(1);
@@ -46,8 +46,8 @@ describe('units', () => {
     });
   });
   describe('#getDisplay', () => {
-    it('gets display of hddcoin', () => {
-      const result = units.getDisplay('hddcoin');
+    it('gets display of ssdcoin', () => {
+      const result = units.getDisplay('ssdcoin');
 
       expect(result).toEqual({
         format: '{amount} CH',
@@ -87,13 +87,13 @@ describe('units', () => {
       expect(result).toEqual(1);
     });
     it('modifies an existing unit', () => {
-      units.setUnit('hddcoin', 9);
+      units.setUnit('ssdcoin', 9);
 
-      const result = units.getUnit('hddcoin');
+      const result = units.getUnit('ssdcoin');
 
       expect(result).toEqual(9);
 
-      units.setUnit('hddcoin', 1);
+      units.setUnit('ssdcoin', 1);
     });
   });
   describe('#setDisplay', () => {
@@ -111,12 +111,12 @@ describe('units', () => {
       });
     });
     it('updates an existing display', () => {
-      units.setDisplay('hddcoin', {
+      units.setDisplay('ssdcoin', {
         format: '{amount} THDD',
         fractionDigits: 0,
       });
 
-      const result = units.getDisplay('hddcoin');
+      const result = units.getDisplay('ssdcoin');
 
       expect(result).toEqual({
         format: '{amount} THDD',

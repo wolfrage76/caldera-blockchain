@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.ints import uint64
-from hddcoin.util.streamable import streamable, Streamable
-from hddcoin.wallet.lineage_proof import LineageProof
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.ints import uint64
+from ssdcoin.util.streamable import streamable, Streamable
+from ssdcoin.wallet.lineage_proof import LineageProof
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.coin import Coin
 
 
 @dataclass(frozen=True)

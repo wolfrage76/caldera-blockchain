@@ -12,55 +12,55 @@ from blspy import AugSchemeMPL, G1Element, PrivateKey
 from chiabip158 import PyBIP158
 from cryptography.fernet import Fernet
 
-from hddcoin import __version__
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.coinbase import pool_parent_id, farmer_parent_id
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.find_fork_point import find_fork_point_in_chain
-from hddcoin.full_node.weight_proof import WeightProofHandler
-from hddcoin.pools.pool_puzzles import SINGLETON_LAUNCHER_HASH, solution_to_extra_data
-from hddcoin.pools.pool_wallet import PoolWallet
-from hddcoin.protocols.wallet_protocol import PuzzleSolutionResponse, RespondPuzzleSolution
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.types.mempool_inclusion_status import MempoolInclusionStatus
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.errors import Err
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint32, uint64, uint128
-from hddcoin.wallet.block_record import HeaderBlockRecord
-from hddcoin.wallet.cc_wallet.cc_wallet import CCWallet
-from hddcoin.wallet.derivation_record import DerivationRecord
-from hddcoin.wallet.derive_keys import master_sk_to_backup_sk, master_sk_to_wallet_sk
-from hddcoin.wallet.key_val_store import KeyValStore
-from hddcoin.wallet.rl_wallet.rl_wallet import RLWallet
-from hddcoin.wallet.settings.user_settings import UserSettings
-from hddcoin.wallet.trade_manager import TradeManager
-from hddcoin.wallet.transaction_record import TransactionRecord
-from hddcoin.wallet.util.backup_utils import open_backup_file
-from hddcoin.wallet.util.transaction_type import TransactionType
-from hddcoin.wallet.util.wallet_types import WalletType
-from hddcoin.wallet.wallet import Wallet
-from hddcoin.wallet.wallet_action import WalletAction
-from hddcoin.wallet.wallet_action_store import WalletActionStore
-from hddcoin.wallet.wallet_block_store import WalletBlockStore
-from hddcoin.wallet.wallet_blockchain import WalletBlockchain
-from hddcoin.wallet.wallet_coin_record import WalletCoinRecord
-from hddcoin.wallet.wallet_coin_store import WalletCoinStore
-from hddcoin.wallet.wallet_info import WalletInfo, WalletInfoBackup
-from hddcoin.wallet.wallet_interested_store import WalletInterestedStore
-from hddcoin.wallet.wallet_pool_store import WalletPoolStore
-from hddcoin.wallet.wallet_puzzle_store import WalletPuzzleStore
-from hddcoin.wallet.wallet_sync_store import WalletSyncStore
-from hddcoin.wallet.wallet_transaction_store import WalletTransactionStore
-from hddcoin.wallet.wallet_user_store import WalletUserStore
-from hddcoin.server.server import HDDcoinServer
-from hddcoin.wallet.did_wallet.did_wallet import DIDWallet
+from ssdcoin import __version__
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.coinbase import pool_parent_id, farmer_parent_id
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.find_fork_point import find_fork_point_in_chain
+from ssdcoin.full_node.weight_proof import WeightProofHandler
+from ssdcoin.pools.pool_puzzles import SINGLETON_LAUNCHER_HASH, solution_to_extra_data
+from ssdcoin.pools.pool_wallet import PoolWallet
+from ssdcoin.protocols.wallet_protocol import PuzzleSolutionResponse, RespondPuzzleSolution
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.types.mempool_inclusion_status import MempoolInclusionStatus
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.errors import Err
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint32, uint64, uint128
+from ssdcoin.wallet.block_record import HeaderBlockRecord
+from ssdcoin.wallet.cc_wallet.cc_wallet import CCWallet
+from ssdcoin.wallet.derivation_record import DerivationRecord
+from ssdcoin.wallet.derive_keys import master_sk_to_backup_sk, master_sk_to_wallet_sk
+from ssdcoin.wallet.key_val_store import KeyValStore
+from ssdcoin.wallet.rl_wallet.rl_wallet import RLWallet
+from ssdcoin.wallet.settings.user_settings import UserSettings
+from ssdcoin.wallet.trade_manager import TradeManager
+from ssdcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.util.backup_utils import open_backup_file
+from ssdcoin.wallet.util.transaction_type import TransactionType
+from ssdcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.wallet import Wallet
+from ssdcoin.wallet.wallet_action import WalletAction
+from ssdcoin.wallet.wallet_action_store import WalletActionStore
+from ssdcoin.wallet.wallet_block_store import WalletBlockStore
+from ssdcoin.wallet.wallet_blockchain import WalletBlockchain
+from ssdcoin.wallet.wallet_coin_record import WalletCoinRecord
+from ssdcoin.wallet.wallet_coin_store import WalletCoinStore
+from ssdcoin.wallet.wallet_info import WalletInfo, WalletInfoBackup
+from ssdcoin.wallet.wallet_interested_store import WalletInterestedStore
+from ssdcoin.wallet.wallet_pool_store import WalletPoolStore
+from ssdcoin.wallet.wallet_puzzle_store import WalletPuzzleStore
+from ssdcoin.wallet.wallet_sync_store import WalletSyncStore
+from ssdcoin.wallet.wallet_transaction_store import WalletTransactionStore
+from ssdcoin.wallet.wallet_user_store import WalletUserStore
+from ssdcoin.server.server import SSDCoinServer
+from ssdcoin.wallet.did_wallet.did_wallet import DIDWallet
 
 
 class WalletStateManager:
@@ -107,7 +107,7 @@ class WalletStateManager:
     interested_store: WalletInterestedStore
     pool_store: WalletPoolStore
     weight_proof_handler: Any
-    server: HDDcoinServer
+    server: SSDCoinServer
     root_path: Path
 
     @staticmethod
@@ -116,7 +116,7 @@ class WalletStateManager:
         config: Dict,
         db_path: Path,
         constants: ConsensusConstants,
-        server: HDDcoinServer,
+        server: SSDCoinServer,
         root_path: Path,
         name: str = None,
     ):

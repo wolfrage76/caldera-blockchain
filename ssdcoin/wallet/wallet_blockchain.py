@@ -6,27 +6,27 @@ from concurrent.futures.process import ProcessPoolExecutor
 from enum import Enum
 from typing import Any, Callable, Dict, List, Optional, Set, Tuple
 
-from hddcoin.consensus.block_header_validation import validate_finished_header_block, validate_unfinished_header_block
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
-from hddcoin.consensus.find_fork_point import find_fork_point_in_chain
-from hddcoin.consensus.full_block_to_block_record import block_to_block_record
-from hddcoin.consensus.multiprocess_validation import PreValidationResult, pre_validate_blocks_multiprocessing
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.types.unfinished_header_block import UnfinishedHeaderBlock
-from hddcoin.util.errors import Err, ValidationError
-from hddcoin.util.ints import uint32, uint64
-from hddcoin.util.streamable import recurse_jsonify
-from hddcoin.wallet.block_record import HeaderBlockRecord
-from hddcoin.wallet.wallet_block_store import WalletBlockStore
-from hddcoin.wallet.wallet_coin_store import WalletCoinStore
-from hddcoin.wallet.wallet_pool_store import WalletPoolStore
-from hddcoin.wallet.wallet_transaction_store import WalletTransactionStore
+from ssdcoin.consensus.block_header_validation import validate_finished_header_block, validate_unfinished_header_block
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
+from ssdcoin.consensus.find_fork_point import find_fork_point_in_chain
+from ssdcoin.consensus.full_block_to_block_record import block_to_block_record
+from ssdcoin.consensus.multiprocess_validation import PreValidationResult, pre_validate_blocks_multiprocessing
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.types.unfinished_header_block import UnfinishedHeaderBlock
+from ssdcoin.util.errors import Err, ValidationError
+from ssdcoin.util.ints import uint32, uint64
+from ssdcoin.util.streamable import recurse_jsonify
+from ssdcoin.wallet.block_record import HeaderBlockRecord
+from ssdcoin.wallet.wallet_block_store import WalletBlockStore
+from ssdcoin.wallet.wallet_coin_store import WalletCoinStore
+from ssdcoin.wallet.wallet_pool_store import WalletPoolStore
+from ssdcoin.wallet.wallet_transaction_store import WalletTransactionStore
 
 log = logging.getLogger(__name__)
 

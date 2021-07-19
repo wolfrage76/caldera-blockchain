@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 from typing import List
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import SerializedProgram, INFINITE_COST
-from hddcoin.util.chain_utils import additions_for_solution
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import SerializedProgram, INFINITE_COST
+from ssdcoin.util.chain_utils import additions_for_solution
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

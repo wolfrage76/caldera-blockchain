@@ -6,24 +6,24 @@ from typing import Any, Callable, Dict, List, Optional
 
 from aiohttp import WSCloseCode, WSMessage, WSMsgType
 
-from hddcoin.cmds.init_funcs import hddcoin_full_version_str
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.protocols.shared_protocol import Capability, Handshake
-from hddcoin.server.outbound_message import Message, NodeType, make_msg
-from hddcoin.server.rate_limits import RateLimiter
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.errors import Err, ProtocolError
-from hddcoin.util.ints import uint8, uint16
+from ssdcoin.cmds.init_funcs import ssdcoin_full_version_str
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.protocols.shared_protocol import Capability, Handshake
+from ssdcoin.server.outbound_message import Message, NodeType, make_msg
+from ssdcoin.server.rate_limits import RateLimiter
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.errors import Err, ProtocolError
+from ssdcoin.util.ints import uint8, uint16
 
 # Each message is prepended with LENGTH_BYTES bytes specifying the length
-from hddcoin.util.network import class_for_type, is_localhost
+from ssdcoin.util.network import class_for_type, is_localhost
 
 # Max size 2^(8*4) which is around 4GiB
 LENGTH_BYTES: int = 4
 
 
-class WSHDDcoinConnection:
+class WSSSDCoinConnection:
     """
     Represents a connection to another node. Local host and port are ours, while peer host and
     port are the host and port of the peer that we are connected to. Node_id and connection_type are
@@ -69,7 +69,7 @@ class WSHDDcoinConnection:
         self.is_outbound = is_outbound
         self.is_feeler = is_feeler
 
-        # HDDcoinConnection metrics
+        # SSDCoinConnection metrics
         self.creation_time = time.time()
         self.bytes_read = 0
         self.bytes_written = 0
@@ -110,7 +110,7 @@ class WSHDDcoinConnection:
                 Handshake(
                     network_id,
                     protocol_version,
-                    hddcoin_full_version_str(),
+                    ssdcoin_full_version_str(),
                     uint16(server_port),
                     uint8(local_type.value),
                     [(uint16(Capability.BASE.value), "1")],
@@ -164,7 +164,7 @@ class WSHDDcoinConnection:
                 Handshake(
                     network_id,
                     protocol_version,
-                    hddcoin_full_version_str(),
+                    ssdcoin_full_version_str(),
                     uint16(server_port),
                     uint8(local_type.value),
                     [(uint16(Capability.BASE.value), "1")],

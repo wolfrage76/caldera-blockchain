@@ -1,8 +1,8 @@
 import pytest
 
-from hddcoin.types.peer_info import PeerInfo
+from ssdcoin.types.peer_info import PeerInfo
 from tests.block_tools import BlockTools
-from hddcoin.util.ints import uint16
+from ssdcoin.util.ints import uint16
 from tests.core.node_height import node_height_at_least
 from tests.setup_nodes import self_hostname, setup_full_node, setup_full_system, test_constants
 from tests.time_out_assert import time_out_assert

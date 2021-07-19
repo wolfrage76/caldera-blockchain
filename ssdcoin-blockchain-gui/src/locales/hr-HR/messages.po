@@ -6,16 +6,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: hr_HR\n"
-"Project-Id-Version: hddcoin-blockchain\n"
+"Project-Id-Version: ssdcoin-blockchain\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2021-06-30 06:03\n"
 "Last-Translator: \n"
 "Language-Team: Croatian\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Crowdin-Project: hddcoin-blockchain\n"
+"X-Crowdin-Project: ssdcoin-blockchain\n"
 "X-Crowdin-Project-ID: 440660\n"
 "X-Crowdin-Language: hr\n"
-"X-Crowdin-File: /[HDDcoin-Network.hddcoin-blockchain-gui] main/src/locales/en-US/messages.po\n"
+"X-Crowdin-File: /[SSDCoin-Network.ssdcoin-blockchain-gui] main/src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 118\n"
 
 #: src/components/plot/add/PlotAddNFT.tsx:62
@@ -23,8 +23,8 @@ msgid "(Optional)"
 msgstr ""
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:64
-msgid "*Want to explore HDDcoin’s blocks further? Check out <0>HDDcoin Explorer</0> built by an open source developer."
-msgstr "*Želiš više istražiti HDDcoin blokove? Pogledaj <0>HDDcoin Explorer</0> napravljen od strane razvojnih programera otvorenog koda."
+msgid "*Want to explore SSDCoin’s blocks further? Check out <0>SSDCoin Explorer</0> built by an open source developer."
+msgstr "*Želiš više istražiti SSDCoin blokove? Pogledaj <0>SSDCoin Explorer</0> napravljen od strane razvojnih programera otvorenog koda."
 
 #: src/components/plot/add/PlotAddNFT.tsx:127
 msgid "+ Add New Plot NFT"
@@ -44,8 +44,8 @@ msgstr "Sakupljač je servis pokrenut na računalu gdje su spremljena zemljišta
 
 #: src/electron/main.tsx:422
 #: src/electron/main.tsx:509
-msgid "About HDDcoin Blockchain"
-msgstr "O HDDcoin Blockchainu"
+msgid "About SSDCoin Blockchain"
+msgstr "O SSDCoin Blockchainu"
 
 #: src/components/trading/ViewOffer.jsx:74
 msgid "Accept"
@@ -207,8 +207,8 @@ msgid "Block VDF Iterations"
 msgstr "VDF Ponavljanje Bloka"
 
 #: src/components/block/Block.jsx:338
-msgid "Block at height {0} in the HDDcoin blockchain"
-msgstr "Blok je na {0} visini u HDDcoin blockchainu"
+msgid "Block at height {0} in the SSDCoin blockchain"
+msgstr "Blok je na {0} visini u SSDCoin blockchainu"
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -299,16 +299,16 @@ msgid "Chat on KeyBase"
 msgstr "Razgovaraj na KeyBase"
 
 #: src/electron/main.tsx:419
-msgid "HDDcoin"
-msgstr "HDDcoin"
+msgid "SSDCoin"
+msgstr "SSDCoin"
 
 #: src/electron/main.tsx:358
-msgid "HDDcoin Blockchain Wiki"
-msgstr "HDDcoin Blockchain Wiki"
+msgid "SSDCoin Blockchain Wiki"
+msgstr "SSDCoin Blockchain Wiki"
 
 #: src/components/wallet/standard/WalletStandard.tsx:630
-msgid "HDDcoin Wallet"
-msgstr "HDDcoin Novčanik"
+msgid "SSDCoin Wallet"
+msgstr "SSDCoin Novčanik"
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:36
 msgid "Choose Number of Plots"
@@ -669,8 +669,8 @@ msgid "Edit"
 msgstr "Uredi"
 
 #: src/components/wallet/WalletImport.tsx:147
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your HDDcoin wallet."
-msgstr "Unesi 24 mnemonic riječi koje su kreirane prilikom kreiranja novčanika kako bi mogao vratiti postojeći HDDcoin novčanik."
+msgid "Enter the 24 word mnemonic that you have saved in order to restore your SSDCoin wallet."
+msgstr "Unesi 24 mnemonic riječi koje su kreirane prilikom kreiranja novčanika kako bi mogao vratiti postojeći SSDCoin novčanik."
 
 #: src/components/farm/FarmerStatus.tsx:21
 #: src/components/farm/FarmerStatus.tsx:22
@@ -683,8 +683,8 @@ msgid "Error"
 msgstr "Greška"
 
 #: src/components/wallet/standard/WalletStandard.tsx:453
-msgid "Error: Cannot send hddcoin to coloured address. Please enter a hddcoin address."
-msgstr "Greška: Nemogu poslati HDDcoin na obojanu adresu. Unesi HDDcoin adresu."
+msgid "Error: Cannot send ssdcoin to coloured address. Please enter a ssdcoin address."
+msgstr "Greška: Nemogu poslati SSDCoin na obojanu adresu. Unesi SSDCoin adresu."
 
 #: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:20
 msgid "Estimated Network Space"
@@ -1431,8 +1431,8 @@ msgid "Plots Passed Filter"
 msgstr "Zemljišta su prošla filter"
 
 #: src/components/plot/overview/PlotOverviewHero.tsx:28
-msgid "Plots are allocated space on your hard drive used to farm and earn HDDcoin. <0>Learn more</0>"
-msgstr "Zemljišta su alociran prostor na tvome tvrdom pogonu koja se koriste za uzgoj i zaradu HDDcoin. <0>Saznaj više</0>"
+msgid "Plots are allocated space on your hard drive used to farm and earn SSDCoin. <0>Learn more</0>"
+msgstr "Zemljišta su alociran prostor na tvome tvrdom pogonu koja se koriste za uzgoj i zaradu SSDCoin. <0>Saznaj više</0>"
 
 #: src/components/plot/queue/PlotQueueIndicator.tsx:34
 msgid "Plotting"
@@ -1850,8 +1850,8 @@ msgstr "Duljina intervala potrošnje (broj blokova)"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:401
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:448
-msgid "Spending Limit (hddcoin per interval): {0}"
-msgstr "Limit potrošnje (hddcoin po intervalu): {0}"
+msgid "Spending Limit (ssdcoin per interval): {0}"
+msgstr "Limit potrošnje (ssdcoin po intervalu): {0}"
 
 #: src/components/fullNode/FullNode.jsx:100
 msgid "State"
@@ -1899,8 +1899,8 @@ msgstr "Stanje:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the HDDcoin blockchain"
-#~ msgstr "Sub Block at height {0} in the HDDcoin blockchain"
+#~ msgid "Sub Block at height {0} in the SSDCoin blockchain"
+#~ msgstr "Sub Block at height {0} in the SSDCoin blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:347
 msgid "Submit"
@@ -2027,8 +2027,8 @@ msgid "This feature is available only from the GUI."
 msgstr "Ova mogućnost je dostupna samo iz GUI."
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:26
-msgid "This is the amount of HDDcoin that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and HDDcoin that you have just spent but is not yet in the blockchain."
-msgstr "Ovo je iznos HDDcoin koji trenutno možeš koristiti za transakcije. Ne uključuje nagrade na čekanju, transakcije na čekanju i HDDcoin koje si potrošio, ali još nisu u blockchainu."
+msgid "This is the amount of SSDCoin that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and SSDCoin that you have just spent but is not yet in the blockchain."
+msgstr "Ovo je iznos SSDCoin koji trenutno možeš koristiti za transakcije. Ne uključuje nagrade na čekanju, transakcije na čekanju i SSDCoin koje si potrošio, ali još nisu u blockchainu."
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:26
 msgid "This is the pending change, which are change coins which you have sent to yourself, but have not been confirmed yet."
@@ -2047,8 +2047,8 @@ msgid "This is the time the block was created by the farmer, which is before it 
 msgstr "Ovo je vrijeme bloka koji je farmer kreirao, koje je prije nego je završen sa dokazom o vremenu"
 
 #: src/components/wallet/card/WalletCardTotalBalance.tsx:34
-msgid "This is the total amount of hddcoin in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
-msgstr "Ovo je ukupan iznos HDDcoin u blockchainu na trenutnom najvisem pod bloku koji je kontroliran sa tvojim privatnim ključevima. Uključuje zamrznute nagrade, ali ne i ulazne ili odlazne transakcije na čekanju."
+msgid "This is the total amount of ssdcoin in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+msgstr "Ovo je ukupan iznos SSDCoin u blockchainu na trenutnom najvisem pod bloku koji je kontroliran sa tvojim privatnim ključevima. Uključuje zamrznute nagrade, ali ne i ulazne ili odlazne transakcije na čekanju."
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:29
 msgid "This is the total balance + pending balance: it is what your balance will be after all pending transactions are confirmed."
@@ -2089,8 +2089,8 @@ msgid "This trade was included on blockchain at this block height"
 msgstr "Ova trgovina je uključena u blockchain na ovoj visini bloka"
 
 #: src/components/app/AppTimeBombAlert.tsx:19
-msgid "This version of HDDcoin is no longer compatible with the blockchain and can not safely farm."
-msgstr "Ova verzija HDDcoin vise nije kompatibilna sa blockchainom i ne može se sigurno uzgajati."
+msgid "This version of SSDCoin is no longer compatible with the blockchain and can not safely farm."
+msgstr "Ova verzija SSDCoin vise nije kompatibilna sa blockchainom i ne može se sigurno uzgajati."
 
 #: src/components/fullNode/FullNode.jsx:92
 msgid "Time Created"
@@ -2114,8 +2114,8 @@ msgstr "Za"
 msgid "Total Balance"
 msgstr "Ukupno stanje"
 
-#: src/components/farm/card/FarmCardTotalHDDcoinFarmed.tsx:15
-#~ msgid "Total HDDcoin Farmed"
+#: src/components/farm/card/FarmCardTotalSSDCoinFarmed.tsx:15
+#~ msgid "Total SSDCoin Farmed"
 #~ msgstr ""
 
 #: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:21
@@ -2278,7 +2278,7 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:30
-#~ msgid "WalletItem.hddcoinWallet"
+#~ msgid "WalletItem.ssdcoinWallet"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:48
@@ -2315,8 +2315,8 @@ msgid "Want to Join a Pool? Create a Plot NFT"
 msgstr ""
 
 #: src/components/plot/overview/PlotOverviewPlots.tsx:133
-msgid "Want to earn more HDDcoin? Add more plots to your farm."
-msgstr "Želiš zaraditi više HDDcoin? Dodaj više zemljišta u svoju farmu."
+msgid "Want to earn more SSDCoin? Add more plots to your farm."
+msgstr "Želiš zaraditi više SSDCoin? Dodaj više zemljišta u svoju farmu."
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:86
 msgid "Want to have a delay before the next plot starts?"
@@ -2331,8 +2331,8 @@ msgid "Weight is the total added difficulty of all sub blocks up to and includin
 msgstr "Težina je ukupno dodanih kompleksnosti svih pod blokova uključujući i ovaj"
 
 #: src/components/selectKey/SelectKey.tsx:114
-msgid "Welcome to HDDcoin. Please log in with an existing key, or create a new key."
-msgstr "Dobrodošao u HDDcoin. Prijavi se sa postojećim ključem, ili kreiraj novi."
+msgid "Welcome to SSDCoin. Please log in with an existing key, or create a new key."
+msgstr "Dobrodošao u SSDCoin. Prijavi se sa postojećim ključem, ili kreiraj novi."
 
 #: src/components/wallet/WalletAdd.tsx:66
 msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
@@ -2402,8 +2402,8 @@ msgid "You need to claim your rewards first"
 msgstr ""
 
 #: src/components/app/AppTimeBomb.tsx:28
-#~ msgid "You need to upgrade the HDDcoin application as this version will stop working soon!"
-#~ msgstr "You need to upgrade the HDDcoin application as this version will stop working soon!"
+#~ msgid "You need to upgrade the SSDCoin application as this version will stop working soon!"
+#~ msgstr "You need to upgrade the SSDCoin application as this version will stop working soon!"
 
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:135
 msgid "You will recieve <0/> to {0}"
@@ -2486,9 +2486,9 @@ msgstr ""
 msgid "{currencyCode} Block Rewards"
 msgstr "{currencyCode} Nagrade bloka"
 
-#: src/components/farm/card/FarmCardTotalHDDcoinFarmed.tsx:29
-msgid "{currencyCode} Total HDDcoin Farmed"
-msgstr "{currencyCode} Ukupno ugojeno HDDcoin"
+#: src/components/farm/card/FarmCardTotalSSDCoinFarmed.tsx:29
+msgid "{currencyCode} Total SSDCoin Farmed"
+msgstr "{currencyCode} Ukupno ugojeno SSDCoin"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:28
 msgid "{currencyCode} User Transaction Fees"

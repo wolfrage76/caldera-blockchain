@@ -9,7 +9,7 @@ import {
   Flex,
   Checkbox,
   TooltipIcon,
-} from '@hddcoin/core';
+} from '@ssdcoin/core';
 import {
   Grid,
   FormControl,

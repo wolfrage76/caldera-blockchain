@@ -1,8 +1,8 @@
 {
-  "name": "hddcoin-blockchain",
-  "author": "HDDcoin Network <hello@hddcoin.org> (https://hddcoin.org/)",
-  "description": "GUI for HDDcoin Blockchain",
-  "productName": "HDDcoin Blockchain",
+  "name": "ssdcoin-blockchain",
+  "author": "SSDCoin Network <hello@ssdcoin.org> (https://ssdcoin.org/)",
+  "description": "GUI for SSDCoin Blockchain",
+  "productName": "SSDCoin Blockchain",
   "private": true,
   "homepage": "./",
   "main": "build/electron/main.js",

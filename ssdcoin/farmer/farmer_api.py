@@ -5,23 +5,23 @@ from typing import Callable, Optional, List, Any, Dict
 import aiohttp
 from blspy import AugSchemeMPL, G2Element, PrivateKey
 
-import hddcoin.server.ws_connection as ws
-from hddcoin.consensus.pot_iterations import calculate_iterations_quality, calculate_sp_interval_iters
-from hddcoin.farmer.farmer import Farmer
-from hddcoin.protocols import farmer_protocol, harvester_protocol
-from hddcoin.protocols.harvester_protocol import PoolDifficulty
-from hddcoin.protocols.pool_protocol import (
+import ssdcoin.server.ws_connection as ws
+from ssdcoin.consensus.pot_iterations import calculate_iterations_quality, calculate_sp_interval_iters
+from ssdcoin.farmer.farmer import Farmer
+from ssdcoin.protocols import farmer_protocol, harvester_protocol
+from ssdcoin.protocols.harvester_protocol import PoolDifficulty
+from ssdcoin.protocols.pool_protocol import (
     get_current_authentication_token,
     PoolErrorCode,
     PostPartialRequest,
     PostPartialPayload,
 )
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.server.outbound_message import NodeType, make_msg
-from hddcoin.types.blockchain_format.pool_target import PoolTarget
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace
-from hddcoin.util.api_decorators import api_request, peer_required
-from hddcoin.util.ints import uint32, uint64
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.server.outbound_message import NodeType, make_msg
+from ssdcoin.types.blockchain_format.pool_target import PoolTarget
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace
+from ssdcoin.util.api_decorators import api_request, peer_required
+from ssdcoin.util.ints import uint32, uint64
 
 
 class FarmerAPI:
@@ -36,7 +36,7 @@ class FarmerAPI:
     @api_request
     @peer_required
     async def new_proof_of_space(
-        self, new_proof_of_space: harvester_protocol.NewProofOfSpace, peer: ws.WSHDDcoinConnection
+        self, new_proof_of_space: harvester_protocol.NewProofOfSpace, peer: ws.WSSSDCoinConnection
     ):
         """
         This is a response from the harvester, for a NewChallenge. Here we check if the proof

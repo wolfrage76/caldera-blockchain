@@ -2,10 +2,10 @@ import asyncio
 
 import pytest
 
-from hddcoin.simulator.simulator_protocol import FarmNewBlockProtocol
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.ints import uint16, uint64
-from hddcoin.wallet.rl_wallet.rl_wallet import RLWallet
+from ssdcoin.simulator.simulator_protocol import FarmNewBlockProtocol
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.ints import uint16, uint64
+from ssdcoin.wallet.rl_wallet.rl_wallet import RLWallet
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
 

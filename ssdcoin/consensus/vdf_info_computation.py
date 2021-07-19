@@ -1,12 +1,12 @@
 from typing import List, Optional
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.util.ints import uint64, uint128
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.util.ints import uint64, uint128
 
 
 def get_signage_point_vdf_info(

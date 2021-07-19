@@ -6,16 +6,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: hu_HU\n"
-"Project-Id-Version: hddcoin-blockchain\n"
+"Project-Id-Version: ssdcoin-blockchain\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2021-06-30 06:04\n"
 "Last-Translator: \n"
 "Language-Team: Hungarian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: hddcoin-blockchain\n"
+"X-Crowdin-Project: ssdcoin-blockchain\n"
 "X-Crowdin-Project-ID: 440660\n"
 "X-Crowdin-Language: hu\n"
-"X-Crowdin-File: /[HDDcoin-Network.hddcoin-blockchain-gui] main/src/locales/en-US/messages.po\n"
+"X-Crowdin-File: /[SSDCoin-Network.ssdcoin-blockchain-gui] main/src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 118\n"
 
 #: src/components/plot/add/PlotAddNFT.tsx:62
@@ -23,8 +23,8 @@ msgid "(Optional)"
 msgstr ""
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:64
-msgid "*Want to explore HDDcoin’s blocks further? Check out <0>HDDcoin Explorer</0> built by an open source developer."
-msgstr "Fel szeretnéd fedezni a HDDcoin rendszerét bővebben? Nézd meg a <0> HDDcoin Explorert</0> amit egy nyílt forráskóddal foglalkozó fejlesztő készített."
+msgid "*Want to explore SSDCoin’s blocks further? Check out <0>SSDCoin Explorer</0> built by an open source developer."
+msgstr "Fel szeretnéd fedezni a SSDCoin rendszerét bővebben? Nézd meg a <0> SSDCoin Explorert</0> amit egy nyílt forráskóddal foglalkozó fejlesztő készített."
 
 #: src/components/plot/add/PlotAddNFT.tsx:127
 msgid "+ Add New Plot NFT"
@@ -44,8 +44,8 @@ msgstr "A betakarító egy szolgáltatás ahol a parcellák valójában tárolá
 
 #: src/electron/main.tsx:422
 #: src/electron/main.tsx:509
-msgid "About HDDcoin Blockchain"
-msgstr "A HDDcoin Blockchain-ről"
+msgid "About SSDCoin Blockchain"
+msgstr "A SSDCoin Blockchain-ről"
 
 #: src/components/trading/ViewOffer.jsx:74
 msgid "Accept"
@@ -207,8 +207,8 @@ msgid "Block VDF Iterations"
 msgstr "VDF-iterációk blokkja"
 
 #: src/components/block/Block.jsx:338
-msgid "Block at height {0} in the HDDcoin blockchain"
-msgstr "{0} Magasságú blokk a HDDcoin blokkláncban"
+msgid "Block at height {0} in the SSDCoin blockchain"
+msgstr "{0} Magasságú blokk a SSDCoin blokkláncban"
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -299,16 +299,16 @@ msgid "Chat on KeyBase"
 msgstr "Csevegés a KeyBase-n"
 
 #: src/electron/main.tsx:419
-msgid "HDDcoin"
-msgstr "HDDcoin"
+msgid "SSDCoin"
+msgstr "SSDCoin"
 
 #: src/electron/main.tsx:358
-msgid "HDDcoin Blockchain Wiki"
-msgstr "HDDcoin Blokklánc Wiki"
+msgid "SSDCoin Blockchain Wiki"
+msgstr "SSDCoin Blokklánc Wiki"
 
 #: src/components/wallet/standard/WalletStandard.tsx:630
-msgid "HDDcoin Wallet"
-msgstr "HDDcoin Pénztárca"
+msgid "SSDCoin Wallet"
+msgstr "SSDCoin Pénztárca"
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:36
 msgid "Choose Number of Plots"
@@ -669,8 +669,8 @@ msgid "Edit"
 msgstr "Módosítás"
 
 #: src/components/wallet/WalletImport.tsx:147
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your HDDcoin wallet."
-msgstr "A HDDcoin pénztárca visszaállításához írja be az elmentett 24 szóból álló mnemonikát."
+msgid "Enter the 24 word mnemonic that you have saved in order to restore your SSDCoin wallet."
+msgstr "A SSDCoin pénztárca visszaállításához írja be az elmentett 24 szóból álló mnemonikát."
 
 #: src/components/farm/FarmerStatus.tsx:21
 #: src/components/farm/FarmerStatus.tsx:22
@@ -683,8 +683,8 @@ msgid "Error"
 msgstr "Hiba"
 
 #: src/components/wallet/standard/WalletStandard.tsx:453
-msgid "Error: Cannot send hddcoin to coloured address. Please enter a hddcoin address."
-msgstr "Hiba: A hddcoin nem küldhető színes címre. Kérjük, adjon meg másik hddcoin címet."
+msgid "Error: Cannot send ssdcoin to coloured address. Please enter a ssdcoin address."
+msgstr "Hiba: A ssdcoin nem küldhető színes címre. Kérjük, adjon meg másik ssdcoin címet."
 
 #: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:20
 msgid "Estimated Network Space"
@@ -1431,8 +1431,8 @@ msgid "Plots Passed Filter"
 msgstr "Szűrőn átjutott parcellák"
 
 #: src/components/plot/overview/PlotOverviewHero.tsx:28
-msgid "Plots are allocated space on your hard drive used to farm and earn HDDcoin. <0>Learn more</0>"
-msgstr "A cserepek a termesztéshez fenntartott helyek a merevlemezen, amikből HDDcoin nyerhető. <0>Részletek</0>"
+msgid "Plots are allocated space on your hard drive used to farm and earn SSDCoin. <0>Learn more</0>"
+msgstr "A cserepek a termesztéshez fenntartott helyek a merevlemezen, amikből SSDCoin nyerhető. <0>Részletek</0>"
 
 #: src/components/plot/queue/PlotQueueIndicator.tsx:34
 msgid "Plotting"
@@ -1850,8 +1850,8 @@ msgstr "Költési időszak hossza (blokkok száma)"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:401
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:448
-msgid "Spending Limit (hddcoin per interval): {0}"
-msgstr "Költési limit (hddcoin / intervallum): {0}"
+msgid "Spending Limit (ssdcoin per interval): {0}"
+msgstr "Költési limit (ssdcoin / intervallum): {0}"
 
 #: src/components/fullNode/FullNode.jsx:100
 msgid "State"
@@ -1899,8 +1899,8 @@ msgstr "Állapot:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the HDDcoin blockchain"
-#~ msgstr "Sub Block at height {0} in the HDDcoin blockchain"
+#~ msgid "Sub Block at height {0} in the SSDCoin blockchain"
+#~ msgstr "Sub Block at height {0} in the SSDCoin blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:347
 msgid "Submit"
@@ -2027,8 +2027,8 @@ msgid "This feature is available only from the GUI."
 msgstr "Ez a funkció csak a grafikus felhasználói felületrôl érhetô el."
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:26
-msgid "This is the amount of HDDcoin that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and HDDcoin that you have just spent but is not yet in the blockchain."
-msgstr "Ez az összeg HDDcoin, amelyet jelenleg felhasználhat tranzakciók lebonyolítására. Nem tartalmazza a függőben lévő gazdálkodási jutalmakat, a függőben lévő bejövő tranzakciókat és Chiát, amelyet most költött, de még nem tartozik a blokkláncba."
+msgid "This is the amount of SSDCoin that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and SSDCoin that you have just spent but is not yet in the blockchain."
+msgstr "Ez az összeg SSDCoin, amelyet jelenleg felhasználhat tranzakciók lebonyolítására. Nem tartalmazza a függőben lévő gazdálkodási jutalmakat, a függőben lévő bejövő tranzakciókat és Chiát, amelyet most költött, de még nem tartozik a blokkláncba."
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:26
 msgid "This is the pending change, which are change coins which you have sent to yourself, but have not been confirmed yet."
@@ -2049,8 +2049,8 @@ msgid "This is the time the block was created by the farmer, which is before it 
 msgstr "Ekkor hozta létre a blokkot a gazdálkodó, ami még az idő igazolásával véglegesítés előtt van"
 
 #: src/components/wallet/card/WalletCardTotalBalance.tsx:34
-msgid "This is the total amount of hddcoin in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
-msgstr "Ez az összes HDDcoin mennyiség a blokkláncban az aktuális csúcs alblokkban, amelyet a privát kulcsaid vezérelnek. Ez magában foglalja a befagyasztott gazdálkodási jutalmakat, de nem a függőben lévő bejövő és kimenő tranzakciókat."
+msgid "This is the total amount of ssdcoin in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+msgstr "Ez az összes SSDCoin mennyiség a blokkláncban az aktuális csúcs alblokkban, amelyet a privát kulcsaid vezérelnek. Ez magában foglalja a befagyasztott gazdálkodási jutalmakat, de nem a függőben lévő bejövő és kimenő tranzakciókat."
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:29
 msgid "This is the total balance + pending balance: it is what your balance will be after all pending transactions are confirmed."
@@ -2091,8 +2091,8 @@ msgid "This trade was included on blockchain at this block height"
 msgstr "Ez a kereskedés a blokklánc ezen magasságán történt"
 
 #: src/components/app/AppTimeBombAlert.tsx:19
-msgid "This version of HDDcoin is no longer compatible with the blockchain and can not safely farm."
-msgstr "A HDDcoin ezen verziója többé már nem kompatibilis a blokklánccal és nem biztonságos."
+msgid "This version of SSDCoin is no longer compatible with the blockchain and can not safely farm."
+msgstr "A SSDCoin ezen verziója többé már nem kompatibilis a blokklánccal és nem biztonságos."
 
 #: src/components/fullNode/FullNode.jsx:92
 msgid "Time Created"
@@ -2116,8 +2116,8 @@ msgstr "Címzett"
 msgid "Total Balance"
 msgstr "Teljes egyenleg"
 
-#: src/components/farm/card/FarmCardTotalHDDcoinFarmed.tsx:15
-#~ msgid "Total HDDcoin Farmed"
+#: src/components/farm/card/FarmCardTotalSSDCoinFarmed.tsx:15
+#~ msgid "Total SSDCoin Farmed"
 #~ msgstr ""
 
 #: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:21
@@ -2280,7 +2280,7 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:30
-#~ msgid "WalletItem.hddcoinWallet"
+#~ msgid "WalletItem.ssdcoinWallet"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:48
@@ -2317,8 +2317,8 @@ msgid "Want to Join a Pool? Create a Plot NFT"
 msgstr ""
 
 #: src/components/plot/overview/PlotOverviewPlots.tsx:133
-msgid "Want to earn more HDDcoin? Add more plots to your farm."
-msgstr "Szeretne többet keresni HDDcoin-val? Adjon hozzá több telket a gazdaságához (farmoláshoz)."
+msgid "Want to earn more SSDCoin? Add more plots to your farm."
+msgstr "Szeretne többet keresni SSDCoin-val? Adjon hozzá több telket a gazdaságához (farmoláshoz)."
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:86
 msgid "Want to have a delay before the next plot starts?"
@@ -2333,8 +2333,8 @@ msgid "Weight is the total added difficulty of all sub blocks up to and includin
 msgstr "Az összes alblokk teljes hozzáadott nehézségének a súlya, egészen ehhez az egységig"
 
 #: src/components/selectKey/SelectKey.tsx:114
-msgid "Welcome to HDDcoin. Please log in with an existing key, or create a new key."
-msgstr "Üdvözöljük a HDDcoin-ban. Kérem jelentkezzen be egy létező kulccsal, vagy készítsen egy új kulcsot magának."
+msgid "Welcome to SSDCoin. Please log in with an existing key, or create a new key."
+msgstr "Üdvözöljük a SSDCoin-ban. Kérem jelentkezzen be egy létező kulccsal, vagy készítsen egy új kulcsot magának."
 
 #: src/components/wallet/WalletAdd.tsx:66
 msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
@@ -2404,8 +2404,8 @@ msgid "You need to claim your rewards first"
 msgstr ""
 
 #: src/components/app/AppTimeBomb.tsx:28
-#~ msgid "You need to upgrade the HDDcoin application as this version will stop working soon!"
-#~ msgstr "You need to upgrade the HDDcoin application as this version will stop working soon!"
+#~ msgid "You need to upgrade the SSDCoin application as this version will stop working soon!"
+#~ msgstr "You need to upgrade the SSDCoin application as this version will stop working soon!"
 
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:135
 msgid "You will recieve <0/> to {0}"
@@ -2488,9 +2488,9 @@ msgstr ""
 msgid "{currencyCode} Block Rewards"
 msgstr "Blokk jutalmak {currencyCode}"
 
-#: src/components/farm/card/FarmCardTotalHDDcoinFarmed.tsx:29
-msgid "{currencyCode} Total HDDcoin Farmed"
-msgstr "Teljes farmolt HDDcoin mennyiség {currencyCode}"
+#: src/components/farm/card/FarmCardTotalSSDCoinFarmed.tsx:29
+msgid "{currencyCode} Total SSDCoin Farmed"
+msgstr "Teljes farmolt SSDCoin mennyiség {currencyCode}"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:28
 msgid "{currencyCode} User Transaction Fees"

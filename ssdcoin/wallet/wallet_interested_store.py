@@ -2,8 +2,8 @@ from typing import List, Tuple, Optional
 
 import aiosqlite
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.db_wrapper import DBWrapper
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.db_wrapper import DBWrapper
 
 
 class WalletInterestedStore:

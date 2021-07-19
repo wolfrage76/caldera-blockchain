@@ -14,7 +14,7 @@ import {
   Loading,
   FormatLargeNumber,
   Link,
-} from '@hddcoin/core';
+} from '@ssdcoin/core';
 import {
   Box,
   Button,
@@ -33,7 +33,7 @@ import PlotIcon from '../icons/Plot';
 import usePlotNFTDetails from '../../hooks/usePlotNFTDetails';
 import PoolJoin from '../pool/PoolJoin';
 import PoolAbsorbRewards from '../pool/PoolAbsorbRewards';
-import { mojo_to_hddcoin } from '../../util/hddcoin';
+import { mojo_to_ssdcoin } from '../../util/ssdcoin';
 import { deleteUnconfirmedTransactions } from '../../modules/incoming';
 import PlotNFTGraph from './PlotNFTGraph';
 
@@ -111,7 +111,7 @@ export default function PlotNFTCard(props: Props) {
       label: <Trans>Unclaimed Rewards</Trans>,
       value: (
         <UnitFormat
-          value={mojo_to_hddcoin(BigInt(balance))}
+          value={mojo_to_ssdcoin(BigInt(balance))}
           state={State.SUCCESS}
         />
       ),

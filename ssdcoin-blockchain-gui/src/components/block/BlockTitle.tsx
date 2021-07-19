@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Flex } from '@hddcoin/core';
+import { Flex } from '@ssdcoin/core';
 import { ArrowBackIos as ArrowBackIosIcon } from '@material-ui/icons';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';

@@ -14,18 +14,18 @@ from blspy import G2Element
 
 from clvm_tools.binutils import assemble
 
-from hddcoin.consensus.blockchain import ReceiveBlockResult
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.types.announcement import Announcement
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.coin_record import CoinRecord
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.spend_bundle import SpendBundle
+from ssdcoin.consensus.blockchain import ReceiveBlockResult
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.types.announcement import Announcement
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.coin_record import CoinRecord
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.spend_bundle import SpendBundle
 from tests.block_tools import BlockTools, test_constants
-from hddcoin.util.errors import Err
-from hddcoin.util.ints import uint32
+from ssdcoin.util.errors import Err
+from ssdcoin.util.ints import uint32
 
 from .ram_db import create_ram_blockchain
 

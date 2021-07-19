@@ -1,8 +1,8 @@
 from typing import Any, Dict
 
-from hddcoin.wallet.key_val_store import KeyValStore
-from hddcoin.wallet.settings.default_settings import default_settings
-from hddcoin.wallet.settings.settings_objects import BackupInitialized
+from ssdcoin.wallet.key_val_store import KeyValStore
+from ssdcoin.wallet.settings.default_settings import default_settings
+from ssdcoin.wallet.settings.settings_objects import BackupInitialized
 
 
 class UserSettings:

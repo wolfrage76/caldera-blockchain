@@ -1,5 +1,5 @@
 {
   "dest": "dist/installers/",
-  "icon": "src/assets/img/hddcoin.ico",
+  "icon": "src/assets/img/ssdcoin.ico",
   "tags": ["Blockchain"]
 }

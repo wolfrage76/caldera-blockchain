@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import List
 
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

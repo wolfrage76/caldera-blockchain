@@ -1,6 +1,6 @@
 from typing import Any, BinaryIO
 
-from hddcoin.util.struct_stream import StructStream
+from ssdcoin.util.struct_stream import StructStream
 
 
 class int8(StructStream):

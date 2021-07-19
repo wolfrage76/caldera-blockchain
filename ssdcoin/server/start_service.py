@@ -6,23 +6,23 @@ import signal
 from sys import platform
 from typing import Any, Callable, List, Optional, Tuple
 
-from hddcoin.daemon.server import singleton, service_launch_lock_path
-from hddcoin.server.ssl_context import hddcoin_ssl_ca_paths, private_ssl_ca_paths
+from ssdcoin.daemon.server import singleton, service_launch_lock_path
+from ssdcoin.server.ssl_context import ssdcoin_ssl_ca_paths, private_ssl_ca_paths
 
 try:
     import uvloop
 except ImportError:
     uvloop = None
 
-from hddcoin.rpc.rpc_server import start_rpc_server
-from hddcoin.server.outbound_message import NodeType
-from hddcoin.server.server import HDDcoinServer
-from hddcoin.server.upnp import UPnP
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.hddcoin_logging import initialize_logging
-from hddcoin.util.config import load_config, load_config_cli
-from hddcoin.util.setproctitle import setproctitle
-from hddcoin.util.ints import uint16
+from ssdcoin.rpc.rpc_server import start_rpc_server
+from ssdcoin.server.outbound_message import NodeType
+from ssdcoin.server.server import SSDCoinServer
+from ssdcoin.server.upnp import UPnP
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.ssdcoin_logging import initialize_logging
+from ssdcoin.util.config import load_config, load_config_cli
+from ssdcoin.util.setproctitle import setproctitle
+from ssdcoin.util.ints import uint16
 
 from .reconnect_task import start_reconnect_task
 
@@ -64,7 +64,7 @@ class Service:
         self._rpc_close_task: Optional[asyncio.Task] = None
         self._network_id: str = network_id
 
-        proctitle_name = f"hddcoin_{service_name}"
+        proctitle_name = f"ssdcoin_{service_name}"
         setproctitle(proctitle_name)
         self._log = logging.getLogger(service_name)
 
@@ -76,11 +76,11 @@ class Service:
 
         self._rpc_info = rpc_info
         private_ca_crt, private_ca_key = private_ssl_ca_paths(root_path, self.config)
-        hddcoin_ca_crt, hddcoin_ca_key = hddcoin_ssl_ca_paths(root_path, self.config)
+        ssdcoin_ca_crt, ssdcoin_ca_key = ssdcoin_ssl_ca_paths(root_path, self.config)
         inbound_rlp = self.config.get("inbound_rate_limit_percent")
         outbound_rlp = self.config.get("outbound_rate_limit_percent")
         assert inbound_rlp and outbound_rlp
-        self._server = HDDcoinServer(
+        self._server = SSDCoinServer(
             advertised_port,
             node,
             peer_api,
@@ -92,7 +92,7 @@ class Service:
             root_path,
             service_config,
             (private_ca_crt, private_ca_key),
-            (hddcoin_ca_crt, hddcoin_ca_key),
+            (ssdcoin_ca_crt, ssdcoin_ca_key),
             name=f"{service_name}_server",
         )
         f = getattr(node, "set_server", None)
@@ -226,7 +226,7 @@ class Service:
 
         self._log.info("Waiting for socket to be closed (if opened)")
 
-        self._log.info("Waiting for HDDcoinServer to be closed")
+        self._log.info("Waiting for SSDCoinServer to be closed")
         await self._server.await_closed()
 
         if self._rpc_close_task:

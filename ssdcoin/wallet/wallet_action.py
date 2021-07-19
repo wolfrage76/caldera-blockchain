@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from hddcoin.util.ints import uint32
-from hddcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.util.ints import uint32
+from ssdcoin.wallet.util.wallet_types import WalletType
 
 
 @dataclass(frozen=True)

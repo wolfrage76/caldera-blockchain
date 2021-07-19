@@ -1,17 +1,17 @@
 import pathlib
 from typing import Dict
 
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.default_constants import DEFAULT_CONSTANTS
-from hddcoin.farmer.farmer import Farmer
-from hddcoin.farmer.farmer_api import FarmerAPI
-from hddcoin.rpc.farmer_rpc_api import FarmerRpcApi
-from hddcoin.server.outbound_message import NodeType
-from hddcoin.server.start_service import run_service
-from hddcoin.types.peer_info import PeerInfo
-from hddcoin.util.config import load_config_cli
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
-from hddcoin.util.keychain import Keychain
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.default_constants import DEFAULT_CONSTANTS
+from ssdcoin.farmer.farmer import Farmer
+from ssdcoin.farmer.farmer_api import FarmerAPI
+from ssdcoin.rpc.farmer_rpc_api import FarmerRpcApi
+from ssdcoin.server.outbound_message import NodeType
+from ssdcoin.server.start_service import run_service
+from ssdcoin.types.peer_info import PeerInfo
+from ssdcoin.util.config import load_config_cli
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin.util.keychain import Keychain
 
 # See: https://bugs.python.org/issue29288
 "".encode("idna")

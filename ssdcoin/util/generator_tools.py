@@ -1,12 +1,12 @@
 from typing import List, Tuple
 from chiabip158 import PyBIP158
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.types.name_puzzle_condition import NPC
-from hddcoin.util.condition_tools import created_outputs_for_conditions_dict
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.types.name_puzzle_condition import NPC
+from ssdcoin.util.condition_tools import created_outputs_for_conditions_dict
 
 
 def get_block_header(block: FullBlock, tx_addition_coins: List[Coin], removals_names: List[bytes32]) -> HeaderBlock:

@@ -11,12 +11,12 @@ from typing import Any, BinaryIO, Dict, List, Tuple, Type, Callable, Optional, I
 
 from blspy import G1Element, G2Element, PrivateKey
 
-from hddcoin.types.blockchain_format.program import Program, SerializedProgram
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import int64, int512, uint32, uint64, uint128
-from hddcoin.util.type_checking import is_type_List, is_type_SpecificOptional, is_type_Tuple, strictdataclass
+from ssdcoin.types.blockchain_format.program import Program, SerializedProgram
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import int64, int512, uint32, uint64, uint128
+from ssdcoin.util.type_checking import is_type_List, is_type_SpecificOptional, is_type_Tuple, strictdataclass
 
 if sys.version_info < (3, 8):
 

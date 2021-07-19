@@ -3,14 +3,14 @@ from typing import Dict, List, Optional, Tuple
 
 import aiosqlite
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.weight_proof import SubEpochChallengeSegment, SubEpochSegments
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint32
-from hddcoin.util.lru_cache import LRUCache
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.weight_proof import SubEpochChallengeSegment, SubEpochSegments
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint32
+from ssdcoin.util.lru_cache import LRUCache
 
 log = logging.getLogger(__name__)
 

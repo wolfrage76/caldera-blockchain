@@ -1,6 +1,6 @@
 import pytest
 
-from hddcoin.wallet.hddcoinlisp import (
+from ssdcoin.wallet.ssdcoinlisp import (
     apply,
     args,
     cons,
@@ -17,7 +17,7 @@ from hddcoin.wallet.hddcoinlisp import (
 )
 
 
-class TestHDDcoinlisp:
+class TestSSDCoinlisp:
     def test_sexp(self):
         assert sexp() == "()"
         assert sexp(1) == "(1)"

@@ -5,27 +5,27 @@ from concurrent.futures.process import ProcessPoolExecutor
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Sequence, Tuple, Union, Callable
 
-from hddcoin.consensus.block_header_validation import validate_finished_header_block
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.cost_calculator import NPCResult
-from hddcoin.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
-from hddcoin.consensus.full_block_to_block_record import block_to_block_record
-from hddcoin.consensus.get_block_challenge import get_block_challenge
-from hddcoin.consensus.pot_iterations import calculate_iterations_quality, is_overflow_block
-from hddcoin.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.generator_types import BlockGenerator
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.util.block_cache import BlockCache
-from hddcoin.util.errors import Err
-from hddcoin.util.generator_tools import get_block_header, tx_removals_and_additions
-from hddcoin.util.ints import uint16, uint64, uint32
-from hddcoin.util.streamable import Streamable, dataclass_from_dict, streamable
+from ssdcoin.consensus.block_header_validation import validate_finished_header_block
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.cost_calculator import NPCResult
+from ssdcoin.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
+from ssdcoin.consensus.full_block_to_block_record import block_to_block_record
+from ssdcoin.consensus.get_block_challenge import get_block_challenge
+from ssdcoin.consensus.pot_iterations import calculate_iterations_quality, is_overflow_block
+from ssdcoin.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.generator_types import BlockGenerator
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.util.block_cache import BlockCache
+from ssdcoin.util.errors import Err
+from ssdcoin.util.generator_tools import get_block_header, tx_removals_and_additions
+from ssdcoin.util.ints import uint16, uint64, uint32
+from ssdcoin.util.streamable import Streamable, dataclass_from_dict, streamable
 
 log = logging.getLogger(__name__)
 

@@ -6,12 +6,12 @@ import React, {
 } from 'react';
 import { t, Trans } from '@lingui/macro';
 import { useForm } from 'react-hook-form';
-import { ButtonLoading, Flex, Form, FormBackButton } from '@hddcoin/core';
+import { ButtonLoading, Flex, Form, FormBackButton } from '@ssdcoin/core';
 import PlotNFTSelectBase from './PlotNFTSelectBase';
 import normalizeUrl from '../../../util/normalizeUrl';
 import getPoolInfo from '../../../util/getPoolInfo';
 import InitialTargetState from '../../../types/InitialTargetState';
-import { hddcoin_to_mojo } from '../../../util/hddcoin';
+import { ssdcoin_to_mojo } from '../../../util/ssdcoin';
 
 export type SubmitData = {
   initialTargetState: InitialTargetState;
@@ -41,7 +41,7 @@ async function prepareSubmitData(data: FormData): SubmitData {
     initialTargetState.relative_lock_height = relative_lock_height;
   }
 
-  const feeMojos = hddcoin_to_mojo(fee);
+  const feeMojos = ssdcoin_to_mojo(fee);
 
   return {
     fee: feeMojos,

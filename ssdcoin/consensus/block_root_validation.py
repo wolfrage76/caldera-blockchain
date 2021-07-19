@@ -1,9 +1,9 @@
 from typing import Dict, List, Optional
 
-from hddcoin.types.blockchain_format.coin import Coin, hash_coin_list
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.errors import Err
-from hddcoin.util.merkle_set import MerkleSet
+from ssdcoin.types.blockchain_format.coin import Coin, hash_coin_list
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.errors import Err
+from ssdcoin.util.merkle_set import MerkleSet
 
 
 def validate_block_merkle_roots(

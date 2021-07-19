@@ -10,53 +10,53 @@ from typing import Any, Callable, Dict, List, Optional, Set, Tuple, Union
 import aiosqlite
 from blspy import AugSchemeMPL
 
-import hddcoin.server.ws_connection as ws  # lgtm [py/import-and-import-from]
-from hddcoin.consensus.block_creation import unfinished_block_to_full_block
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain import Blockchain, ReceiveBlockResult
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
-from hddcoin.consensus.make_sub_epoch_summary import next_sub_epoch_summary
-from hddcoin.consensus.multiprocess_validation import PreValidationResult
-from hddcoin.consensus.pot_iterations import calculate_sp_iters
-from hddcoin.full_node.block_store import BlockStore
-from hddcoin.full_node.bundle_tools import detect_potential_template_generator
-from hddcoin.full_node.coin_store import CoinStore
-from hddcoin.full_node.full_node_store import FullNodeStore
-from hddcoin.full_node.mempool_manager import MempoolManager
-from hddcoin.full_node.signage_point import SignagePoint
-from hddcoin.full_node.sync_store import SyncStore
-from hddcoin.full_node.weight_proof import WeightProofHandler
-from hddcoin.protocols import farmer_protocol, full_node_protocol, timelord_protocol, wallet_protocol
-from hddcoin.protocols.full_node_protocol import (
+import ssdcoin.server.ws_connection as ws  # lgtm [py/import-and-import-from]
+from ssdcoin.consensus.block_creation import unfinished_block_to_full_block
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain import Blockchain, ReceiveBlockResult
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
+from ssdcoin.consensus.make_sub_epoch_summary import next_sub_epoch_summary
+from ssdcoin.consensus.multiprocess_validation import PreValidationResult
+from ssdcoin.consensus.pot_iterations import calculate_sp_iters
+from ssdcoin.full_node.block_store import BlockStore
+from ssdcoin.full_node.bundle_tools import detect_potential_template_generator
+from ssdcoin.full_node.coin_store import CoinStore
+from ssdcoin.full_node.full_node_store import FullNodeStore
+from ssdcoin.full_node.mempool_manager import MempoolManager
+from ssdcoin.full_node.signage_point import SignagePoint
+from ssdcoin.full_node.sync_store import SyncStore
+from ssdcoin.full_node.weight_proof import WeightProofHandler
+from ssdcoin.protocols import farmer_protocol, full_node_protocol, timelord_protocol, wallet_protocol
+from ssdcoin.protocols.full_node_protocol import (
     RejectBlocks,
     RequestBlocks,
     RespondBlock,
     RespondBlocks,
     RespondSignagePoint,
 )
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.server.node_discovery import FullNodePeers
-from hddcoin.server.outbound_message import Message, NodeType, make_msg
-from hddcoin.server.server import HDDcoinServer
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.pool_target import PoolTarget
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.blockchain_format.vdf import CompressibleVDFField, VDFInfo, VDFProof
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.types.mempool_inclusion_status import MempoolInclusionStatus
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.types.unfinished_block import UnfinishedBlock
-from hddcoin.util.bech32m import encode_puzzle_hash
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.errors import ConsensusError, Err
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
-from hddcoin.util.path import mkdir, path_from_root
-from hddcoin.util.safe_cancel_task import cancel_task_safe
-from hddcoin.util.profiler import profile_task
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.server.node_discovery import FullNodePeers
+from ssdcoin.server.outbound_message import Message, NodeType, make_msg
+from ssdcoin.server.server import SSDCoinServer
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.pool_target import PoolTarget
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.blockchain_format.vdf import CompressibleVDFField, VDFInfo, VDFProof
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.types.mempool_inclusion_status import MempoolInclusionStatus
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.types.unfinished_block import UnfinishedBlock
+from ssdcoin.util.bech32m import encode_puzzle_hash
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.errors import ConsensusError, Err
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.path import mkdir, path_from_root
+from ssdcoin.util.safe_cancel_task import cancel_task_safe
+from ssdcoin.util.profiler import profile_task
 
 
 class FullNode:
@@ -174,7 +174,7 @@ class FullNode:
         if peak is not None:
             await self.weight_proof_handler.create_sub_epoch_segments()
 
-    def set_server(self, server: HDDcoinServer):
+    def set_server(self, server: SSDCoinServer):
         self.server = server
         dns_servers = []
         try:
@@ -187,7 +187,7 @@ class FullNode:
             dns_servers = self.config["dns_servers"]
         elif self.config["port"] == 8444:
             # If `dns_servers` misses from the `config`, hardcode it if we're running mainnet.
-            dns_servers.append("dns-introducer.hddcoin.org")
+            dns_servers.append("dns-introducer.ssdcoin.org")
         try:
             self.full_node_peers = FullNodePeers(
                 self.server,
@@ -212,7 +212,7 @@ class FullNode:
         if self.state_changed_callback is not None:
             self.state_changed_callback(change)
 
-    async def short_sync_batch(self, peer: ws.WSHDDcoinConnection, start_height: uint32, target_height: uint32) -> bool:
+    async def short_sync_batch(self, peer: ws.WSSSDCoinConnection, start_height: uint32, target_height: uint32) -> bool:
         """
         Tries to sync to a chain which is not too far in the future, by downloading batches of blocks. If the first
         block that we download is not connected to our chain, we return False and do an expensive long sync instead.
@@ -282,7 +282,7 @@ class FullNode:
         return True
 
     async def short_sync_backtrack(
-        self, peer: ws.WSHDDcoinConnection, peak_height: uint32, target_height: uint32, target_unf_hash: bytes32
+        self, peer: ws.WSSSDCoinConnection, peak_height: uint32, target_height: uint32, target_unf_hash: bytes32
     ):
         """
         Performs a backtrack sync, where blocks are downloaded one at a time from newest to oldest. If we do not
@@ -338,7 +338,7 @@ class FullNode:
             await asyncio.sleep(sleep_before)
         self._state_changed("peer_changed_peak")
 
-    async def new_peak(self, request: full_node_protocol.NewPeak, peer: ws.WSHDDcoinConnection):
+    async def new_peak(self, request: full_node_protocol.NewPeak, peer: ws.WSSSDCoinConnection):
         """
         We have received a notification of a new peak from a peer. This happens either when we have just connected,
         or when the peer has updated their peak.
@@ -416,7 +416,7 @@ class FullNode:
             self._sync_task = asyncio.create_task(self._sync())
 
     async def send_peak_to_timelords(
-        self, peak_block: Optional[FullBlock] = None, peer: Optional[ws.WSHDDcoinConnection] = None
+        self, peak_block: Optional[FullBlock] = None, peer: Optional[ws.WSSSDCoinConnection] = None
     ):
         """
         Sends current peak to timelords
@@ -489,7 +489,7 @@ class FullNode:
         else:
             return True
 
-    async def on_connect(self, connection: ws.WSHDDcoinConnection):
+    async def on_connect(self, connection: ws.WSSSDCoinConnection):
         """
         Whenever we connect to another node / wallet, send them our current heads. Also send heads to farmers
         and challenges to timelords.
@@ -541,7 +541,7 @@ class FullNode:
             elif connection.connection_type is NodeType.TIMELORD:
                 await self.send_peak_to_timelords()
 
-    def on_disconnect(self, connection: ws.WSHDDcoinConnection):
+    def on_disconnect(self, connection: ws.WSSSDCoinConnection):
         self.log.info(f"peer disconnected {connection.get_peer_info()}")
         self._state_changed("close_connection")
         self._state_changed("sync_mode")
@@ -809,7 +809,7 @@ class FullNode:
     async def receive_block_batch(
         self,
         all_blocks: List[FullBlock],
-        peer: ws.WSHDDcoinConnection,
+        peer: ws.WSSSDCoinConnection,
         fork_point: Optional[uint32],
         wp_summaries: Optional[List[SubEpochSummary]] = None,
     ) -> Tuple[bool, bool, Optional[uint32]]:
@@ -903,7 +903,7 @@ class FullNode:
     async def signage_point_post_processing(
         self,
         request: full_node_protocol.RespondSignagePoint,
-        peer: ws.WSHDDcoinConnection,
+        peer: ws.WSSSDCoinConnection,
         ip_sub_slot: Optional[EndOfSubSlotBundle],
     ):
         self.log.info(
@@ -957,7 +957,7 @@ class FullNode:
         await self.server.send_to_all([msg], NodeType.FARMER)
 
     async def peak_post_processing(
-        self, block: FullBlock, record: BlockRecord, fork_height: uint32, peer: Optional[ws.WSHDDcoinConnection]
+        self, block: FullBlock, record: BlockRecord, fork_height: uint32, peer: Optional[ws.WSSSDCoinConnection]
     ):
         """
         Must be called under self.blockchain.lock. This updates the internal state of the full node with the
@@ -1106,7 +1106,7 @@ class FullNode:
     async def respond_block(
         self,
         respond_block: full_node_protocol.RespondBlock,
-        peer: Optional[ws.WSHDDcoinConnection] = None,
+        peer: Optional[ws.WSSSDCoinConnection] = None,
     ) -> Optional[Message]:
         """
         Receive a full block from a peer full node (or ourselves).
@@ -1267,7 +1267,7 @@ class FullNode:
     async def respond_unfinished_block(
         self,
         respond_unfinished_block: full_node_protocol.RespondUnfinishedBlock,
-        peer: Optional[ws.WSHDDcoinConnection],
+        peer: Optional[ws.WSSSDCoinConnection],
         farmed_block: bool = False,
     ):
         """
@@ -1424,7 +1424,7 @@ class FullNode:
         self._state_changed("unfinished_block")
 
     async def new_infusion_point_vdf(
-        self, request: timelord_protocol.NewInfusionPointVDF, timelord_peer: Optional[ws.WSHDDcoinConnection] = None
+        self, request: timelord_protocol.NewInfusionPointVDF, timelord_peer: Optional[ws.WSSSDCoinConnection] = None
     ) -> Optional[Message]:
         # Lookup unfinished blocks
         unfinished_block: Optional[UnfinishedBlock] = self.full_node_store.get_unfinished_block(
@@ -1527,7 +1527,7 @@ class FullNode:
         return None
 
     async def respond_end_of_sub_slot(
-        self, request: full_node_protocol.RespondEndOfSubSlot, peer: ws.WSHDDcoinConnection
+        self, request: full_node_protocol.RespondEndOfSubSlot, peer: ws.WSSSDCoinConnection
     ) -> Tuple[Optional[Message], bool]:
 
         fetched_ss = self.full_node_store.get_sub_slot(request.end_of_slot_bundle.challenge_chain.get_hash())
@@ -1615,7 +1615,7 @@ class FullNode:
         self,
         transaction: SpendBundle,
         spend_name: bytes32,
-        peer: Optional[ws.WSHDDcoinConnection] = None,
+        peer: Optional[ws.WSSSDCoinConnection] = None,
         test: bool = False,
     ) -> Tuple[MempoolInclusionStatus, Optional[Err]]:
         if self.sync_store.get_sync_mode():
@@ -1827,7 +1827,7 @@ class FullNode:
         if self.server is not None:
             await self.server.send_to_all([msg], NodeType.FULL_NODE)
 
-    async def new_compact_vdf(self, request: full_node_protocol.NewCompactVDF, peer: ws.WSHDDcoinConnection):
+    async def new_compact_vdf(self, request: full_node_protocol.NewCompactVDF, peer: ws.WSSSDCoinConnection):
         is_fully_compactified = await self.block_store.is_fully_compactified(request.header_hash)
         if is_fully_compactified is None or is_fully_compactified:
             return False
@@ -1845,7 +1845,7 @@ class FullNode:
             if response is not None and isinstance(response, full_node_protocol.RespondCompactVDF):
                 await self.respond_compact_vdf(response, peer)
 
-    async def request_compact_vdf(self, request: full_node_protocol.RequestCompactVDF, peer: ws.WSHDDcoinConnection):
+    async def request_compact_vdf(self, request: full_node_protocol.RequestCompactVDF, peer: ws.WSSSDCoinConnection):
         header_block = await self.blockchain.get_header_block_by_height(
             request.height, request.header_hash, tx_filter=False
         )
@@ -1889,7 +1889,7 @@ class FullNode:
         msg = make_msg(ProtocolMessageTypes.respond_compact_vdf, compact_vdf)
         await peer.send_message(msg)
 
-    async def respond_compact_vdf(self, request: full_node_protocol.RespondCompactVDF, peer: ws.WSHDDcoinConnection):
+    async def respond_compact_vdf(self, request: full_node_protocol.RespondCompactVDF, peer: ws.WSSSDCoinConnection):
         field_vdf = CompressibleVDFField(int(request.field_vdf))
         if not await self._can_accept_compact_proof(
             request.vdf_info, request.vdf_proof, request.height, request.header_hash, field_vdf

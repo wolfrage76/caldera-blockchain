@@ -1,12 +1,12 @@
 from typing import Dict, Optional, Tuple
 
-from hddcoin.types.blockchain_format.program import Program, INFINITE_COST
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.condition_tools import conditions_dict_for_solution
-from hddcoin.wallet.cc_wallet import cc_utils
-from hddcoin.wallet.trade_record import TradeRecord
-from hddcoin.wallet.trading.trade_status import TradeStatus
+from ssdcoin.types.blockchain_format.program import Program, INFINITE_COST
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.condition_tools import conditions_dict_for_solution
+from ssdcoin.wallet.cc_wallet import cc_utils
+from ssdcoin.wallet.trade_record import TradeRecord
+from ssdcoin.wallet.trading.trade_status import TradeStatus
 
 
 def trade_status_ui_string(status: TradeStatus):
@@ -83,10 +83,10 @@ def get_discrepancies_for_spend_bundle(
                 coin_amount = coinsol.coin.amount
                 out_amount = get_output_amount_for_puzzle_and_solution(puzzle, solution)
                 diff = coin_amount - out_amount
-                if "hddcoin" in cc_discrepancies:
-                    cc_discrepancies["hddcoin"] = cc_discrepancies["hddcoin"] + diff
+                if "ssdcoin" in cc_discrepancies:
+                    cc_discrepancies["ssdcoin"] = cc_discrepancies["ssdcoin"] + diff
                 else:
-                    cc_discrepancies["hddcoin"] = diff
+                    cc_discrepancies["ssdcoin"] = diff
 
         return True, cc_discrepancies, None
     except Exception as e:

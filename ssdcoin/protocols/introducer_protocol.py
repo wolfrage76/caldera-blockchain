@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import List
 
-from hddcoin.types.peer_info import TimestampedPeerInfo
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.peer_info import TimestampedPeerInfo
+from ssdcoin.util.streamable import Streamable, streamable
 
 """
 Protocol to introducer

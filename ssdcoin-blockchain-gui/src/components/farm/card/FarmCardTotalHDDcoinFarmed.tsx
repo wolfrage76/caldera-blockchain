@@ -3,10 +3,10 @@ import { Trans } from '@lingui/macro';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../../modules/rootReducer';
 import FarmCard from './FarmCard';
-import { mojo_to_hddcoin } from '../../../util/hddcoin';
+import { mojo_to_ssdcoin } from '../../../util/ssdcoin';
 import useCurrencyCode from '../../../hooks/useCurrencyCode';
 
-export default function FarmCardTotalHDDcoinFarmed() {
+export default function FarmCardTotalSSDCoinFarmed() {
   const currencyCode = useCurrencyCode();
 
   const loading = useSelector(
@@ -17,17 +17,17 @@ export default function FarmCardTotalHDDcoinFarmed() {
     (state: RootState) => state.wallet_state.farmed_amount?.farmed_amount,
   );
 
-  const totalHDDcoinFarmed = useMemo(() => {
+  const totalSSDCoinFarmed = useMemo(() => {
     if (farmedAmount !== undefined) {
       const val = BigInt(farmedAmount.toString());
-      return mojo_to_hddcoin(val);
+      return mojo_to_ssdcoin(val);
     }
   }, [farmedAmount]);
 
   return (
     <FarmCard
-      title={<Trans>{currencyCode} Total HDDcoin Farmed</Trans>}
-      value={totalHDDcoinFarmed}
+      title={<Trans>{currencyCode} Total SSDCoin Farmed</Trans>}
+      value={totalSSDCoinFarmed}
       loading={loading}
     />
   );

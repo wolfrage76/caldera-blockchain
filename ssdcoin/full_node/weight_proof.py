@@ -6,27 +6,27 @@ import random
 from concurrent.futures.process import ProcessPoolExecutor
 from typing import Dict, List, Optional, Tuple
 
-from hddcoin.consensus.block_header_validation import validate_finished_header_block
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.deficit import calculate_deficit
-from hddcoin.consensus.full_block_to_block_record import header_block_to_sub_block_record
-from hddcoin.consensus.pot_iterations import (
+from ssdcoin.consensus.block_header_validation import validate_finished_header_block
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.deficit import calculate_deficit
+from ssdcoin.consensus.full_block_to_block_record import header_block_to_sub_block_record
+from ssdcoin.consensus.pot_iterations import (
     calculate_ip_iters,
     calculate_iterations_quality,
     calculate_sp_iters,
     is_overflow_block,
 )
-from hddcoin.consensus.vdf_info_computation import get_signage_point_vdf_info
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.slots import ChallengeChainSubSlot, RewardChainSubSlot
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.blockchain_format.vdf import VDFInfo
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.types.weight_proof import (
+from ssdcoin.consensus.vdf_info_computation import get_signage_point_vdf_info
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.slots import ChallengeChainSubSlot, RewardChainSubSlot
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.blockchain_format.vdf import VDFInfo
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.types.weight_proof import (
     SubEpochChallengeSegment,
     SubEpochData,
     SubSlotData,
@@ -34,10 +34,10 @@ from hddcoin.types.weight_proof import (
     SubEpochSegments,
     RecentChainData,
 )
-from hddcoin.util.block_cache import BlockCache
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
-from hddcoin.util.streamable import dataclass_from_dict, recurse_jsonify
+from ssdcoin.util.block_cache import BlockCache
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.streamable import dataclass_from_dict, recurse_jsonify
 
 log = logging.getLogger(__name__)
 

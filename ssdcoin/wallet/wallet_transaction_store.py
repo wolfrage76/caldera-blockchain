@@ -3,13 +3,13 @@ from typing import Dict, List, Optional, Tuple
 
 import aiosqlite
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.mempool_inclusion_status import MempoolInclusionStatus
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.errors import Err
-from hddcoin.util.ints import uint8, uint32
-from hddcoin.wallet.transaction_record import TransactionRecord
-from hddcoin.wallet.util.transaction_type import TransactionType
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.mempool_inclusion_status import MempoolInclusionStatus
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.errors import Err
+from ssdcoin.util.ints import uint8, uint32
+from ssdcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.util.transaction_type import TransactionType
 
 
 class WalletTransactionStore:

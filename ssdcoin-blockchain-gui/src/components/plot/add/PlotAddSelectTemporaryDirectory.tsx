@@ -7,7 +7,7 @@ import {
   CardStep,
   Flex,
   TextField,
-} from '@hddcoin/core';
+} from '@ssdcoin/core';
 import { Typography } from '@material-ui/core';
 import useSelectDirectory from '../../../hooks/useSelectDirectory';
 

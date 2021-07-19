@@ -2,8 +2,8 @@ import asyncio
 import logging
 from typing import Dict, List, Optional, Set, Tuple
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.ints import uint32, uint128
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.ints import uint32, uint128
 
 log = logging.getLogger(__name__)
 

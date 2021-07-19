@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Trans } from '@lingui/macro';
 import { useFormContext } from 'react-hook-form';
-import { CardStep, ConfirmDialog, Link, Select, StateColor } from '@hddcoin/core';
+import { CardStep, ConfirmDialog, Link, Select, StateColor } from '@ssdcoin/core';
 import {
   Grid,
   FormControl,
@@ -66,7 +66,7 @@ export default function PlotAddChooseSize() {
           }
           <Link
             target="_blank"
-            href="https://github.com/HDDcoin-Network/hddcoin-blockchain/wiki/k-sizes"
+            href="https://github.com/SSDCoin-Network/ssdcoin-blockchain/wiki/k-sizes"
           >
             Learn more
           </Link>

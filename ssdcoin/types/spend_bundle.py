@@ -3,10 +3,10 @@ from typing import List
 
 from blspy import AugSchemeMPL, G2Element
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.streamable import Streamable, streamable
-from hddcoin.wallet.util.debug_spend_bundle import debug_spend_bundle
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.streamable import Streamable, streamable
+from ssdcoin.wallet.util.debug_spend_bundle import debug_spend_bundle
 
 from .coin_solution import CoinSolution
 

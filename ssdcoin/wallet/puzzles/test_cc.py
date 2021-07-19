@@ -5,21 +5,21 @@ from typing import Dict, List, Optional, Tuple
 
 from blspy import G2Element
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.spend_bundle import CoinSolution, SpendBundle
-from hddcoin.util.ints import uint64
-from hddcoin.wallet.cc_wallet.cc_utils import (
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.spend_bundle import CoinSolution, SpendBundle
+from ssdcoin.util.ints import uint64
+from ssdcoin.wallet.cc_wallet.cc_utils import (
     CC_MOD,
     cc_puzzle_for_inner_puzzle,
     cc_puzzle_hash_for_inner_puzzle_hash,
     spend_bundle_for_spendable_ccs,
     spendable_cc_list_from_coin_solution,
 )
-from hddcoin.wallet.puzzles.genesis_by_coin_id_with_0 import create_genesis_or_zero_coin_checker
-from hddcoin.wallet.puzzles.genesis_by_puzzle_hash_with_0 import create_genesis_puzzle_or_zero_coin_checker
+from ssdcoin.wallet.puzzles.genesis_by_coin_id_with_0 import create_genesis_or_zero_coin_checker
+from ssdcoin.wallet.puzzles.genesis_by_puzzle_hash_with_0 import create_genesis_puzzle_or_zero_coin_checker
 
 CONDITIONS = dict((k, bytes(v)[0]) for k, v in ConditionOpcode.__members__.items())  # pylint: disable=E1101
 
@@ -197,7 +197,7 @@ def test_spend_zero_coin(mod_code: Program, coin_checker_for_farmed_coin):
     assert len(eve_cc_list) == 1
     eve_cc_spendable = eve_cc_list[0]
 
-    # farm regular hddcoin
+    # farm regular ssdcoin
 
     farmed_coin = generate_farmed_coin(2, eve_inner_puzzle_hash, amount=500)
 

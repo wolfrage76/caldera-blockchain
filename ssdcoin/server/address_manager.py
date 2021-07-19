@@ -6,9 +6,9 @@ from random import choice, randrange
 from secrets import randbits
 from typing import Dict, List, Optional, Set, Tuple
 
-from hddcoin.types.peer_info import PeerInfo, TimestampedPeerInfo
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint16, uint64
+from ssdcoin.types.peer_info import PeerInfo, TimestampedPeerInfo
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint16, uint64
 
 TRIED_BUCKETS_PER_GROUP = 8
 NEW_BUCKETS_PER_SOURCE_GROUP = 64

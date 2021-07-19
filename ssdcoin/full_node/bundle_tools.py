@@ -4,13 +4,13 @@ from typing import Optional, Tuple, List, Union
 from clvm import SExp
 from clvm_tools import binutils
 
-from hddcoin.full_node.generator import create_compressed_generator
-from hddcoin.types.blockchain_format.program import SerializedProgram, Program
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.generator_types import BlockGenerator, CompressorArg
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.ints import uint32, uint64
+from ssdcoin.full_node.generator import create_compressed_generator
+from ssdcoin.types.blockchain_format.program import SerializedProgram, Program
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.generator_types import BlockGenerator, CompressorArg
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.ints import uint32, uint64
 
 
 def spend_bundle_to_serialized_coin_solution_entry_list(bundle: SpendBundle) -> bytes:

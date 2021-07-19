@@ -19,7 +19,7 @@ import {
   Loading,
   TooltipIcon,
   Flex,
-} from '@hddcoin/core';
+} from '@ssdcoin/core';
 import {
   unix_to_short_date,
   hex_to_array,
@@ -27,7 +27,7 @@ import {
   sha256,
 } from '../../util/utils';
 import { getBlockRecord, getBlock } from '../../modules/fullnodeMessages';
-import { mojo_to_hddcoin } from '../../util/hddcoin';
+import { mojo_to_ssdcoin } from '../../util/ssdcoin';
 import {
   calculatePoolReward,
   calculateBaseFarmerReward,
@@ -173,13 +173,13 @@ export default function Block() {
       ? blockRecord.weight - prevBlockRecord.weight
       : blockRecord?.weight ?? 0;
 
-  const poolReward = mojo_to_hddcoin(calculatePoolReward(blockRecord.height));
-  const baseFarmerReward = mojo_to_hddcoin(
+  const poolReward = mojo_to_ssdcoin(calculatePoolReward(blockRecord.height));
+  const baseFarmerReward = mojo_to_ssdcoin(
     calculateBaseFarmerReward(blockRecord.height),
   );
 
-  const hddcoinFees = blockRecord.fees
-    ? mojo_to_hddcoin(BigInt(blockRecord.fees))
+  const ssdcoinFees = blockRecord.fees
+    ? mojo_to_ssdcoin(BigInt(blockRecord.fees))
     : '';
 
   const rows = [
@@ -270,7 +270,7 @@ export default function Block() {
       value: (
         <Link
           target="_blank"
-          href={`https://www.hddcoinexplorer.com/blockchain/puzzlehash/${blockRecord.farmer_puzzle_hash}`}
+          href={`https://www.ssdcoinexplorer.com/blockchain/puzzlehash/${blockRecord.farmer_puzzle_hash}`}
         >
           {currencyCode
             ? toBech32m(
@@ -286,7 +286,7 @@ export default function Block() {
       value: (
         <Link
           target="_blank"
-          href={`https://www.hddcoinexplorer.com/blockchain/puzzlehash/${blockRecord.pool_puzzle_hash}`}
+          href={`https://www.ssdcoinexplorer.com/blockchain/puzzlehash/${blockRecord.pool_puzzle_hash}`}
         >
           {currencyCode
             ? toBech32m(
@@ -321,7 +321,7 @@ export default function Block() {
     },
     {
       name: <Trans>Fees Amount</Trans>,
-      value: hddcoinFees ? `${hddcoinFees} ${currencyCode}` : '',
+      value: ssdcoinFees ? `${ssdcoinFees} ${currencyCode}` : '',
       tooltip: (
         <Trans>
           The total transactions fees in this block. Rewarded to the farmer.
@@ -336,7 +336,7 @@ export default function Block() {
         title={
           <BlockTitle>
             <Trans>
-              Block at height {blockRecord.height} in the HDDcoin blockchain
+              Block at height {blockRecord.height} in the SSDCoin blockchain
             </Trans>
           </BlockTitle>
         }

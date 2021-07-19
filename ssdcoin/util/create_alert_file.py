@@ -3,9 +3,9 @@ from typing import List
 
 from blspy import AugSchemeMPL
 
-from hddcoin.util.ints import uint32
-from hddcoin.util.keychain import Keychain
-from hddcoin.util.validate_alert import create_alert_file, create_not_ready_alert_file, validate_alert_file
+from ssdcoin.util.ints import uint32
+from ssdcoin.util.keychain import Keychain
+from ssdcoin.util.validate_alert import create_alert_file, create_not_ready_alert_file, validate_alert_file
 
 bitcoin_hash = None
 bram_message = None

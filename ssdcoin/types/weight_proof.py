@@ -1,14 +1,14 @@
 from dataclasses import dataclass
 from typing import List, Optional
 
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace
-from hddcoin.types.blockchain_format.reward_chain_block import RewardChainBlock
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
-from hddcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.util.ints import uint8, uint32, uint64, uint128
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace
+from ssdcoin.types.blockchain_format.reward_chain_block import RewardChainBlock
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
+from ssdcoin.types.end_of_slot_bundle import EndOfSubSlotBundle
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.util.ints import uint8, uint32, uint64, uint128
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

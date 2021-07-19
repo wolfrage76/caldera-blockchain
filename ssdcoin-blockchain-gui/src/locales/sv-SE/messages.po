@@ -6,16 +6,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: sv_SE\n"
-"Project-Id-Version: hddcoin-blockchain\n"
+"Project-Id-Version: ssdcoin-blockchain\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2021-06-30 06:03\n"
 "Last-Translator: \n"
 "Language-Team: Swedish\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Crowdin-Project: hddcoin-blockchain\n"
+"X-Crowdin-Project: ssdcoin-blockchain\n"
 "X-Crowdin-Project-ID: 440660\n"
 "X-Crowdin-Language: sv-SE\n"
-"X-Crowdin-File: /[HDDcoin-Network.hddcoin-blockchain-gui] main/src/locales/en-US/messages.po\n"
+"X-Crowdin-File: /[SSDCoin-Network.ssdcoin-blockchain-gui] main/src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 118\n"
 
 #: src/components/plot/add/PlotAddNFT.tsx:62
@@ -23,8 +23,8 @@ msgid "(Optional)"
 msgstr ""
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:64
-msgid "*Want to explore HDDcoin’s blocks further? Check out <0>HDDcoin Explorer</0> built by an open source developer."
-msgstr "*Vill du utforska HDDcoins block lite mer? Ta en titt på <0>HDDcoin Explorer</0> som har skapats som öppen källkod av en utvecklare."
+msgid "*Want to explore SSDCoin’s blocks further? Check out <0>SSDCoin Explorer</0> built by an open source developer."
+msgstr "*Vill du utforska SSDCoins block lite mer? Ta en titt på <0>SSDCoin Explorer</0> som har skapats som öppen källkod av en utvecklare."
 
 #: src/components/plot/add/PlotAddNFT.tsx:127
 msgid "+ Add New Plot NFT"
@@ -44,8 +44,8 @@ msgstr "En skördare är en tjänst som körs på en maskin där plottar lagras.
 
 #: src/electron/main.tsx:422
 #: src/electron/main.tsx:509
-msgid "About HDDcoin Blockchain"
-msgstr "Om HDDcoin Blockchain"
+msgid "About SSDCoin Blockchain"
+msgstr "Om SSDCoin Blockchain"
 
 #: src/components/trading/ViewOffer.jsx:74
 msgid "Accept"
@@ -207,8 +207,8 @@ msgid "Block VDF Iterations"
 msgstr "VDF-iterationer för block"
 
 #: src/components/block/Block.jsx:338
-msgid "Block at height {0} in the HDDcoin blockchain"
-msgstr "Block vid höjd {0} i HDDcoin-blockkedjan"
+msgid "Block at height {0} in the SSDCoin blockchain"
+msgstr "Block vid höjd {0} i SSDCoin-blockkedjan"
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -299,16 +299,16 @@ msgid "Chat on KeyBase"
 msgstr "Chatta på KeyBase"
 
 #: src/electron/main.tsx:419
-msgid "HDDcoin"
-msgstr "HDDcoin"
+msgid "SSDCoin"
+msgstr "SSDCoin"
 
 #: src/electron/main.tsx:358
-msgid "HDDcoin Blockchain Wiki"
-msgstr "HDDcoin Blockchains wiki"
+msgid "SSDCoin Blockchain Wiki"
+msgstr "SSDCoin Blockchains wiki"
 
 #: src/components/wallet/standard/WalletStandard.tsx:630
-msgid "HDDcoin Wallet"
-msgstr "HDDcoin-plånbok"
+msgid "SSDCoin Wallet"
+msgstr "SSDCoin-plånbok"
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:36
 msgid "Choose Number of Plots"
@@ -669,8 +669,8 @@ msgid "Edit"
 msgstr "Redigera"
 
 #: src/components/wallet/WalletImport.tsx:147
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your HDDcoin wallet."
-msgstr "Skriv in din sparade minnesfras på 24 ord för att återställa din HDDcoin-plånbok."
+msgid "Enter the 24 word mnemonic that you have saved in order to restore your SSDCoin wallet."
+msgstr "Skriv in din sparade minnesfras på 24 ord för att återställa din SSDCoin-plånbok."
 
 #: src/components/farm/FarmerStatus.tsx:21
 #: src/components/farm/FarmerStatus.tsx:22
@@ -683,8 +683,8 @@ msgid "Error"
 msgstr "Fel"
 
 #: src/components/wallet/standard/WalletStandard.tsx:453
-msgid "Error: Cannot send hddcoin to coloured address. Please enter a hddcoin address."
-msgstr "Fel: det går inte att skicka hddcoin till färgad adress. Ange en hddcoin-adress."
+msgid "Error: Cannot send ssdcoin to coloured address. Please enter a ssdcoin address."
+msgstr "Fel: det går inte att skicka ssdcoin till färgad adress. Ange en ssdcoin-adress."
 
 #: src/components/fullNode/card/FullNodeEstimatedNetworkSpace.tsx:20
 msgid "Estimated Network Space"
@@ -1431,8 +1431,8 @@ msgid "Plots Passed Filter"
 msgstr "Plottar som passerat filtret"
 
 #: src/components/plot/overview/PlotOverviewHero.tsx:28
-msgid "Plots are allocated space on your hard drive used to farm and earn HDDcoin. <0>Learn more</0>"
-msgstr "Plottar är reserverat utrymme på din hårddisk som används för att odla och tjäna HDDcoin. <0>Läs mer</0>"
+msgid "Plots are allocated space on your hard drive used to farm and earn SSDCoin. <0>Learn more</0>"
+msgstr "Plottar är reserverat utrymme på din hårddisk som används för att odla och tjäna SSDCoin. <0>Läs mer</0>"
 
 #: src/components/plot/queue/PlotQueueIndicator.tsx:34
 msgid "Plotting"
@@ -1850,8 +1850,8 @@ msgstr "Längd på spenderintervall (antal block)"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:401
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:448
-msgid "Spending Limit (hddcoin per interval): {0}"
-msgstr "Spenderbegränsning (hddcoin per intervall): {0}"
+msgid "Spending Limit (ssdcoin per interval): {0}"
+msgstr "Spenderbegränsning (ssdcoin per intervall): {0}"
 
 #: src/components/fullNode/FullNode.jsx:100
 msgid "State"
@@ -1899,8 +1899,8 @@ msgstr "Status:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the HDDcoin blockchain"
-#~ msgstr "Sub Block at height {0} in the HDDcoin blockchain"
+#~ msgid "Sub Block at height {0} in the SSDCoin blockchain"
+#~ msgstr "Sub Block at height {0} in the SSDCoin blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:347
 msgid "Submit"
@@ -2027,8 +2027,8 @@ msgid "This feature is available only from the GUI."
 msgstr "Denna funktion kan bara användas från GUI."
 
 #: src/components/wallet/card/WalletCardSpendableBalance.tsx:26
-msgid "This is the amount of HDDcoin that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and HDDcoin that you have just spent but is not yet in the blockchain."
-msgstr "Detta är den mängd HDDcoin du för tillfället kan använda för transaktioner. Det innefattar inte väntande odlingsbelöningar, väntande inkommande transaktioner eller HDDcoin som du just spenderat men som ännu inte finns i blockkedjan."
+msgid "This is the amount of SSDCoin that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and SSDCoin that you have just spent but is not yet in the blockchain."
+msgstr "Detta är den mängd SSDCoin du för tillfället kan använda för transaktioner. Det innefattar inte väntande odlingsbelöningar, väntande inkommande transaktioner eller SSDCoin som du just spenderat men som ännu inte finns i blockkedjan."
 
 #: src/components/wallet/card/WalletCardPendingChange.tsx:26
 msgid "This is the pending change, which are change coins which you have sent to yourself, but have not been confirmed yet."
@@ -2047,8 +2047,8 @@ msgid "This is the time the block was created by the farmer, which is before it 
 msgstr "Detta är den tidpunkt då blocket skapades av odlaren, vilket är innan det färdigställs med ett bevis-på-tid"
 
 #: src/components/wallet/card/WalletCardTotalBalance.tsx:34
-msgid "This is the total amount of hddcoin in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
-msgstr "Detta är den sammanlagda mängden hddcoin i blockkedjan vid det aktuella topp-underblocket som kontrolleras av dina privata nycklar. Det innefattar frusna odlingsbelöningar, men inte väntande inkommande och utgående transaktioner."
+msgid "This is the total amount of ssdcoin in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+msgstr "Detta är den sammanlagda mängden ssdcoin i blockkedjan vid det aktuella topp-underblocket som kontrolleras av dina privata nycklar. Det innefattar frusna odlingsbelöningar, men inte väntande inkommande och utgående transaktioner."
 
 #: src/components/wallet/card/WalletCardPendingTotalBalance.tsx:29
 msgid "This is the total balance + pending balance: it is what your balance will be after all pending transactions are confirmed."
@@ -2089,8 +2089,8 @@ msgid "This trade was included on blockchain at this block height"
 msgstr "Denna affärstransaktion lades till i blockkedjan vid denna blockhöjd"
 
 #: src/components/app/AppTimeBombAlert.tsx:19
-msgid "This version of HDDcoin is no longer compatible with the blockchain and can not safely farm."
-msgstr "Denna version av HDDcoin är inte längre kompatibel med blockkedjan och kan därför inte användas för odling."
+msgid "This version of SSDCoin is no longer compatible with the blockchain and can not safely farm."
+msgstr "Denna version av SSDCoin är inte längre kompatibel med blockkedjan och kan därför inte användas för odling."
 
 #: src/components/fullNode/FullNode.jsx:92
 msgid "Time Created"
@@ -2114,8 +2114,8 @@ msgstr "Till"
 msgid "Total Balance"
 msgstr "Totalt saldo"
 
-#: src/components/farm/card/FarmCardTotalHDDcoinFarmed.tsx:15
-#~ msgid "Total HDDcoin Farmed"
+#: src/components/farm/card/FarmCardTotalSSDCoinFarmed.tsx:15
+#~ msgid "Total SSDCoin Farmed"
 #~ msgstr ""
 
 #: src/components/fullNode/card/FullNodeCardTotalIterations.tsx:21
@@ -2278,7 +2278,7 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:30
-#~ msgid "WalletItem.hddcoinWallet"
+#~ msgid "WalletItem.ssdcoinWallet"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:48
@@ -2315,8 +2315,8 @@ msgid "Want to Join a Pool? Create a Plot NFT"
 msgstr ""
 
 #: src/components/plot/overview/PlotOverviewPlots.tsx:133
-msgid "Want to earn more HDDcoin? Add more plots to your farm."
-msgstr "Vill du tjäna mer HDDcoin? Lägg till fler plottar till din odling."
+msgid "Want to earn more SSDCoin? Add more plots to your farm."
+msgstr "Vill du tjäna mer SSDCoin? Lägg till fler plottar till din odling."
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:86
 msgid "Want to have a delay before the next plot starts?"
@@ -2331,8 +2331,8 @@ msgid "Weight is the total added difficulty of all sub blocks up to and includin
 msgstr "Vikt är den sammanlagda svårighetsgraden för alla underblock upp till och inklusive detta"
 
 #: src/components/selectKey/SelectKey.tsx:114
-msgid "Welcome to HDDcoin. Please log in with an existing key, or create a new key."
-msgstr "Välkommen till HDDcoin. Logga in med en existerande nyckel, eller skapa en ny nyckel."
+msgid "Welcome to SSDCoin. Please log in with an existing key, or create a new key."
+msgstr "Välkommen till SSDCoin. Logga in med en existerande nyckel, eller skapa en ny nyckel."
 
 #: src/components/wallet/WalletAdd.tsx:66
 msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
@@ -2404,8 +2404,8 @@ msgid "You need to claim your rewards first"
 msgstr ""
 
 #: src/components/app/AppTimeBomb.tsx:28
-#~ msgid "You need to upgrade the HDDcoin application as this version will stop working soon!"
-#~ msgstr "You need to upgrade the HDDcoin application as this version will stop working soon!"
+#~ msgid "You need to upgrade the SSDCoin application as this version will stop working soon!"
+#~ msgstr "You need to upgrade the SSDCoin application as this version will stop working soon!"
 
 #: src/components/plotNFT/PlotNFTAbsorbRewards.tsx:135
 msgid "You will recieve <0/> to {0}"
@@ -2488,9 +2488,9 @@ msgstr ""
 msgid "{currencyCode} Block Rewards"
 msgstr "{currencyCode} blockbelöningar"
 
-#: src/components/farm/card/FarmCardTotalHDDcoinFarmed.tsx:29
-msgid "{currencyCode} Total HDDcoin Farmed"
-msgstr "{currencyCode} Totalt antal HDDcoin som odlats"
+#: src/components/farm/card/FarmCardTotalSSDCoinFarmed.tsx:29
+msgid "{currencyCode} Total SSDCoin Farmed"
+msgstr "{currencyCode} Totalt antal SSDCoin som odlats"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:28
 msgid "{currencyCode} User Transaction Fees"

@@ -6,8 +6,8 @@ import ipaddress
 from dataclasses import dataclass
 from typing import Optional, Union
 
-from hddcoin.util.ints import uint16, uint64
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.util.ints import uint16, uint64
+from ssdcoin.util.streamable import Streamable, streamable
 
 log = logging.getLogger(__name__)
 

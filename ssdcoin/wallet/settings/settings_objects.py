@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

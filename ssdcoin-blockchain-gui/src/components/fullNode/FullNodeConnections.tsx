@@ -11,7 +11,7 @@ import {
   Loading,
   Table,
   IconButton,
-} from '@hddcoin/core';
+} from '@ssdcoin/core';
 import { Button, Tooltip } from '@material-ui/core';
 import { service_connection_types } from '../../util/service_names';
 import Connection from '../../types/Connection';

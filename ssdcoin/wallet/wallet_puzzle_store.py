@@ -5,11 +5,11 @@ from typing import List, Optional, Set, Tuple
 import aiosqlite
 from blspy import G1Element
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint32
-from hddcoin.wallet.derivation_record import DerivationRecord
-from hddcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint32
+from ssdcoin.wallet.derivation_record import DerivationRecord
+from ssdcoin.wallet.util.wallet_types import WalletType
 
 log = logging.getLogger(__name__)
 

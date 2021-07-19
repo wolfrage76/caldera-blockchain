@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
 import { useDispatch } from 'react-redux';
-import { ConfirmDialog, More } from '@hddcoin/core';
+import { ConfirmDialog, More } from '@ssdcoin/core';
 import {
   Box,
   Divider,

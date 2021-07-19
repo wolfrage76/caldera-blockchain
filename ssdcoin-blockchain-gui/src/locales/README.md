@@ -1,5 +1,5 @@
 # Localization
 
-Thanks for helping to translate the GUI for HDDcoin Blockchain.
+Thanks for helping to translate the GUI for SSDCoin Blockchain.
 
-Please head over to our [Crowdin project](https://crowdin.com/project/hddcoin-blockchain/) and add/edit translations there.
+Please head over to our [Crowdin project](https://crowdin.com/project/ssdcoin-blockchain/) and add/edit translations there.

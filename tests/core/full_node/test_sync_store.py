@@ -2,8 +2,8 @@ import asyncio
 
 import pytest
 
-from hddcoin.full_node.sync_store import SyncStore
-from hddcoin.util.hash import std_hash
+from ssdcoin.full_node.sync_store import SyncStore
+from ssdcoin.util.hash import std_hash
 
 
 @pytest.fixture(scope="module")

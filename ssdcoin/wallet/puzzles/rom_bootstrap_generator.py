@@ -1,4 +1,4 @@
-from hddcoin.types.blockchain_format.program import SerializedProgram
+from ssdcoin.types.blockchain_format.program import SerializedProgram
 
 from .load_clvm import load_clvm
 

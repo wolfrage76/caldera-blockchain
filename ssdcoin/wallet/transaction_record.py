@@ -1,14 +1,14 @@
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
 
-from hddcoin.consensus.coinbase import pool_parent_id, farmer_parent_id
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.mempool_inclusion_status import MempoolInclusionStatus
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.util.ints import uint8, uint32, uint64
-from hddcoin.util.streamable import Streamable, streamable
-from hddcoin.wallet.util.transaction_type import TransactionType
+from ssdcoin.consensus.coinbase import pool_parent_id, farmer_parent_id
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.mempool_inclusion_status import MempoolInclusionStatus
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.util.ints import uint8, uint32, uint64
+from ssdcoin.util.streamable import Streamable, streamable
+from ssdcoin.wallet.util.transaction_type import TransactionType
 
 
 @dataclass(frozen=True)

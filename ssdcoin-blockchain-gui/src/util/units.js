@@ -1,17 +1,17 @@
 const units = {
-  hddcoin: 1,
+  ssdcoin: 1,
   mojo: 1 / 1e12,
   colouredcoin: 1 / 1e9,
 };
 
 const aliases = {
-  hddcoin: ['ch', 'hddcoin', 'HDDcoin'],
+  ssdcoin: ['ch', 'ssdcoin', 'SSDCoin'],
   mojo: ['mj', 'mojo'],
   colouredcoin: ['cc', 'colouredcoin'],
 };
 
 const display = {
-  hddcoin: {
+  ssdcoin: {
     format: '{amount} CH',
     fractionDigits: 12,
   },

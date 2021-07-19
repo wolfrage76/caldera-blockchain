@@ -1,15 +1,15 @@
 from typing import Callable, Dict, List, Optional
 
-from hddcoin.farmer.farmer import Farmer
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.ws_message import WsRpcMessage, create_payload_dict
+from ssdcoin.farmer.farmer import Farmer
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.ws_message import WsRpcMessage, create_payload_dict
 
 
 class FarmerRpcApi:
     def __init__(self, farmer: Farmer):
         self.service = farmer
-        self.service_name = "hddcoin_farmer"
+        self.service_name = "ssdcoin_farmer"
 
     def get_routes(self) -> Dict[str, Callable]:
         return {

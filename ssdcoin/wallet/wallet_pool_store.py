@@ -3,9 +3,9 @@ from typing import List, Tuple, Dict, Optional
 
 import aiosqlite
 
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.util.db_wrapper import DBWrapper
-from hddcoin.util.ints import uint32
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.util.db_wrapper import DBWrapper
+from ssdcoin.util.ints import uint32
 
 log = logging.getLogger(__name__)
 

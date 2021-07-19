@@ -1,10 +1,10 @@
 from typing import Dict
 from unittest import TestCase
 
-from hddcoin.types.blockchain_format.program import Program, SerializedProgram
-from hddcoin.types.generator_types import GeneratorBlockCacheInterface
-from hddcoin.full_node.generator import create_block_generator, create_generator_args
-from hddcoin.util.ints import uint32
+from ssdcoin.types.blockchain_format.program import Program, SerializedProgram
+from ssdcoin.types.generator_types import GeneratorBlockCacheInterface
+from ssdcoin.full_node.generator import create_block_generator, create_generator_args
+from ssdcoin.util.ints import uint32
 
 gen0 = SerializedProgram.from_bytes(
     bytes.fromhex(

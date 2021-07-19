@@ -5,10 +5,10 @@ from typing import List
 
 from blspy import G1Element
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.config import load_config, save_config
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.config import load_config, save_config
+from ssdcoin.util.streamable import Streamable, streamable
 
 """
 Config example

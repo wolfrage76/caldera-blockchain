@@ -3,8 +3,8 @@ from pathlib import Path
 
 from blspy import AugSchemeMPL, PublicKeyMPL, SignatureMPL
 
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.hash import std_hash
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.hash import std_hash
 
 
 def validate_alert_file(file_path: Path, pubkey: str) -> bool:

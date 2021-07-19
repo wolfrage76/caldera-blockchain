@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
-import { FormatLargeNumber } from '@hddcoin/core';
+import { FormatLargeNumber } from '@ssdcoin/core';
 import FarmCard from './FarmCard';
 import usePlots from '../../../hooks/usePlots';
 

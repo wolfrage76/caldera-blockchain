@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Trans } from '@lingui/macro';
-import { State, StateIndicator } from '@hddcoin/core';
+import { State, StateIndicator } from '@ssdcoin/core';
 import FarmCard from './FarmCard';
 
 type Props = {

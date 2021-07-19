@@ -4,9 +4,9 @@ from typing import Any, Optional, Set, Tuple, List, Dict
 
 from blspy import PrivateKey, G2Element, G1Element
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.pools.pool_config import PoolWalletConfig, load_pool_config, update_pool_config
-from hddcoin.pools.pool_wallet_info import (
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.pools.pool_config import PoolWalletConfig, load_pool_config, update_pool_config
+from ssdcoin.pools.pool_wallet_info import (
     PoolWalletInfo,
     PoolSingletonState,
     PoolState,
@@ -15,17 +15,17 @@ from hddcoin.pools.pool_wallet_info import (
     LEAVING_POOL,
     create_pool_state,
 )
-from hddcoin.protocols.pool_protocol import POOL_PROTOCOL_VERSION
+from ssdcoin.protocols.pool_protocol import POOL_PROTOCOL_VERSION
 
-from hddcoin.types.announcement import Announcement
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.program import Program, SerializedProgram
-from hddcoin.types.coin_record import CoinRecord
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.types.spend_bundle import SpendBundle
+from ssdcoin.types.announcement import Announcement
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.program import Program, SerializedProgram
+from ssdcoin.types.coin_record import CoinRecord
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.types.spend_bundle import SpendBundle
 
-from hddcoin.pools.pool_puzzles import (
+from ssdcoin.pools.pool_puzzles import (
     create_waiting_room_inner_puzzle,
     create_full_puzzle,
     SINGLETON_LAUNCHER,
@@ -43,18 +43,18 @@ from hddcoin.pools.pool_puzzles import (
     get_delayed_puz_info_from_launcher_spend,
 )
 
-from hddcoin.util.ints import uint8, uint32, uint64
-from hddcoin.wallet.derive_keys import (
+from ssdcoin.util.ints import uint8, uint32, uint64
+from ssdcoin.wallet.derive_keys import (
     master_sk_to_pooling_authentication_sk,
     find_owner_sk,
 )
-from hddcoin.wallet.sign_coin_solutions import sign_coin_solutions
-from hddcoin.wallet.transaction_record import TransactionRecord
-from hddcoin.wallet.util.wallet_types import WalletType
-from hddcoin.wallet.wallet import Wallet
+from ssdcoin.wallet.sign_coin_solutions import sign_coin_solutions
+from ssdcoin.wallet.transaction_record import TransactionRecord
+from ssdcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.wallet import Wallet
 
-from hddcoin.wallet.wallet_info import WalletInfo
-from hddcoin.wallet.util.transaction_type import TransactionType
+from ssdcoin.wallet.wallet_info import WalletInfo
+from ssdcoin.wallet.util.transaction_type import TransactionType
 
 
 class PoolWallet:
@@ -398,7 +398,7 @@ class PoolWallet:
     ) -> Tuple[TransactionRecord, bytes32, bytes32]:
         """
         A "plot NFT", or pool wallet, represents the idea of a set of plots that all pay to
-        the same pooling puzzle. This puzzle is a `hddcoin singleton` that is
+        the same pooling puzzle. This puzzle is a `ssdcoin singleton` that is
         parameterized with a public key controlled by the user's wallet
         (a `smart coin`). It contains an inner puzzle that can switch between
         paying block rewards to a pool, or to a user's own wallet.

@@ -1,12 +1,12 @@
 from dataclasses import dataclass
 from typing import List, Optional
 
-from hddcoin.consensus.condition_costs import ConditionCost
-from hddcoin.types.blockchain_format.program import SerializedProgram
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.name_puzzle_condition import NPC
-from hddcoin.util.ints import uint64, uint16
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.consensus.condition_costs import ConditionCost
+from ssdcoin.types.blockchain_format.program import SerializedProgram
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.name_puzzle_condition import NPC
+from ssdcoin.util.ints import uint64, uint16
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

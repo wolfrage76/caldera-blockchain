@@ -7,10 +7,10 @@ from pathlib import Path
 import aiosqlite
 import pytest
 
-from hddcoin.consensus.blockchain import Blockchain
-from hddcoin.full_node.block_store import BlockStore
-from hddcoin.full_node.coin_store import CoinStore
-from hddcoin.util.db_wrapper import DBWrapper
+from ssdcoin.consensus.blockchain import Blockchain
+from ssdcoin.full_node.block_store import BlockStore
+from ssdcoin.full_node.coin_store import CoinStore
+from ssdcoin.util.db_wrapper import DBWrapper
 from tests.setup_nodes import bt, test_constants
 
 log = logging.getLogger(__name__)

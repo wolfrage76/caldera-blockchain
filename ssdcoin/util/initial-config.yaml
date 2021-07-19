@@ -32,8 +32,8 @@ network_overrides: &network_overrides
       default_full_node_port: 48444
 
 selected_network: &selected_network "mainnet"
-ALERTS_URL: https://download.hddcoin.org/notify/mainnet_alert.txt
-HDDCOIN_ALERTS_PUBKEY: 89b7fd87cb56e926ecefb879a29aae308be01f31980569f6a75a69d2a9a69daefd71fb778d865f7c50d6c967e3025937
+ALERTS_URL: https://download.ssdcoin.org/notify/mainnet_alert.txt
+SSDCOIN_ALERTS_PUBKEY: 89b7fd87cb56e926ecefb879a29aae308be01f31980569f6a75a69d2a9a69daefd71fb778d865f7c50d6c967e3025937
 
 # public ssl ca is included in source code
 # Private ssl ca is used for trusted connections between machines user owns
@@ -41,9 +41,9 @@ private_ssl_ca:
   crt: "config/ssl/ca/private_ca.crt"
   key: "config/ssl/ca/private_ca.key"
 
-hddcoin_ssl_ca:
-  crt: "config/ssl/ca/hddcoin_ca.crt"
-  key: "config/ssl/ca/hddcoin_ca.key"
+ssdcoin_ssl_ca:
+  crt: "config/ssl/ca/ssdcoin_ca.crt"
+  key: "config/ssl/ca/ssdcoin_ca.key"
 
 
 daemon_ssl:
@@ -89,9 +89,9 @@ harvester:
     crt: "config/ssl/ca/private_ca.crt"
     key: "config/ssl/ca/private_ca.key"
 
-  hddcoin_ssl_ca:
-    crt: "config/ssl/ca/hddcoin_ca.crt"
-    key: "config/ssl/ca/hddcoin_ca.key"
+  ssdcoin_ssl_ca:
+    crt: "config/ssl/ca/ssdcoin_ca.crt"
+    key: "config/ssl/ca/ssdcoin_ca.key"
 
 pool:
   # Replace this with a real puzzle hash
@@ -240,13 +240,13 @@ full_node:
   weight_proof_timeout: 360
 
   # when enabled, the full node will print a pstats profile to the root_dir/profile every second
-  # analyze with hddcoin/utils/profiler.py
+  # analyze with ssdcoin/utils/profiler.py
   enable_profiler: False
 
   # List of trusted DNS seeders to bootstrap from.
   # If you modify this, please change the hardcode as well from FullNode.set_server()
   dns_servers:
-    - "dns-introducer.hddcoin.org"
+    - "dns-introducer.ssdcoin.org"
   farmer_peer:
       host: *self_hostname
       port: 28447
@@ -254,7 +254,7 @@ full_node:
       host: *self_hostname
       port: 28446
   introducer_peer:
-      host: introducer.hddcoin.org  # HDDcoin introducer IPv4/IPv6
+      host: introducer.ssdcoin.org  # SSDCoin introducer IPv4/IPv6
       port: 28444
   wallet_peer:
     host: *self_hostname
@@ -338,7 +338,7 @@ wallet:
   recent_peer_threshold: 6000
 
   introducer_peer:
-    host: introducer.hddcoin.org # HDDcoin AWS introducer IPv4/IPv6
+    host: introducer.ssdcoin.org # SSDCoin AWS introducer IPv4/IPv6
     port: 28444
 
   ssl:

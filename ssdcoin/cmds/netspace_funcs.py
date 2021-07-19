@@ -1,11 +1,11 @@
 import aiohttp
 
-from hddcoin.rpc.full_node_rpc_client import FullNodeRpcClient
-from hddcoin.util.byte_types import hexstr_to_bytes
-from hddcoin.util.config import load_config
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
-from hddcoin.util.ints import uint16
-from hddcoin.util.misc import format_bytes
+from ssdcoin.rpc.full_node_rpc_client import FullNodeRpcClient
+from ssdcoin.util.byte_types import hexstr_to_bytes
+from ssdcoin.util.config import load_config
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin.util.ints import uint16
+from ssdcoin.util.misc import format_bytes
 
 
 async def netstorge_async(rpc_port: int, delta_block_height: str, start: str) -> None:

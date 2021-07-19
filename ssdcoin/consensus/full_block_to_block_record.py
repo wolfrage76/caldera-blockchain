@@ -1,19 +1,19 @@
 from typing import List, Optional, Union
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.consensus.constants import ConsensusConstants
-from hddcoin.consensus.deficit import calculate_deficit
-from hddcoin.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
-from hddcoin.consensus.make_sub_epoch_summary import make_sub_epoch_summary
-from hddcoin.consensus.pot_iterations import is_overflow_block
-from hddcoin.types.blockchain_format.classgroup import ClassgroupElement
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.slots import ChallengeBlockInfo
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.full_block import FullBlock
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.util.ints import uint8, uint32, uint64
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.consensus.constants import ConsensusConstants
+from ssdcoin.consensus.deficit import calculate_deficit
+from ssdcoin.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
+from ssdcoin.consensus.make_sub_epoch_summary import make_sub_epoch_summary
+from ssdcoin.consensus.pot_iterations import is_overflow_block
+from ssdcoin.types.blockchain_format.classgroup import ClassgroupElement
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.slots import ChallengeBlockInfo
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.full_block import FullBlock
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.util.ints import uint8, uint32, uint64
 
 
 def block_to_block_record(

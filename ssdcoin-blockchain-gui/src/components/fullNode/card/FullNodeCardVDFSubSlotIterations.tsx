@@ -2,7 +2,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import { useSelector } from 'react-redux';
 import FarmCard from '../../farm/card/FarmCard';
-import { FormatLargeNumber } from '@hddcoin/core';
+import { FormatLargeNumber } from '@ssdcoin/core';
 import { RootState } from '../../../modules/rootReducer';
 
 export default function FullNodeCardVDFSubSlotIterations() {

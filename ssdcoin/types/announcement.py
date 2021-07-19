@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.hash import std_hash
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.hash import std_hash
 
 
 @dataclass(frozen=True)

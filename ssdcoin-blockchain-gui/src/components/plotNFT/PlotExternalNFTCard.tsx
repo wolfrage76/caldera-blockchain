@@ -11,7 +11,7 @@ import {
   Loading,
   FormatLargeNumber,
   Link,
-} from '@hddcoin/core';
+} from '@ssdcoin/core';
 import {
   Box,
   Card,

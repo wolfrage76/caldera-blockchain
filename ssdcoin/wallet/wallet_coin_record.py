@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.ints import uint32
-from hddcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.ints import uint32
+from ssdcoin.wallet.util.wallet_types import WalletType
 
 
 @dataclass(frozen=True)

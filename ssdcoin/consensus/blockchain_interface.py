@@ -1,12 +1,12 @@
 from typing import Dict, List, Optional
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from hddcoin.types.blockchain_format.vdf import VDFInfo
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.types.weight_proof import SubEpochChallengeSegment
-from hddcoin.util.ints import uint32
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from ssdcoin.types.blockchain_format.vdf import VDFInfo
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.types.weight_proof import SubEpochChallengeSegment
+from ssdcoin.util.ints import uint32
 
 
 class BlockchainInterface:

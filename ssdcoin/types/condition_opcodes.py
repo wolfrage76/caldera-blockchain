@@ -2,7 +2,7 @@ import enum
 from typing import Any
 
 
-# See hddcoin/wallet/puzzles/condition_codes.clvm
+# See ssdcoin/wallet/puzzles/condition_codes.clvm
 class ConditionOpcode(bytes, enum.Enum):
     # UNKNOWN is ascii "0"
     UNKNOWN = bytes([48])

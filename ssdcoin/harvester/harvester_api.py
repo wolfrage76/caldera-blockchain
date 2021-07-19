@@ -5,20 +5,20 @@ from typing import Callable, List, Tuple
 
 from blspy import AugSchemeMPL, G2Element, G1Element
 
-from hddcoin.consensus.pot_iterations import calculate_iterations_quality, calculate_sp_interval_iters
-from hddcoin.harvester.harvester import Harvester
-from hddcoin.plotting.plot_tools import PlotInfo, parse_plot_info
-from hddcoin.protocols import harvester_protocol
-from hddcoin.protocols.farmer_protocol import FarmingInfo
-from hddcoin.protocols.harvester_protocol import Plot
-from hddcoin.protocols.protocol_message_types import ProtocolMessageTypes
-from hddcoin.server.outbound_message import make_msg
-from hddcoin.server.ws_connection import WSHDDcoinConnection
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.api_decorators import api_request, peer_required
-from hddcoin.util.ints import uint8, uint32, uint64
-from hddcoin.wallet.derive_keys import master_sk_to_local_sk
+from ssdcoin.consensus.pot_iterations import calculate_iterations_quality, calculate_sp_interval_iters
+from ssdcoin.harvester.harvester import Harvester
+from ssdcoin.plotting.plot_tools import PlotInfo, parse_plot_info
+from ssdcoin.protocols import harvester_protocol
+from ssdcoin.protocols.farmer_protocol import FarmingInfo
+from ssdcoin.protocols.harvester_protocol import Plot
+from ssdcoin.protocols.protocol_message_types import ProtocolMessageTypes
+from ssdcoin.server.outbound_message import make_msg
+from ssdcoin.server.ws_connection import WSSSDCoinConnection
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.api_decorators import api_request, peer_required
+from ssdcoin.util.ints import uint8, uint32, uint64
+from ssdcoin.wallet.derive_keys import master_sk_to_local_sk
 
 
 class HarvesterAPI:
@@ -49,7 +49,7 @@ class HarvesterAPI:
     @peer_required
     @api_request
     async def new_signage_point_harvester(
-        self, new_challenge: harvester_protocol.NewSignagePointHarvester, peer: WSHDDcoinConnection
+        self, new_challenge: harvester_protocol.NewSignagePointHarvester, peer: WSSSDCoinConnection
     ):
         """
         The harvester receives a new signage point from the farmer, this happens at the start of each slot.

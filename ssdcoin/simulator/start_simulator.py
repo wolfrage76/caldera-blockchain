@@ -2,14 +2,14 @@ from multiprocessing import freeze_support
 from pathlib import Path
 from typing import Dict
 
-from hddcoin.full_node.full_node import FullNode
-from hddcoin.rpc.full_node_rpc_api import FullNodeRpcApi
-from hddcoin.server.outbound_message import NodeType
-from hddcoin.server.start_service import run_service
+from ssdcoin.full_node.full_node import FullNode
+from ssdcoin.rpc.full_node_rpc_api import FullNodeRpcApi
+from ssdcoin.server.outbound_message import NodeType
+from ssdcoin.server.start_service import run_service
 from tests.block_tools import BlockTools, test_constants
-from hddcoin.util.config import load_config_cli
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
-from hddcoin.util.path import mkdir, path_from_root
+from ssdcoin.util.config import load_config_cli
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin.util.path import mkdir, path_from_root
 
 from .full_node_simulator import FullNodeSimulator
 

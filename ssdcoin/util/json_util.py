@@ -4,7 +4,7 @@ from typing import Any
 
 from aiohttp import web
 
-from hddcoin.wallet.util.wallet_types import WalletType
+from ssdcoin.wallet.util.wallet_types import WalletType
 
 
 class EnhancedJSONEncoder(json.JSONEncoder):

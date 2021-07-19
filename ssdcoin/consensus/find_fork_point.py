@@ -1,8 +1,8 @@
 from typing import Union
 
-from hddcoin.consensus.block_record import BlockRecord
-from hddcoin.consensus.blockchain_interface import BlockchainInterface
-from hddcoin.types.header_block import HeaderBlock
+from ssdcoin.consensus.block_record import BlockRecord
+from ssdcoin.consensus.blockchain_interface import BlockchainInterface
+from ssdcoin.types.header_block import HeaderBlock
 
 
 def find_fork_point_in_chain(

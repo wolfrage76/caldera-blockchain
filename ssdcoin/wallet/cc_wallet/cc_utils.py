@@ -3,15 +3,15 @@ from typing import List, Optional, Tuple
 
 from blspy import AugSchemeMPL, G2Element
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program, INFINITE_COST
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.spend_bundle import CoinSolution, SpendBundle
-from hddcoin.util.condition_tools import conditions_dict_for_solution
-from hddcoin.util.ints import uint64
-from hddcoin.wallet.puzzles.cc_loader import CC_MOD, LOCK_INNER_PUZZLE
-from hddcoin.wallet.puzzles.genesis_by_coin_id_with_0 import (
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program, INFINITE_COST
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.spend_bundle import CoinSolution, SpendBundle
+from ssdcoin.util.condition_tools import conditions_dict_for_solution
+from ssdcoin.util.ints import uint64
+from ssdcoin.wallet.puzzles.cc_loader import CC_MOD, LOCK_INNER_PUZZLE
+from ssdcoin.wallet.puzzles.genesis_by_coin_id_with_0 import (
     genesis_coin_id_for_genesis_coin_checker,
     lineage_proof_for_coin,
     lineage_proof_for_genesis,

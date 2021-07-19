@@ -1,6 +1,6 @@
 from ipaddress import ip_address, IPv4Network, IPv6Network
 from typing import Iterable, Union, Any
-from hddcoin.server.outbound_message import NodeType
+from ssdcoin.server.outbound_message import NodeType
 
 
 def is_in_network(peer_host: str, networks: Iterable[Union[IPv4Network, IPv6Network]]) -> bool:
@@ -17,27 +17,27 @@ def is_localhost(peer_host: str) -> bool:
 
 def class_for_type(type: NodeType) -> Any:
     if type is NodeType.FULL_NODE:
-        from hddcoin.full_node.full_node_api import FullNodeAPI
+        from ssdcoin.full_node.full_node_api import FullNodeAPI
 
         return FullNodeAPI
     elif type is NodeType.WALLET:
-        from hddcoin.wallet.wallet_node_api import WalletNodeAPI
+        from ssdcoin.wallet.wallet_node_api import WalletNodeAPI
 
         return WalletNodeAPI
     elif type is NodeType.INTRODUCER:
-        from hddcoin.introducer.introducer_api import IntroducerAPI
+        from ssdcoin.introducer.introducer_api import IntroducerAPI
 
         return IntroducerAPI
     elif type is NodeType.TIMELORD:
-        from hddcoin.timelord.timelord_api import TimelordAPI
+        from ssdcoin.timelord.timelord_api import TimelordAPI
 
         return TimelordAPI
     elif type is NodeType.FARMER:
-        from hddcoin.farmer.farmer_api import FarmerAPI
+        from ssdcoin.farmer.farmer_api import FarmerAPI
 
         return FarmerAPI
     elif type is NodeType.HARVESTER:
-        from hddcoin.harvester.harvester_api import HarvesterAPI
+        from ssdcoin.harvester.harvester_api import HarvesterAPI
 
         return HarvesterAPI
     raise ValueError("No class for type")

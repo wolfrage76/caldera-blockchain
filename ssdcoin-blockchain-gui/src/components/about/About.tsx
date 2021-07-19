@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import icon from '../../assets/img/hddcoin_circle.svg';
+import icon from '../../assets/img/ssdcoin_circle.svg';
 
 const GlobalStyle = createGlobalStyle`
   body,
@@ -70,7 +70,7 @@ const Spacer = styled.div`
   margin-bottom: 1rem;
 `;
 
-const url = 'https://hddcoin.org';
+const url = 'https://ssdcoin.org';
 
 type Props = {
   version: string;
@@ -114,7 +114,7 @@ export default function About(props: Props) {
         </StyledLink>
         <StyledSubTitle>{description}</StyledSubTitle>
         <Spacer />
-        <div className="copyright">Copyright (c) 2021 HDDcoin Network</div>
+        <div className="copyright">Copyright (c) 2021 SSDCoin Network</div>
         <Spacer />
         <VersionsTable>
           {versions?.electron && (
@@ -144,7 +144,7 @@ export default function About(props: Props) {
         </VersionsTable>
 
         <BugReport
-          href="https://github.com/HDDcoin-Network/hddcoin-blockchain/issues"
+          href="https://github.com/SSDCoin-Network/ssdcoin-blockchain/issues"
           target="_blank"
         >
           Report an issue

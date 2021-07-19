@@ -1,4 +1,4 @@
-from hddcoin.util.condition_tools import ConditionOpcode
+from ssdcoin.util.condition_tools import ConditionOpcode
 
 
 def make_create_coin_condition(puzzle_hash, amount):

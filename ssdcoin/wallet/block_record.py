@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from typing import List
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.header_block import HeaderBlock
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.header_block import HeaderBlock
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

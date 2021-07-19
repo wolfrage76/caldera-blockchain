@@ -4,18 +4,18 @@ import logging
 import pytest
 from blspy import AugSchemeMPL
 
-from hddcoin.consensus.pot_iterations import is_overflow_block
-from hddcoin.full_node.signage_point import SignagePoint
-from hddcoin.protocols import full_node_protocol
-from hddcoin.rpc.full_node_rpc_api import FullNodeRpcApi
-from hddcoin.rpc.full_node_rpc_client import FullNodeRpcClient
-from hddcoin.rpc.rpc_server import start_rpc_server
-from hddcoin.simulator.simulator_protocol import FarmNewBlockProtocol
-from hddcoin.types.spend_bundle import SpendBundle
-from hddcoin.types.unfinished_block import UnfinishedBlock
+from ssdcoin.consensus.pot_iterations import is_overflow_block
+from ssdcoin.full_node.signage_point import SignagePoint
+from ssdcoin.protocols import full_node_protocol
+from ssdcoin.rpc.full_node_rpc_api import FullNodeRpcApi
+from ssdcoin.rpc.full_node_rpc_client import FullNodeRpcClient
+from ssdcoin.rpc.rpc_server import start_rpc_server
+from ssdcoin.simulator.simulator_protocol import FarmNewBlockProtocol
+from ssdcoin.types.spend_bundle import SpendBundle
+from ssdcoin.types.unfinished_block import UnfinishedBlock
 from tests.block_tools import get_signage_point
-from hddcoin.util.hash import std_hash
-from hddcoin.util.ints import uint16, uint8
+from ssdcoin.util.hash import std_hash
+from ssdcoin.util.ints import uint16, uint8
 from tests.wallet_tools import WalletTool
 from tests.connection_utils import connect_and_get_peer
 from tests.setup_nodes import bt, self_hostname, setup_simulators_and_wallets, test_constants

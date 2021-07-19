@@ -1,14 +1,14 @@
 from typing import List, Tuple
 
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import Program
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.condition_opcodes import ConditionOpcode
-from hddcoin.types.coin_solution import CoinSolution
-from hddcoin.wallet.puzzles.load_clvm import load_clvm
-from hddcoin.wallet.lineage_proof import LineageProof
-from hddcoin.util.ints import uint64
-from hddcoin.util.hash import std_hash
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import Program
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.condition_opcodes import ConditionOpcode
+from ssdcoin.types.coin_solution import CoinSolution
+from ssdcoin.wallet.puzzles.load_clvm import load_clvm
+from ssdcoin.wallet.lineage_proof import LineageProof
+from ssdcoin.util.ints import uint64
+from ssdcoin.util.hash import std_hash
 
 SINGLETON_MOD = load_clvm("singleton_top_layer.clvm")
 SINGLETON_MOD_HASH = SINGLETON_MOD.get_tree_hash()

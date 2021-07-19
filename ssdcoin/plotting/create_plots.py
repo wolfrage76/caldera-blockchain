@@ -7,14 +7,14 @@ from typing import List, Optional, Tuple
 from blspy import AugSchemeMPL, G1Element, PrivateKey
 from chiapos import DiskPlotter
 
-from hddcoin.plotting.plot_tools import add_plot_directory, stream_plot_info_ph, stream_plot_info_pk
-from hddcoin.types.blockchain_format.proof_of_space import ProofOfSpace
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.util.bech32m import decode_puzzle_hash
-from hddcoin.util.config import config_path_for_filename, load_config
-from hddcoin.util.keychain import Keychain
-from hddcoin.util.path import mkdir
-from hddcoin.wallet.derive_keys import master_sk_to_farmer_sk, master_sk_to_local_sk, master_sk_to_pool_sk
+from ssdcoin.plotting.plot_tools import add_plot_directory, stream_plot_info_ph, stream_plot_info_pk
+from ssdcoin.types.blockchain_format.proof_of_space import ProofOfSpace
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.util.bech32m import decode_puzzle_hash
+from ssdcoin.util.config import config_path_for_filename, load_config
+from ssdcoin.util.keychain import Keychain
+from ssdcoin.util.path import mkdir
+from ssdcoin.wallet.derive_keys import master_sk_to_farmer_sk, master_sk_to_local_sk, master_sk_to_pool_sk
 
 log = logging.getLogger(__name__)
 
@@ -27,7 +27,7 @@ def get_farmer_public_key(alt_fingerprint: Optional[int] = None) -> G1Element:
     else:
         sk_ent = keychain.get_first_private_key()
     if sk_ent is None:
-        raise RuntimeError("No keys, please run 'hddcoin keys add', 'hddcoin keys generate' or provide a public key with -f")
+        raise RuntimeError("No keys, please run 'ssdcoin keys add', 'ssdcoin keys generate' or provide a public key with -f")
     return master_sk_to_farmer_sk(sk_ent[0]).get_g1()
 
 
@@ -39,7 +39,7 @@ def get_pool_public_key(alt_fingerprint: Optional[int] = None) -> G1Element:
     else:
         sk_ent = keychain.get_first_private_key()
     if sk_ent is None:
-        raise RuntimeError("No keys, please run 'hddcoin keys add', 'hddcoin keys generate' or provide a public key with -p")
+        raise RuntimeError("No keys, please run 'ssdcoin keys add', 'ssdcoin keys generate' or provide a public key with -p")
     return master_sk_to_pool_sk(sk_ent[0]).get_g1()
 
 

@@ -3,22 +3,22 @@ import time
 from typing import Tuple, Dict, List, Optional, Set
 from clvm import SExp
 
-from hddcoin.consensus.cost_calculator import NPCResult
-from hddcoin.consensus.condition_costs import ConditionCost
-from hddcoin.full_node.generator import create_generator_args, setup_generator_args
-from hddcoin.types.blockchain_format.coin import Coin
-from hddcoin.types.blockchain_format.program import NIL
-from hddcoin.types.blockchain_format.sized_bytes import bytes32
-from hddcoin.types.coin_record import CoinRecord
-from hddcoin.types.condition_with_args import ConditionWithArgs
-from hddcoin.types.generator_types import BlockGenerator
-from hddcoin.types.name_puzzle_condition import NPC
-from hddcoin.util.clvm import int_from_bytes, int_to_bytes
-from hddcoin.util.condition_tools import ConditionOpcode, conditions_by_opcode
-from hddcoin.util.errors import Err, ValidationError
-from hddcoin.util.ints import uint32, uint64, uint16
-from hddcoin.wallet.puzzles.generator_loader import GENERATOR_FOR_SINGLE_COIN_MOD
-from hddcoin.wallet.puzzles.rom_bootstrap_generator import get_generator
+from ssdcoin.consensus.cost_calculator import NPCResult
+from ssdcoin.consensus.condition_costs import ConditionCost
+from ssdcoin.full_node.generator import create_generator_args, setup_generator_args
+from ssdcoin.types.blockchain_format.coin import Coin
+from ssdcoin.types.blockchain_format.program import NIL
+from ssdcoin.types.blockchain_format.sized_bytes import bytes32
+from ssdcoin.types.coin_record import CoinRecord
+from ssdcoin.types.condition_with_args import ConditionWithArgs
+from ssdcoin.types.generator_types import BlockGenerator
+from ssdcoin.types.name_puzzle_condition import NPC
+from ssdcoin.util.clvm import int_from_bytes, int_to_bytes
+from ssdcoin.util.condition_tools import ConditionOpcode, conditions_by_opcode
+from ssdcoin.util.errors import Err, ValidationError
+from ssdcoin.util.ints import uint32, uint64, uint16
+from ssdcoin.wallet.puzzles.generator_loader import GENERATOR_FOR_SINGLE_COIN_MOD
+from ssdcoin.wallet.puzzles.rom_bootstrap_generator import get_generator
 
 GENERATOR_MOD = get_generator()
 

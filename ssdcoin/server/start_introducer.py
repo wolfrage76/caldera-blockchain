@@ -1,12 +1,12 @@
 import pathlib
 from typing import Dict
 
-from hddcoin.introducer.introducer import Introducer
-from hddcoin.introducer.introducer_api import IntroducerAPI
-from hddcoin.server.outbound_message import NodeType
-from hddcoin.server.start_service import run_service
-from hddcoin.util.config import load_config_cli
-from hddcoin.util.default_root import DEFAULT_ROOT_PATH
+from ssdcoin.introducer.introducer import Introducer
+from ssdcoin.introducer.introducer_api import IntroducerAPI
+from ssdcoin.server.outbound_message import NodeType
+from ssdcoin.server.start_service import run_service
+from ssdcoin.util.config import load_config_cli
+from ssdcoin.util.default_root import DEFAULT_ROOT_PATH
 
 # See: https://bugs.python.org/issue29288
 "".encode("idna")

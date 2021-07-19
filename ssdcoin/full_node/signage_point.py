@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from hddcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
-from hddcoin.util.streamable import Streamable, streamable
+from ssdcoin.types.blockchain_format.vdf import VDFInfo, VDFProof
+from ssdcoin.util.streamable import Streamable, streamable
 
 
 @dataclass(frozen=True)

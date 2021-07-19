@@ -8,8 +8,8 @@ from ssdcoin.util.bech32m import decode_puzzle_hash, encode_puzzle_hash
 from ssdcoin.util.condition_tools import parse_sexp_to_conditions
 from ssdcoin.util.ints import uint32
 
-address1 = "hdd1tm2fmappqenrj3c9ngej8k33pujvspxxea6zpu7p4sx0lvle62es9ae95j"  # SSDCoin Network Inc Reserves Account-1
-address2 = "hdd1tm2fmappqenrj3c9ngej8k33pujvspxxea6zpu7p4sx0lvle62es9ae95j"  # SSDCoin Network Inc Reserves Account-1
+address1 = "ssd1tm2fmappqenrj3c9ngej8k33pujvspxxea6zpu7p4sx0lvle62es9ae95j"  # SSDCoin Network Inc Reserves Account-1
+address2 = "ssd1tm2fmappqenrj3c9ngej8k33pujvspxxea6zpu7p4sx0lvle62es9ae95j"  # SSDCoin Network Inc Reserves Account-1
 
 ph1 = decode_puzzle_hash(address1)
 ph2 = decode_puzzle_hash(address2)
@@ -30,7 +30,7 @@ def make_puzzle(amount: int) -> int:
     puzzle_hash = puzzle_prog.get_tree_hash()
 
     solution = "()"
-    prefix = "hdd"
+    prefix = "ssd"
     print("PH", puzzle_hash)
     print(f"Address: {encode_puzzle_hash(puzzle_hash, prefix)}")
 

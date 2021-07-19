@@ -794,7 +794,7 @@ msgid "Fee"
 msgstr "Gebyr"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:420
-#~ msgid "Fee (THDD)"
+#~ msgid "Fee (TSSD)"
 #~ msgstr ""
 
 #: src/components/wallet/coloured/WalletColoured.tsx:420
@@ -986,16 +986,16 @@ msgid "Join a Pool"
 msgstr "Tilslut til en Pulje"
 
 #: src/components/plot/add/PlotAddNFT.tsx:44
-msgid "Join a pool and get consistent HDD farming rewards. The average returns are the same, but it is much less volatile."
-msgstr "Tilslut en pulje og få stabil HDD farm belønninger. Gennemsnitsudbyttet er det samme, med en del mindrer udsving."
+msgid "Join a pool and get consistent SSD farming rewards. The average returns are the same, but it is much less volatile."
+msgstr "Tilslut en pulje og få stabil SSD farm belønninger. Gennemsnitsudbyttet er det samme, med en del mindrer udsving."
 
 #: src/components/plotNFT/PlotNFTAdd.tsx:59
-msgid "Join a pool and get consistent HDD farming rewards. The average returns are the same, but it is much less volatile. Assign plots to a plot NFT. You can easily switch pools without having to re-plot."
-msgstr "Tilslut en pulje og få stabil HDD farm belønninger. Gennemsnitsudbyttet er det samme, med en del mindrer udsving. Tildel dine plots til en plot NFT. Du kan nemt skifte imellem puljer uden at skulle re-plotte."
+msgid "Join a pool and get consistent SSD farming rewards. The average returns are the same, but it is much less volatile. Assign plots to a plot NFT. You can easily switch pools without having to re-plot."
+msgstr "Tilslut en pulje og få stabil SSD farm belønninger. Gennemsnitsudbyttet er det samme, med en del mindrer udsving. Tildel dine plots til en plot NFT. Du kan nemt skifte imellem puljer uden at skulle re-plotte."
 
 #: src/components/plot/add/PlotAddNFT.tsx:137
-msgid "Join a pool and get more consistent HDD farming rewards. Create a plot NFT and assign your new plots to a group."
-msgstr "Tilslut en pulje og få stabil HDD farm belønninger. Opret en plot NFT og tildel dine nye plot filer til en gruppe."
+msgid "Join a pool and get more consistent SSD farming rewards. Create a plot NFT and assign your new plots to a group."
+msgstr "Tilslut en pulje og få stabil SSD farm belønninger. Opret en plot NFT og tildel dine nye plot filer til en gruppe."
 
 #: src/components/plot/overview/PlotOverviewPlots.tsx:63
 msgid "K-Size"
@@ -1219,8 +1219,8 @@ msgid "Not found Plots"
 msgstr "Ikke fundet Plotfiler"
 
 #: src/components/farm/FarmManageFarmingRewards.tsx:186
-msgid "Note that this does not change your pooling payout addresses. This only affects old format plots, and the 0.25HDD reward for pooling plots."
-msgstr "Bemærk, at dette ikke ændrer din pulje udbetalingsadresser. Dette påvirker kun gamle plot filer af gammelt format, og 0,25HDD belønning for pulje plots."
+msgid "Note that this does not change your pooling payout addresses. This only affects old format plots, and the 0.25SSD reward for pooling plots."
+msgstr "Bemærk, at dette ikke ændrer din pulje udbetalingsadresser. Dette påvirker kun gamle plot filer af gammelt format, og 0,25SSD belønning for pulje plots."
 
 #: src/components/plotNFT/PlotExternalNFTCard.tsx:95
 #: src/components/plotNFT/PlotNFTCard.tsx:121
@@ -1734,8 +1734,8 @@ msgid "Select Wallet Type"
 msgstr "Vælg Pung Type"
 
 #: src/components/plot/add/PlotAddSelectFinalDirectory.tsx:25
-msgid "Select the final destination for the folder where you would like the plot to be stored. We recommend you use a large slow hard drive (like external HDD)."
-msgstr "Vælg den endelige folder hvor du vil have plotfilen gemt. Vi foreslår ar du bruger en stor langsom harddisk (såsom en ekstern HDD)."
+msgid "Select the final destination for the folder where you would like the plot to be stored. We recommend you use a large slow hard drive (like external SSD)."
+msgstr "Vælg den endelige folder hvor du vil have plotfilen gemt. Vi foreslår ar du bruger en stor langsom harddisk (såsom en ekstern SSD)."
 
 #: src/components/plot/add/PlotAddSelectTemporaryDirectory.tsx:41
 #~ msgid "Select the temporary destination for the folder where you would like the plot to be stored. We recommend you use a fast SSD."
@@ -1743,7 +1743,7 @@ msgstr "Vælg den endelige folder hvor du vil have plotfilen gemt. Vi foreslår 
 
 #: src/components/plot/add/PlotAddSelectTemporaryDirectory.tsx:41
 msgid "Select the temporary destination for the folder where you would like the plot to be stored. We recommend you use a fast drive."
-msgstr "Vælg den endelige folder, hvor du vil have plotfilen gemt. Vi foreslår, at du bruger en stor langsom harddisk (såsom en ekstern HDD)."
+msgstr "Vælg den endelige folder, hvor du vil have plotfilen gemt. Vi foreslår, at du bruger en stor langsom harddisk (såsom en ekstern SSD)."
 
 #: src/components/plot/add/PlotAddNFT.tsx:85
 msgid "Select your Plot NFT"
@@ -1765,8 +1765,8 @@ msgid "Self Pooling"
 msgstr "Selv Pulje"
 
 #: src/components/plotNFT/select/PlotNFTSelectBase.tsx:105
-msgid "Self pool. When you win a block you will earn HDD rewards."
-msgstr "Selvpulje. Når du vinder en blok, vil du tjene HDD belønning."
+msgid "Self pool. When you win a block you will earn SSD rewards."
+msgstr "Selvpulje. Når du vinder en blok, vil du tjene SSD belønning."
 
 #: src/components/trading/CreateOffer.jsx:164
 #: src/components/trading/TradesTable.tsx:47
@@ -1818,8 +1818,8 @@ msgid "Skips adding a final directory to harvester for farming"
 msgstr "Skipper tilføjelse af endelig mappe til harvesteren for farmning"
 
 #: src/components/pool/PoolHero.tsx:26
-msgid "Smooth out your HDD farming rewards by joining a pool."
-msgstr "Glat dine HDD belønninger ud ved at deltage i en pulje."
+msgid "Smooth out your SSD farming rewards by joining a pool."
+msgstr "Glat dine SSD belønninger ud ved at deltage i en pulje."
 
 #: src/electron/main.tsx:470
 msgid "Speech"
@@ -1927,23 +1927,23 @@ msgstr "Synkroniserer <0/>/<1/>"
 #~ msgstr "Syncing {progress}/{tip}"
 
 #: src/components/farm/card/FarmCardBlockRewards.tsx:15
-#~ msgid "THDD Block Rewards"
+#~ msgid "TSSD Block Rewards"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardCoinbaseRewards.tsx:12
-#~ msgid "THDD Farming Rewards"
+#~ msgid "TSSD Farming Rewards"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardFeesReward.tsx:12
-#~ msgid "THDD Fees Collected"
+#~ msgid "TSSD Fees Collected"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardUserFees.tsx:12
-#~ msgid "THDD User Fees"
-#~ msgstr "THDD User Fees"
+#~ msgid "TSSD User Fees"
+#~ msgstr "TSSD User Fees"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:15
-#~ msgid "THDD User Transaction Fees"
+#~ msgid "TSSD User Transaction Fees"
 #~ msgstr ""
 
 #: src/components/pool/PoolInfo.tsx:37

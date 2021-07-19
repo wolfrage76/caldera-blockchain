@@ -794,7 +794,7 @@ msgid "Fee"
 msgstr "Poplatok"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:420
-#~ msgid "Fee (THDD)"
+#~ msgid "Fee (TSSD)"
 #~ msgstr ""
 
 #: src/components/wallet/coloured/WalletColoured.tsx:420
@@ -986,16 +986,16 @@ msgid "Join a Pool"
 msgstr "Pripojiť sa k združeniu"
 
 #: src/components/plot/add/PlotAddNFT.tsx:44
-msgid "Join a pool and get consistent HDD farming rewards. The average returns are the same, but it is much less volatile."
-msgstr "Pripojte sa k združeniu a získajte konzistentné farmárske HDD odmeny. Priemerný výnos je rovnaký, je však oveľa menej volatilný."
+msgid "Join a pool and get consistent SSD farming rewards. The average returns are the same, but it is much less volatile."
+msgstr "Pripojte sa k združeniu a získajte konzistentné farmárske SSD odmeny. Priemerný výnos je rovnaký, je však oveľa menej volatilný."
 
 #: src/components/plotNFT/PlotNFTAdd.tsx:59
-msgid "Join a pool and get consistent HDD farming rewards. The average returns are the same, but it is much less volatile. Assign plots to a plot NFT. You can easily switch pools without having to re-plot."
-msgstr "Pripojte sa k združeniu a získajte konzistentné farmárske HDD odmeny. Priemerný výnos je rovnaký, je však oveľa menej volatilný. Priraďte polia k NFT poľa. Môžete ľahko prepínať združenia bez nutnosti opakovaného vytvárania polí."
+msgid "Join a pool and get consistent SSD farming rewards. The average returns are the same, but it is much less volatile. Assign plots to a plot NFT. You can easily switch pools without having to re-plot."
+msgstr "Pripojte sa k združeniu a získajte konzistentné farmárske SSD odmeny. Priemerný výnos je rovnaký, je však oveľa menej volatilný. Priraďte polia k NFT poľa. Môžete ľahko prepínať združenia bez nutnosti opakovaného vytvárania polí."
 
 #: src/components/plot/add/PlotAddNFT.tsx:137
-msgid "Join a pool and get more consistent HDD farming rewards. Create a plot NFT and assign your new plots to a group."
-msgstr "Pripojte sa k združeniu a získajte konzistentnejšie farmárske HDD odmeny. Vytvorte NFT poľa a priraďte svoje nové polia do skupiny."
+msgid "Join a pool and get more consistent SSD farming rewards. Create a plot NFT and assign your new plots to a group."
+msgstr "Pripojte sa k združeniu a získajte konzistentnejšie farmárske SSD odmeny. Vytvorte NFT poľa a priraďte svoje nové polia do skupiny."
 
 #: src/components/plot/overview/PlotOverviewPlots.tsx:63
 msgid "K-Size"
@@ -1219,8 +1219,8 @@ msgid "Not found Plots"
 msgstr "Polia sa nenašli"
 
 #: src/components/farm/FarmManageFarmingRewards.tsx:186
-msgid "Note that this does not change your pooling payout addresses. This only affects old format plots, and the 0.25HDD reward for pooling plots."
-msgstr "Toto však nezmení vaše platobné adresy združovania. Ovplyvňuje to iba polia v starom formáte, a odmenu 0,25 HDD za združovanie polí."
+msgid "Note that this does not change your pooling payout addresses. This only affects old format plots, and the 0.25SSD reward for pooling plots."
+msgstr "Toto však nezmení vaše platobné adresy združovania. Ovplyvňuje to iba polia v starom formáte, a odmenu 0,25 SSD za združovanie polí."
 
 #: src/components/plotNFT/PlotExternalNFTCard.tsx:95
 #: src/components/plotNFT/PlotNFTCard.tsx:121
@@ -1734,7 +1734,7 @@ msgid "Select Wallet Type"
 msgstr "Vyberte typ peňaženky"
 
 #: src/components/plot/add/PlotAddSelectFinalDirectory.tsx:25
-msgid "Select the final destination for the folder where you would like the plot to be stored. We recommend you use a large slow hard drive (like external HDD)."
+msgid "Select the final destination for the folder where you would like the plot to be stored. We recommend you use a large slow hard drive (like external SSD)."
 msgstr "Vyberte cieľový adresár, do ktorého chcete uložiť pole. Odporúčame vám používať veľký pomalý pevný disk (napríklad externý pevný disk)."
 
 #: src/components/plot/add/PlotAddSelectTemporaryDirectory.tsx:41
@@ -1765,8 +1765,8 @@ msgid "Self Pooling"
 msgstr "Sólo združovanie"
 
 #: src/components/plotNFT/select/PlotNFTSelectBase.tsx:105
-msgid "Self pool. When you win a block you will earn HDD rewards."
-msgstr "Osobné združenie. Keď vyhráte blok, získate HDD odmeny."
+msgid "Self pool. When you win a block you will earn SSD rewards."
+msgstr "Osobné združenie. Keď vyhráte blok, získate SSD odmeny."
 
 #: src/components/trading/CreateOffer.jsx:164
 #: src/components/trading/TradesTable.tsx:47
@@ -1818,8 +1818,8 @@ msgid "Skips adding a final directory to harvester for farming"
 msgstr "Preskočiť pridanie cieľového adresára do zberača pre farmárčenie"
 
 #: src/components/pool/PoolHero.tsx:26
-msgid "Smooth out your HDD farming rewards by joining a pool."
-msgstr "Zjemnite si svoje farmárske HDD odmeny pripojením sa k združeniu."
+msgid "Smooth out your SSD farming rewards by joining a pool."
+msgstr "Zjemnite si svoje farmárske SSD odmeny pripojením sa k združeniu."
 
 #: src/electron/main.tsx:470
 msgid "Speech"
@@ -1927,23 +1927,23 @@ msgstr "Synchronizácia <0/>/<1/>"
 #~ msgstr "Syncing {progress}/{tip}"
 
 #: src/components/farm/card/FarmCardBlockRewards.tsx:15
-#~ msgid "THDD Block Rewards"
+#~ msgid "TSSD Block Rewards"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardCoinbaseRewards.tsx:12
-#~ msgid "THDD Farming Rewards"
+#~ msgid "TSSD Farming Rewards"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardFeesReward.tsx:12
-#~ msgid "THDD Fees Collected"
+#~ msgid "TSSD Fees Collected"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardUserFees.tsx:12
-#~ msgid "THDD User Fees"
-#~ msgstr "THDD User Fees"
+#~ msgid "TSSD User Fees"
+#~ msgstr "TSSD User Fees"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:15
-#~ msgid "THDD User Transaction Fees"
+#~ msgid "TSSD User Transaction Fees"
 #~ msgstr ""
 
 #: src/components/pool/PoolInfo.tsx:37

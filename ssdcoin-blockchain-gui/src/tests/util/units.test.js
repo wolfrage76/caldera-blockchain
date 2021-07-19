@@ -112,14 +112,14 @@ describe('units', () => {
     });
     it('updates an existing display', () => {
       units.setDisplay('ssdcoin', {
-        format: '{amount} THDD',
+        format: '{amount} TSSD',
         fractionDigits: 0,
       });
 
       const result = units.getDisplay('ssdcoin');
 
       expect(result).toEqual({
-        format: '{amount} THDD',
+        format: '{amount} TSSD',
         fractionDigits: 0,
       });
     });

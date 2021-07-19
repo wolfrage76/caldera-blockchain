@@ -337,6 +337,7 @@ wallet:
   # recent_peer_threshold seconds
   recent_peer_threshold: 6000
 
+  # TODO: Maybe.
   introducer_peer:
     host: introducer.ssdcoin.org # SSDCoin AWS introducer IPv4/IPv6
     port: 29444

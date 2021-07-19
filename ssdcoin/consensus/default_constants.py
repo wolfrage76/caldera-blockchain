@@ -28,9 +28,9 @@ testnet_kwargs = {
     # Used as the initial cc rc challenges, as well as first block back pointers, and first SES back pointer
     # We override this value based on the chain being run (testnet0, testnet1, mainnet, etc)
     # Default used for tests is std_hash(b'')
-    "GENESIS_CHALLENGE": bytes.fromhex("f663a54192e4fc8832d62c5f914d1c3a15dd2a519c3ca23609a508f4641da23e"),
-    # Forks of ssdcoin should change this value to provide replay attack protection. This is set to mainnet genesis chall
-    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("49f4afb189342858dba5c1bb6b50b0deaa706088474f0c5431d65b857d54ddb5"),
+    "GENESIS_CHALLENGE": bytes.fromhex("f663a54192e4fc8832d62c5f914d1c3a15dd2a519c3ca23609a508f4641da23f"),
+    # Forks of chia should change this value to provide replay attack protection. This is set to mainnet genesis chall
+    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("49f4afb189342858dba5c1bb6b50b0deaa706088474f0c5431d65b857d54ddb6"),
     "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex(
         "5ed49df42106663947059a3323da310f24c804c6cf7420f3c1ac0cffb3f9d2b3"
     ),

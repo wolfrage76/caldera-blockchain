@@ -2,8 +2,8 @@
 [submodule "mozilla-ca"]
 	path = mozilla-ca
 	url = https://github.com/Chia-Network/mozilla-ca.git
-        branch = main
+    branch = main
 [submodule "tad-blockchain-gui"]
 	path = tad-blockchain-gui
 	url = https://github.com/Tad-Network/tad-blockchain-gui.git
-        branch = main
+    branch = main

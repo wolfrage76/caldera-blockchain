@@ -10,7 +10,7 @@ git status
 Write-Output "   ---"
 Write-Output "curl miniupnpc"
 Write-Output "   ---"
-Invoke-WebRequest -Uri "https://pypi.chia.net/simple/miniupnpc/miniupnpc-2.2.2-cp39-cp39-win_amd64.whl" -OutFile "miniupnpc-2.2.2-cp39-cp39-win_amd64.whl"
+Invoke-WebRequest -Uri "https://pypi.tad.net/simple/miniupnpc/miniupnpc-2.2.2-cp39-cp39-win_amd64.whl" -OutFile "miniupnpc-2.2.2-cp39-cp39-win_amd64.whl"
 Write-Output "Using win_amd64 python 3.9 wheel from https://github.com/miniupnp/miniupnp/pull/475 (2.2.0-RC1)"
 Write-Output "Actual build from https://github.com/miniupnp/miniupnp/commit/7783ac1545f70e3341da5866069bde88244dd848"
 If ($LastExitCode -gt 0){
@@ -46,12 +46,12 @@ Write-Output "Tad Version is: $env:TAD_INSTALLER_VERSION"
 Write-Output "   ---"
 
 Write-Output "   ---"
-Write-Output "Build chia-blockchain wheels"
+Write-Output "Build tad-blockchain wheels"
 Write-Output "   ---"
-pip wheel --use-pep517 --extra-index-url https://pypi.chia.net/simple/ -f . --wheel-dir=.\build_scripts\win_build .
+pip wheel --use-pep517 --extra-index-url https://pypi.tad.net/simple/ -f . --wheel-dir=.\build_scripts\win_build .
 
 Write-Output "   ---"
-Write-Output "Install chia-blockchain wheels into venv with pip"
+Write-Output "Install tad-blockchain wheels into venv with pip"
 Write-Output "   ---"
 
 Write-Output "pip install miniupnpc"
@@ -60,8 +60,8 @@ pip install --no-index --find-links=.\win_build\ miniupnpc
 # Write-Output "pip install setproctitle"
 # pip install setproctitle==1.2.2
 
-Write-Output "pip install chia-blockchain"
-pip install --no-index --find-links=.\win_build\ chia-blockchain
+Write-Output "pip install tad-blockchain"
+pip install --no-index --find-links=.\win_build\ tad-blockchain
 
 Write-Output "   ---"
 Write-Output "Use pyinstaller to create tad .exe's"
@@ -70,10 +70,10 @@ $SPEC_FILE = (python -c 'import tad; print(tad.PYINSTALLER_SPEC_PATH)') -join "`
 pyinstaller --log-level INFO $SPEC_FILE
 
 Write-Output "   ---"
-Write-Output "Copy tad executables to chia-blockchain-gui\"
+Write-Output "Copy tad executables to tad-blockchain-gui\"
 Write-Output "   ---"
-Copy-Item "dist\daemon" -Destination "..\chia-blockchain-gui\" -Recurse
-Set-Location -Path "..\chia-blockchain-gui" -PassThru
+Copy-Item "dist\daemon" -Destination "..\tad-blockchain-gui\" -Recurse
+Set-Location -Path "..\tad-blockchain-gui" -PassThru
 
 git status
 

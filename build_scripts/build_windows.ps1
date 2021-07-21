@@ -134,4 +134,4 @@ Write-Output "Windows Installer complete"
 Write-Output "   ---"
 
 
-dir .\tad-blockchain-gui\release-builds
+dir .\tad-blockchain-gui\

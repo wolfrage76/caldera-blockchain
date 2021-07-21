@@ -61,6 +61,8 @@ pip install --no-index --find-links=.\win_build\ miniupnpc
 # pip install setproctitle==1.2.2
 
 Write-Output "pip install tad-blockchain"
+dir .
+dir .\win_build\
 pip install --no-index --find-links=.\win_build\ tad-blockchain
 
 Write-Output "   ---"

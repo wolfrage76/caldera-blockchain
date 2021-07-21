@@ -1,20 +1,21 @@
 # TadCoin Blockchain network
 
-We've reached mainnet! **At the moment only CLI is supported**, we're working on GUI.
+We've reached mainnet and GUI apps are available for download! 
+## ➡️➡️ [Download TadCoin here](https://github.com/Tad-Network/tad-blockchain/releases) ⬅️⬅️
 
-If you'd like to participate in testnet please [join our Discord](https://discord.gg/4dkydqsQ)
+Have questions, suggestions or just want to show off your TadCoins? [Join our Discord](https://discord.gg/mwZF9DX544)
 
 **How is this fork different?**
 
-* We support both OG and NFT plots and get you **FULL** reward. Yes, that's right, full reward for any type of plots.
-* Get most of the space on the hard drive - we support k28+ plots  
-* Open Source and in forked off Chia Network. You can always audit code by diff'ing it with Chia upstream
+* We support both OG and NFT plots and get you **FULL** reward. Yes, that's right, **full reward for any type of plots.**
+* Get most of the space on the hard drive - we support k28+ plots.  
+* It's Open Source and forked off Chia Network 1.2.2. You can always audit code by diff'ing it with Chia upstream
 * You don't need goddamn IP addresses for the nodes. Tad's network discovery works.
 
                                                          
 ### Ports used by TadCoin
 
-➡ Full Node: **4044** ⬅
+➡ Full Node: **4044** 
 
 Other ports: 
 - harvester: **4448**, RPC: **4458**
@@ -32,4 +33,4 @@ netstat -tnap | grep -e '4044|4448|4458|4447|4457|4050|8446|4044|4555'
                                                               
 ## Credit
 
-Thanks Chia team!
+Thanks Chia team and awesome people participating in the network!

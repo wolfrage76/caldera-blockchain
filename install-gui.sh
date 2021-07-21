@@ -14,7 +14,7 @@ if [ "$(id -u)" = 0 ]; then
 	exit 1
 fi
 
-# Allows overriding the branch or commit to build in chia-blockchain-gui
+# Allows overriding the branch or commit to build in tad-blockchain-gui
 SUBMODULE_BRANCH=$1
 
 UBUNTU=false
@@ -102,4 +102,4 @@ fi
 echo ""
 echo "Tad blockchain install-gui.sh completed."
 echo ""
-echo "Type 'cd chia-blockchain-gui' and then 'npm run electron &' to start the GUI."
+echo "Type 'cd tad-blockchain-gui' and then 'npm run electron &' to start the GUI."

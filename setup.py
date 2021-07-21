@@ -41,7 +41,7 @@ dev_dependencies = [
 ]
 
 kwargs = dict(
-    name="chia-blockchain",
+    name="tad-blockchain",
     author="Tad Developer",
     author_email="git@tadcoin.xyz",
     description="Tad blockchain full node, farmer, timelord, and wallet.",

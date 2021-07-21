@@ -48,6 +48,7 @@ Write-Output "   ---"
 Write-Output "   ---"
 Write-Output "Build tad-blockchain wheels"
 Write-Output "   ---"
+dir 
 pip wheel --use-pep517 --extra-index-url https://pypi.chia.net/simple/ -f . --wheel-dir=.\build_scripts\win_build .
 
 Write-Output "   ---"

@@ -5,10 +5,10 @@ if [ ! "$1" ]; then
 	exit 1
 elif [ "$1" = "amd64" ]; then
 	PLATFORM="$1"
-	DIR_NAME="chia-blockchain-linux-x64"
+	DIR_NAME="tad-blockchain-linux-x64"
 else
 	PLATFORM="$1"
-	DIR_NAME="chia-blockchain-linux-arm64"
+	DIR_NAME="tad-blockchain-linux-arm64"
 fi
 
 pip install setuptools_scm
@@ -41,9 +41,9 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 	exit $LAST_EXIT_CODE
 fi
 
-cp -r dist/daemon ../chia-blockchain-gui
+cp -r dist/daemon ../tad-blockchain-gui
 cd .. || exit
-cd chia-blockchain-gui || exit
+cd tad-blockchain-gui || exit
 
 echo "npm build"
 npm install
@@ -55,7 +55,7 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 	exit $LAST_EXIT_CODE
 fi
 
-electron-packager . chia-blockchain --asar.unpack="**/daemon/**" --platform=linux \
+electron-packager . tad-blockchain --asar.unpack="**/daemon/**" --platform=linux \
 --icon=src/assets/img/Tad.icns --overwrite --app-bundle-id=tadcoin.xyz.blockchain \
 --appVersion=$TAD_INSTALLER_VERSION
 LAST_EXIT_CODE=$?

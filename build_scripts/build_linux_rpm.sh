@@ -6,10 +6,10 @@ if [ ! "$1" ]; then
 elif [ "$1" = "amd64" ]; then
 	#PLATFORM="$1"
 	REDHAT_PLATFORM="x86_64"
-	DIR_NAME="chia-blockchain-linux-x64"
+	DIR_NAME="tad-blockchain-linux-x64"
 else
 	#PLATFORM="$1"
-	DIR_NAME="chia-blockchain-linux-arm64"
+	DIR_NAME="tad-blockchain-linux-arm64"
 fi
 
 pip install setuptools_scm
@@ -42,9 +42,9 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 	exit $LAST_EXIT_CODE
 fi
 
-cp -r dist/daemon ../chia-blockchain-gui
+cp -r dist/daemon ../tad-blockchain-gui
 cd .. || exit
-cd chia-blockchain-gui || exit
+cd tad-blockchain-gui || exit
 
 echo "npm build"
 npm install
@@ -56,7 +56,7 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 	exit $LAST_EXIT_CODE
 fi
 
-electron-packager . chia-blockchain --asar.unpack="**/daemon/**" --platform=linux \
+electron-packager . tad-blockchain --asar.unpack="**/daemon/**" --platform=linux \
 --icon=src/assets/img/Tad.icns --overwrite --app-bundle-id=tadcoin.xyz.blockchain \
 --appVersion=$TAD_INSTALLER_VERSION
 LAST_EXIT_CODE=$?
@@ -69,7 +69,7 @@ mv $DIR_NAME ../build_scripts/dist/
 cd ../build_scripts || exit
 
 if [ "$REDHAT_PLATFORM" = "x86_64" ]; then
-	echo "Create chia-blockchain-$TAD_INSTALLER_VERSION.rpm"
+	echo "Create tad-blockchain-$TAD_INSTALLER_VERSION.rpm"
   electron-installer-redhat --src dist/$DIR_NAME/ --dest final_installer/ \
   --arch "$REDHAT_PLATFORM" --options.version $TAD_INSTALLER_VERSION \
   --license ../LICENSE

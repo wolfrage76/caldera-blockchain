@@ -38,7 +38,7 @@ network_overrides: &network_overrides
       address_prefix: "txcl"
       default_full_node_port: 8630
 
-selected_network: &selected_network "mainnet"
+selected_network: &selected_network "testnet5"
 ALERTS_URL: https://download.caldera.network/notify/mainnet_alert.txt
 CALDERA_ALERTS_PUBKEY: 89b7fd87cb56e926ecefb879a29aae308be01f31980569f6a75a69d2a9a69daefd71fb778d865f7c50d6c967e3025937
 
@@ -114,7 +114,7 @@ farmer:
   # The farmer will attempt to connect to this full node and harvester
   full_node_peer:
     host: *self_hostname
-    port: 8620
+    port: 8630
   harvester_peer:
     host: *self_hostname
     port: 8624
@@ -163,7 +163,7 @@ timelord:
       - 150000
   full_node_peer:
       host: *self_hostname
-      port: 8620
+      port: 8630
   # Maximum number of seconds allowed for a client to reconnect to the server.
   max_connection_time: 60
   # The ip and port where the TCP clients will connect.
@@ -198,7 +198,7 @@ timelord:
 
 full_node:
   # The full node server (if run) will run on this port
-  port: 8620
+  port: 8630
 
   # Run multiple nodes with different databases by changing the database_path
   database_path: db/blockchain_v1_CHALLENGE.sqlite
@@ -261,8 +261,8 @@ full_node:
       host: *self_hostname
       port: 8622
   introducer_peer:
-      host: introducer.caldera.network
-      port: 8620
+      host: beta_introducer.caldera.network
+      port: 8630
   wallet_peer:
     host: *self_hostname
     port: 8625
@@ -299,7 +299,7 @@ ui:
 
 introducer:
   host: *self_hostname
-  port: 8621
+  port: 8631
   max_peers_to_send: 20
   # The introducer will only return peers who it has seen in the last
   # recent_peer_threshold seconds
@@ -328,7 +328,7 @@ wallet:
 
   full_node_peer:
     host: *self_hostname
-    port: 8620
+    port: 8630
 
   testing: False
   database_path: wallet/db/blockchain_wallet_v1_CHALLENGE_KEY.sqlite
@@ -346,7 +346,7 @@ wallet:
 
   introducer_peer:
     host: introducer.caldera.network
-    port: 8620
+    port: 8630
 
   ssl:
     private_crt:  "config/ssl/wallet/private_wallet.crt"
